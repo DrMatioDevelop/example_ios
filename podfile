@@ -1,0 +1,88 @@
+inhibit_all_warnings!
+platform :ios, '7.0'
+
+
+target 'example' do
+    
+    # 网络请求
+    pod 'AFNetworking', '~> 3.1.0'
+
+    
+
+    # 提示框
+    pod 'MBProgressHUD', '0.9.2'
+
+    # 网络图片
+    pod 'SDWebImage', '~> 3.8.2'
+
+    # 表格单元格侧滑
+    #pod 'SWTableViewCell'
+
+    # 引导页
+    #pod 'EAIntroView', '2.8.1'
+
+    # 为KVO添加了block和@selector(SEL) 的回调操作
+    #pod 'KVOController', '1.1.0'
+
+    # 图像处理
+    #pod 'TuSDK’#, '2.6.0'
+    #pod 'GPUImage', '~> 0.1.7'
+    # 日志
+    #pod 'CocoaLumberjack'
+
+    # 方法拦截
+    #pod 'Aspects'
+
+    # 响应式编程框架
+    #pod 'ReactiveCocoa', '2.5’
+
+    # 界面布局
+    pod 'Masonry', '1.0.1'
+
+    # JSON --> Model
+    pod 'MJExtension', '3.0.11’
+
+
+    pod 'MJRefresh','3.1.9’
+
+    # 新浪微博
+    #pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+    
+    #数据库
+    #pod 'FMDB'
+    
+    
+    #键盘控制
+    #pod 'IQKeyboardManager'
+    
+    #gif图片加载
+    #pod 'YLGIFImage'
+    
+    
+    #日期处理
+    #pod 'DateTools'
+    
+    
+    #提示框
+    #pod 'SVProgressHUD'
+     
+    
+    #html解析
+    #pod 'GDataXML-HTML', '~> 1.3.0'
+    
+    #路由
+    pod 'JLRoutes','1.6'
+    
+    #自定义alert
+    #pod 'MMPopupView'
+    
+    #自定义分类
+    pod 'ESCategories', '~> 0.1.9’
+    
+    
+    #颜色选择器
+    #pod 'Color-Picker-for-iOS', '~> 2.0'
+    
+#    pod 'QIYU_iOS_SDK_Exclude_Libcrypto'
+
+end

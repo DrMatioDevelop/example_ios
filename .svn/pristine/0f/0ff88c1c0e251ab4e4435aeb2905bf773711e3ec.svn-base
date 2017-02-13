@@ -1,0 +1,72 @@
+//
+//  ESLiveProductCollectionView.m
+//  example
+//
+//  Created by d2c_cyf on 17/1/4.
+//  Copyright © 2017年 d2c_cyf. All rights reserved.
+//
+
+#import "ESLiveProductCollectionView.h"
+#import "ESLiveProductHeadCell.h"
+#import "ESLiveProductListCell.h"
+@interface ESLiveProductCollectionView ()
+@property(nonatomic, strong)NSArray *arrayDS;
+@end
+@implementation ESLiveProductCollectionView
+-(void)dealloc {
+    NSLog(@"%s",__func__);
+}
+-(instancetype)initWithFrame:(CGRect)frame {
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection  = UICollectionViewScrollDirectionVertical;
+    if (self = [super initWithFrame:frame collectionViewLayout:flowLayout]) {
+        self.delegate   = self;
+        self.dataSource = self;
+        [self registerClass:[ESLiveProductHeadCell class] forCellWithReuseIdentifier:@"headCell"];
+        [self registerClass:[ESLiveCouponAndCrowdCell class] forCellWithReuseIdentifier:@"couponAndCrowdCell"];
+        [self registerClass:[ESLiveProductListCell class] forCellWithReuseIdentifier:@"listCell"];
+    }
+    return self;
+}
+
+#pragma mark - func
+- (void)productListReload:(id)model {
+    self.arrayDS = model;
+    [self reloadData];
+}
+
+#pragma mark - UICollectionViewDelegate
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.arrayDS.count;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.arrayDS.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        ESLiveProductHeadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"headCell" forIndexPath:indexPath];
+        return cell;
+    }
+    else if (indexPath.section == 1) {
+        ESLiveCouponAndCrowdCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"couponAndCrowdCell" forIndexPath:indexPath];
+        return cell;
+    }
+    else{
+        ESLiveProductListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"listCell" forIndexPath:indexPath];
+        return cell;
+    }
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return [ESLiveProductHeadCell getBrandSize];
+    }
+    else if (indexPath.section == 1) {
+        return CGSizeMake(SSize.width, [ESLiveCouponAndCrowdCell getCellHeightWithModel:@""]);
+    }
+    else {
+        return [ESLiveProductListCell getProductListCellSize];
+    }
+}
+
+@end

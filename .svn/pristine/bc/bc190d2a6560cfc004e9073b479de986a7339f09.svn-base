@@ -1,0 +1,23 @@
+//
+//  ESLiveProductView.m
+//  example
+//
+//  Created by d2c_cyf on 17/1/4.
+//  Copyright © 2017年 d2c_cyf. All rights reserved.
+//
+
+#import "ESLiveProductView.h"
+
+@implementation ESLiveProductView
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        
+    }
+    return self;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.liveProductCloseBlock) {
+        self.liveProductCloseBlock();
+    }
+}
+@end

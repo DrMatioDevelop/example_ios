@@ -1,0 +1,65 @@
+//
+//  OtherViewController.m
+//  example
+//
+//  Created by d2c_cyf on 16/12/20.
+//  Copyright © 2016年 d2c_cyf. All rights reserved.
+//
+
+#import "OtherViewController.h"
+#import "ESLiveSearchProductView.h"
+@interface OtherViewController ()
+@property(nonatomic, strong)ESLiveSearchProductView *myView;
+@end
+
+@implementation OtherViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+//    [self predicateTest];
+//    [self zhengze];
+    self.hidesBottomBarWhenPushed = YES;
+    self.view.backgroundColor = [UIColor yellowColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.view addSubview:self.myView];
+    [self.myView setLiveSearchList:@""];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:YES];
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
+#pragma mark - 正则表达式
+- (void)zhengze {
+    NSString *searchText = @"123rangeOfString";
+    NSRange range = [searchText rangeOfString:@"^[0-9]+$" options:NSRegularExpressionSearch];
+    if (range.location != NSNotFound) {
+        NSLog(@"range ：%@", [searchText substringWithRange:range]);
+    }
+    [@"" compare:@""];
+}
+#pragma mark - NSPredicate
+- (void)predicateTest {
+//    NSArray *array1 = [NSArray arrayWithObjects:@1,@2,@3,@4,@5,@5,@6,@7, nil];
+//    NSArray *array2 = [NSArray arrayWithObjects:@3,@5, nil];
+    NSArray *array3 = [NSArray arrayWithObjects:@"shanghai",@"guangzhou",@"wuhan",@"jinan",@"anhui", nil];
+    NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"self  like [c] 'an*'"];
+    NSArray *temp1 = [array3 filteredArrayUsingPredicate:predicate1];
+    NSLog(@"%@, %@",predicate1,temp1);
+    // >, ==,  !=, like, contains, beginswith , endswith
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (ESLiveSearchProductView *)myView {
+    if (!_myView) {
+        _myView = [[ESLiveSearchProductView alloc] initWithFrame:CGRectMake(0, 0, SSize.width, SSize.height)];
+    }
+    return _myView;
+}
+@end
