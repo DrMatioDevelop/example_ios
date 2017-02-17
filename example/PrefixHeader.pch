@@ -23,4 +23,7 @@
 #import "Function.h"
 
 #import "UIImage+MYKit.h"
+#import "AFNHelp.h"
+#import "FileHelp.h"
+#import "example-Swift.h"
 #endif /* PrefixHeader_pch */

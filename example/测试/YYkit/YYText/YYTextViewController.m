@@ -7,9 +7,10 @@
 //
 
 #import "YYTextViewController.h"
-
+#import "YYText_1_ViewController.h"
+#import <ImageIO/ImageIO.h>
 @interface YYTextViewController ()
-
+@property (nonatomic, strong)UIImageView *gifImgView;
 @end
 
 @implementation YYTextViewController
@@ -17,28 +18,222 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGSize size = CGSizeMake(20, 20);
-    UIImage *background = [UIImage imageWithSize:size drawBlock:^(CGContextRef context) {
-        UIColor *c0 = [UIColor redColor];
-        UIColor *c1 = [UIColor blueColor];
-        [c0 setFill];
-        CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
-        [c1 setStroke];
-        CGContextSetLineWidth(context, 2);
-//        for (int i = 0; i < size.width * 2; i+= 4) {
-            CGContextMoveToPoint(context, 0, -2);
-            CGContextAddLineToPoint(context, 0 - size.height, size.height + 2);
-//        }
-        CGContextStrokePath(context);
-    }];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.backgroundColor = [UIColor redColor];
+    button.frame = CGRectMake(0, 64, 100, 50);
+    [self.view bringSubviewToFront:button];
+    [button addTarget:self action:@selector(gifBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 100, 200)];
-    imgView.image = background;
-    [self.view addSubview:imgView];
+    [self gifToPng];
+//    [self shoGifWithImgView];
+    
+//    [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        [self nsoperationQueue];
+//    }];
+//
+    
+    
+
+    
+    
+    
+    
+    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"d2c" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBar:)];
+//    
+//    CGSize size = CGSizeMake(20, 20);
+//    UIImage *background = [UIImage imageWithSize:size drawBlock:^(CGContextRef context) {
+//        UIColor *c0 = [UIColor redColor];
+//        UIColor *c1 = [UIColor blueColor];
+//        [c0 setFill];
+//        CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
+//        [c1 setStroke];
+//        CGContextSetLineWidth(context, 2);
+////        for (int i = 0; i < size.width * 2; i+= 4) {
+//            CGContextMoveToPoint(context, 0, -2);
+//            CGContextAddLineToPoint(context, 0 - size.height, size.height + 2);
+////        }
+//        CGContextStrokePath(context);
+//    }];
+//    
+//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 100, 200)];
+//    imgView.image = background;
+//    [self.view addSubview:imgView];
     
 }
 
 
+- (void)clickLeftBar:(UIBarButtonItem *)barItem {
+    gifImageViewController *vc = [[gifImageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+
+//    [self.navigationController pushViewController:[[YYText_1_ViewController alloc] init] animated:YES];
+}
+#pragma mark - 使用UIImageView加载gif图片
+- (void)gifToPng {
+    NSString *baseUrl1 = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    
+    [FileHelp removeFileAtPath:baseUrl1 keepDirectory:YES];
+    
+    return;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"view-wechat-chat" ofType:@"gif"];
+    NSData   *gifData  = [NSData dataWithContentsOfFile:filePath];
+    //用imageIO框架转为 CGImageSourceRef
+    CGImageSourceRef gifDataSource = CGImageSourceCreateWithData((__bridge CFDataRef)gifData, nil);
+    NSInteger count = CGImageSourceGetCount(gifDataSource);
+    
+    NSString *baseUrl = NSHomeDirectory();
+    NSString *directory = [baseUrl stringByAppendingPathComponent:@"cyf/weichat"];
+    if (![FileHelp createDirectoriesWithUrlStr:directory intermediateDirectories:YES]) {
+        return;
+    }
+    for (int i = 0; i < count - 1; i++) {
+        CGImageRef imgRef = CGImageSourceCreateImageAtIndex(gifDataSource, i, nil);
+        UIImage    *image = [UIImage imageWithCGImage:imgRef scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+        NSData     *imageData = UIImagePNGRepresentation(image);
+        NSString   *fileUrlStr = [directory stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.png",i]];
+        [imageData writeToFile:fileUrlStr atomically:YES];
+        
+    }
+    NSLog(@"%@",baseUrl);
+
+    
+}
+- (void)shoGifWithImgView {
+    NSString *baseUrlStr =  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    
+    NSInteger count =  [FileHelp getFileCountWithUrlStr:baseUrlStr fileType:@".png"];
+    NSMutableArray *muArray = [[NSMutableArray alloc] init];
+    for (int i = 0;i < count-1; i++) {
+       UIImage *image = [UIImage imageWithContentsOfFile:[baseUrlStr stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.png",i]]];
+        [muArray addObject:image];
+        
+    }
+    
+    UIImage *image = [muArray firstObject];
+    CGSize size = image.size;
+    
+    self.gifImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    [self.view addSubview:self.gifImgView];
+    self.gifImgView.animationImages   = muArray;
+    self.gifImgView.animationDuration = 5.0;
+    self.gifImgView.animationRepeatCount = 0; //0重复播放
+    NSLog(@"%@",baseUrlStr);
+}
+
+- (void)stopAnimationWithImgView:(UIImageView *)imgView {
+    [imgView stopAnimating];
+}
+- (void)startAnimationWithImgView:(UIImageView *)imgView {
+    [imgView startAnimating];
+}
+- (BOOL)isAnimationWithImgView:(UIImageView *)imgView {
+    return [imgView isAnimating];
+}
+- (void)gifBtn:(UIButton *)button {
+    if (button.selected) {
+        [self stopAnimationWithImgView:self.gifImgView];
+
+    }
+    else {
+        [self startAnimationWithImgView:self.gifImgView];
+
+    }
+    button.selected = !button.selected;
+}
+#pragma mark - 各个请求异步执行  顺序要一定
+- (void)nsoperationQueue {
+    NSBlockOperation *operation_1 = [NSBlockOperation blockOperationWithBlock:^{
+        [self requestA];
+    }];
+    
+    NSBlockOperation *operation_2 = [NSBlockOperation blockOperationWithBlock:^{
+        [self requestB];
+    }];
+    
+    NSBlockOperation *operation_3 = [NSBlockOperation blockOperationWithBlock:^{
+        [self requestC];
+    }];
+    
+    [operation_2 addDependency:operation_1];
+    [operation_3 addDependency:operation_2];
+    
+    NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
+    [operationQueue addOperations:@[operation_1,operation_2,operation_3] waitUntilFinished:NO];
+    
+    
+    NSLog(@"\n\n");
+    
+}
+#pragma mark - GCD 组并不能解决  多个请求同时完成时再刷新UI
+- (void)groupGCD {
+    
+    dispatch_group_t group = dispatch_group_create();
+
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self requestB];
+
+    });
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self requestA];
+    });
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self requestC];
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"notify");
+    });
+    
+
+}
+- (void)requestA {
+//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=li" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"1");
+//        dispatch_semaphore_signal(sema);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+//        dispatch_semaphore_signal(sema);
+    }];
+//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+
+}
+
+- (void)requestB {
+//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"2");
+//        dispatch_semaphore_signal(sema);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+//        dispatch_semaphore_signal(sema);
+
+    }];
+//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+
+}
+
+- (void)requestC {
+//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/detail/list?designerId=10438" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"3");
+//        dispatch_semaphore_signal(sema);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+//        dispatch_semaphore_signal(sema);
+
+    }];
+//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+
+}
 #pragma mark -  const相关
 - (void)about_const {
     int   c = 22; int   d = 33;
