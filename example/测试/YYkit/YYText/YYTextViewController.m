@@ -10,13 +10,24 @@
 #import "YYText_1_ViewController.h"
 #import <ImageIO/ImageIO.h>
 @interface YYTextViewController ()
+
+/**
+ gif图image
+ */
 @property (nonatomic, strong)UIImageView *gifImgView;
+/**
+ 队列
+ */
+@property (nonatomic, strong)NSOperationQueue *operationQueue;
+@property (nonatomic, strong)UIButton         *btn;
 @end
 
 @implementation YYTextViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.operationQueue = [[NSOperationQueue alloc] init];
+    self.operationQueue.maxConcurrentOperationCount = 1;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.backgroundColor = [UIColor redColor];
@@ -25,7 +36,20 @@
     [button addTarget:self action:@selector(gifBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    [self gifToPng];
+    
+    self.btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.btn.backgroundColor = [UIColor blueColor];
+    self.btn.frame = CGRectMake(0, 200, 100, 50);
+    [self.view bringSubviewToFront:self.btn];
+    [self.btn addTarget:self action:@selector(clickOperation:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn];
+    
+    
+
+    
+    
+    
+//    [self gifToPng];
 //    [self shoGifWithImgView];
     
 //    [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -70,13 +94,36 @@
 
 //    [self.navigationController pushViewController:[[YYText_1_ViewController alloc] init] animated:YES];
 }
+#pragma mark - NSOpration
+
+- (void)optationAnimation {
+    [UIView animateWithDuration:3 animations:^{
+        self.btn.transform = CGAffineTransformTranslate(self.btn.transform, 200, 0);
+//        self.operationQueue.suspended = NO;
+
+    } completion:^(BOOL finished) {
+        self.btn.transform = CGAffineTransformIdentity;
+//        self.operationQueue.suspended = NO;
+    }];
+}
+
+- (void)clickOperation:(UIButton *)button  {
+//    static int a = 1;
+//    NSOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+//        [self optationAnimation];
+//        NSLog(@"完成 %d",a++);
+//    }];
+//    [self.operationQueue addOperation:op1];
+//    
+//    NSLog(@"队列数量 %ld",self.operationQueue.operationCount);
+}
 #pragma mark - 使用UIImageView加载gif图片
 - (void)gifToPng {
-    NSString *baseUrl1 = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    
-    [FileHelp removeFileAtPath:baseUrl1 keepDirectory:YES];
-    
-    return;
+//    NSString *baseUrl1 = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+//    
+////    [FileHelp removeFileAtPath:baseUrl1 keepDirectory:YES];
+//    
+//    return;
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"view-wechat-chat" ofType:@"gif"];
     NSData   *gifData  = [NSData dataWithContentsOfFile:filePath];
@@ -133,15 +180,25 @@
     return [imgView isAnimating];
 }
 - (void)gifBtn:(UIButton *)button {
-    if (button.selected) {
-        [self stopAnimationWithImgView:self.gifImgView];
-
-    }
-    else {
-        [self startAnimationWithImgView:self.gifImgView];
-
-    }
-    button.selected = !button.selected;
+    
+    static int a = 1;
+    NSOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [self optationAnimation];
+        NSLog(@"完成 %d",a++);
+    }];
+    [self.operationQueue addOperation:op1];
+    
+    NSLog(@"队列数量 %ld",self.operationQueue.operationCount);
+    
+//    if (button.selected) {
+//        [self stopAnimationWithImgView:self.gifImgView];
+//
+//    }
+//    else {
+//        [self startAnimationWithImgView:self.gifImgView];
+//
+//    }
+//    button.selected = !button.selected;
 }
 #pragma mark - 各个请求异步执行  顺序要一定
 - (void)nsoperationQueue {
