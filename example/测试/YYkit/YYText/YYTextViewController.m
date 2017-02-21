@@ -9,6 +9,7 @@
 #import "YYTextViewController.h"
 #import "YYText_1_ViewController.h"
 #import <ImageIO/ImageIO.h>
+#import "OprationViewController.h"
 @interface YYTextViewController ()
 
 /**
@@ -108,14 +109,8 @@
 }
 
 - (void)clickOperation:(UIButton *)button  {
-//    static int a = 1;
-//    NSOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-//        [self optationAnimation];
-//        NSLog(@"完成 %d",a++);
-//    }];
-//    [self.operationQueue addOperation:op1];
-//    
-//    NSLog(@"队列数量 %ld",self.operationQueue.operationCount);
+    OprationViewController *vc =  [[OprationViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - 使用UIImageView加载gif图片
 - (void)gifToPng {
