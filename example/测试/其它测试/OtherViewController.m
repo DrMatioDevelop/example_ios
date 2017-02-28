@@ -14,51 +14,76 @@
 @property(nonatomic, strong)ESLiveSearchProductView *myView;
 @property(nonatomic, strong)ESLiveProductView       *owerView;
 @property(nonatomic, strong)UIButton                *button;
+
+@property(nonatomic, strong)UITableView             *tableView;
+@property(nonatomic, strong)NSArray                 *arrayDS;
 @end
 
 @implementation OtherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self predicateTest];
-//    [self zhengze];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.hidesBottomBarWhenPushed = YES;
     self.view.backgroundColor = [UIColor yellowColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+
+    [self.view addSubview:self.tableView];
+    self.arrayDS = @[
+                     @"正则表达式与代码片段显示",
+                     @"项目列表测试"
+                     ];
+    
+    
+    
+//    [self predicateTest];
+//    [self zhengze];
 
     
     
     
-    _button = [UIButton buttonWithType:UIButtonTypeSystem];
-    _button.frame = CGRectMake(38, 64, 100, 61);
-    [_button addTarget:self action:@selector(clickBtn1:) forControlEvents:UIControlEventTouchUpInside];
-    _button.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.618];
-    [self.view addSubview:_button];
+//    _button = [UIButton buttonWithType:UIButtonTypeSystem];
+//    _button.frame = CGRectMake(38, 64, 100, 61);
+//    [_button addTarget:self action:@selector(clickBtn1:) forControlEvents:UIControlEventTouchUpInside];
+//    _button.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.618];
+//    [self.view addSubview:_button];
 //
-//    [self.view addSubview:self.myView];
-//    [self.myView setLiveSearchList:@""];
-//    
+//    [self.view addSubview:self.owerView];
+//    [self.owerView loadLiveProductListWithModel:@""];
 //    __weak typeof(self) weakSelf = self;
-//    self.myView.liveSearchProductBlock = ^(){
-//        weakSelf.myView.isShow = NO;
+//    self.owerView.liveProductCloseBlock = ^(){
+//        weakSelf.owerView.isShow = NO;
+//
 //        [UIView animateWithDuration:0.3 animations:^{
-//            weakSelf.myView.transform = CGAffineTransformIdentity;
+//            weakSelf.owerView.transform = CGAffineTransformIdentity;
+//
 //        }];
 //    };
-    
-    [self.view addSubview:self.owerView];
-    [self.owerView loadLiveProductListWithModel:@""];
-    __weak typeof(self) weakSelf = self;
-    self.owerView.liveProductCloseBlock = ^(){
-        weakSelf.owerView.isShow = NO;
-
-        [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.owerView.transform = CGAffineTransformIdentity;
-
-        }];
-    };
 }
 
+#pragma mark - TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayDS.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.textLabel.text = self.arrayDS[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.arrayDS[indexPath.row] isEqualToString:@"正则表达式与代码片段显示"]) {
+        Class cla = NSClassFromString(@"RegurOrHtmlViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"项目列表测试"]) {
+        Class cla = NSClassFromString(@"OtherViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
+}
 - (void)clickBtn1:(UIButton *)button {
 //    if (self.myView.isShow) {
 //        [UIView animateWithDuration:0.3 animations:^{
@@ -88,29 +113,11 @@
     [super viewWillAppear:animated];
     [self.tabBarController.tabBar setHidden:YES];
 }
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.tabBarController.tabBar setHidden:NO];
 }
-#pragma mark - 正则表达式
-- (void)zhengze {
-    NSString *searchText = @"123rangeOfString";
-    NSRange range = [searchText rangeOfString:@"^[0-9]+$" options:NSRegularExpressionSearch];
-    if (range.location != NSNotFound) {
-        NSLog(@"range ：%@", [searchText substringWithRange:range]);
-    }
-    [@"" compare:@""];
-}
-#pragma mark - NSPredicate
-- (void)predicateTest {
-//    NSArray *array1 = [NSArray arrayWithObjects:@1,@2,@3,@4,@5,@5,@6,@7, nil];
-//    NSArray *array2 = [NSArray arrayWithObjects:@3,@5, nil];
-    NSArray *array3 = [NSArray arrayWithObjects:@"shanghai",@"guangzhou",@"wuhan",@"jinan",@"anhui", nil];
-    NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"self  like [c] 'an*'"];
-    NSArray *temp1 = [array3 filteredArrayUsingPredicate:predicate1];
-    NSLog(@"%@, %@",predicate1,temp1);
-    // >, ==,  !=, like, contains, beginswith , endswith
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -128,5 +135,15 @@
         _owerView = [[ESLiveProductView alloc] initWithFrame:CGRectMake(0, SSize.height, SSize.width, SSize.height)];
     }
     return _owerView;
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SSize.width, SSize.height - 64.0) style:UITableViewStylePlain];
+        _tableView.delegate   = self;
+        _tableView.dataSource = self;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    }
+    return _tableView;
 }
 @end

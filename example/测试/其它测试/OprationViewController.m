@@ -6,6 +6,14 @@
 //  Copyright © 2017年 d2c_cyf. All rights reserved.
 //
 
+
+/**
+ NSOperationQueue 通过设置max-xxx属性可以实现串行  但是不能动态的添加一个线程到queue里面；  如queue里面目前有两个opreation
+ 并且是在执行的状态   这两个设置max-xx属性是串行的 如果继续添加新加的一个会变成并行
+
+ 阻塞suspended 并不会使queue里面的operation一个一个的执行
+ 下面的测试代码说明问题
+ */
 #import "OprationViewController.h"
 
 @interface OprationViewController ()
