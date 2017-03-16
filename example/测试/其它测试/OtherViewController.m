@@ -7,14 +7,8 @@
 //
 
 #import "OtherViewController.h"
-#import "ESLiveSearchProductView.h"
-#import "ESLiveProductCollectionView.h"
-#import "ESLiveProductView.h"
 @interface OtherViewController ()
-@property(nonatomic, strong)ESLiveSearchProductView *myView;
-@property(nonatomic, strong)ESLiveProductView       *owerView;
 @property(nonatomic, strong)UIButton                *button;
-
 @property(nonatomic, strong)UITableView             *tableView;
 @property(nonatomic, strong)NSArray                 *arrayDS;
 @end
@@ -30,36 +24,18 @@
     [self.view addSubview:self.tableView];
     self.arrayDS = @[
                      @"正则表达式与代码片段显示",
-                     @"项目列表测试"
+                     @"项目列表测试",
+                     @"玻璃效果,虚化(GPUImage)"
                      ];
-    
-    
-    
-//    [self predicateTest];
-//    [self zhengze];
-
-    
-    
-    
-//    _button = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _button.frame = CGRectMake(38, 64, 100, 61);
-//    [_button addTarget:self action:@selector(clickBtn1:) forControlEvents:UIControlEventTouchUpInside];
-//    _button.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.618];
-//    [self.view addSubview:_button];
-//
-//    [self.view addSubview:self.owerView];
-//    [self.owerView loadLiveProductListWithModel:@""];
-//    __weak typeof(self) weakSelf = self;
-//    self.owerView.liveProductCloseBlock = ^(){
-//        weakSelf.owerView.isShow = NO;
-//
-//        [UIView animateWithDuration:0.3 animations:^{
-//            weakSelf.owerView.transform = CGAffineTransformIdentity;
-//
-//        }];
-//    };
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:YES];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
 #pragma mark - TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -83,58 +59,18 @@
         Class cla = NSClassFromString(@"OtherViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
     }
-}
-- (void)clickBtn1:(UIButton *)button {
-//    if (self.myView.isShow) {
-//        [UIView animateWithDuration:0.3 animations:^{
-//            self.myView.transform = CGAffineTransformIdentity;
-//        }];
-//    }
-//    else {
-//        [UIView animateWithDuration:0.3 animations:^{
-//            self.myView.transform = CGAffineTransformTranslate(self.myView.transform, -SSize.width, 0);
-//        }];
-//    }
-//    self.myView.isShow = !self.myView.isShow;
-    
-    if (self.owerView.isShow) {
-        [UIView animateWithDuration:0.3 animations:^{
-            self.owerView.transform = CGAffineTransformIdentity;
-        }];
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"玻璃效果,虚化(GPUImage)"]) {
+        Class cla = NSClassFromString(@"GPU_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
     }
-    else {
-        [UIView animateWithDuration:0.3 animations:^{
-            self.owerView.transform = CGAffineTransformTranslate(self.owerView.transform, 0, -SSize.height);
-        }];
-    }
-    
 }
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:YES];
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
-}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (ESLiveSearchProductView *)myView {
-    if (!_myView) {
-        _myView = [[ESLiveSearchProductView alloc] initWithFrame:CGRectMake(SSize.width, 0, SSize.width, SSize.height)];
-    }
-    return _myView;
-}
-
-- (ESLiveProductView *)owerView {
-    if (!_owerView) {
-        _owerView = [[ESLiveProductView alloc] initWithFrame:CGRectMake(0, SSize.height, SSize.width, SSize.height)];
-    }
-    return _owerView;
 }
 
 - (UITableView *)tableView {

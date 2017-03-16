@@ -26,7 +26,7 @@ target 'example' do
 
     # 图像处理
     #pod 'TuSDK’#, '2.6.0'
-    #pod 'GPUImage', '~> 0.1.7'
+    pod 'GPUImage', '~> 0.1.7'
     # 日志
     #pod 'CocoaLumberjack'
 

@@ -1,0 +1,21 @@
+
+//pod 命令  NSTask执行
+
+NSTask *task = [[NSTask alloc] init];
+//    task.currentDirectoryPath =  @"/Users/d2c_cyf/Desktop/ffff/develop/cyf";
+//    task.currentDirectoryPath =  @"/Users/d2c_cyf/Desktop/helloword";
+
+task.launchPath = @"/usr/local/bin/pod";
+task.arguments = @[@"install", @"--project-directory=/Users/d2c_cyf/Desktop/ls/2.3.1"];
+[task launch];
+
+
+
+
+//    NSTask *task = [[NSTask alloc] init];
+////    task.currentDirectoryPath = @"/Users/d2c_cyf/Desktop/ffff/develop/cyf"; /Users/d2c_cyf/Desktop/ls/2.3.1 /Users/d2c_cyf/Desktop/cccc
+//    task.launchPath = @"/bin/sh";
+//    task.arguments = @[@"-c", @"/Users/d2c_cyf/Desktop/ServerDocument/xxx.sh /Users/d2c_cyf/Desktop/cccc"];
+//    [task launch];
+
+//    [[NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:@[@"-c", ipaShell]] waitUntilExit];
