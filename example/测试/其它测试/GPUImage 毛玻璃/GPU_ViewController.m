@@ -31,7 +31,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSStringFromClass([self class]);
     [self configSubviews];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,9 +96,21 @@
     [self.view addSubview:self.selectImgInfo];
     [self.view addSubview:self.resetBtn];
     
-    [self configImageOne];
-    [self configImageTwo];
-    [self configImageThree];
+    [GCD GCDGlobalTask:^{
+        [self configImageOne];
+    } mainTask:^{
+    }];
+    
+    [GCD GCDGlobalTask:^{
+        [self configImageTwo];
+    } mainTask:^{
+        
+    }];
+    [GCD GCDGlobalTask:^{
+        [self configImageThree];
+    } mainTask:^{
+        
+    }];
     [self configImageFour];
 }
 -(void)configImageOne{
@@ -203,4 +214,7 @@
     return _resetBtn;
 }
 
+- (void)dealloc {
+    NSLog(@"%s",__FUNCTION__);
+}
 @end

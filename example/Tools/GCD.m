@@ -9,11 +9,11 @@
 #import "GCD.h"
 
 @implementation GCD
-+ (void)ddd {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-       
++ (void)GCDGlobalTask:(void (^)(void))globalTask mainTask:(void(^)(void))mainTask {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        globalTask();
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            mainTask();
         });
     });
 }

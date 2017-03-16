@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface GCD : NSObject
-
++ (void)GCDGlobalTask:(void (^)(void))globalTask mainTask:(void(^)(void))mainTask;
 @end
