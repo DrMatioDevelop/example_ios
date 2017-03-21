@@ -25,7 +25,8 @@
     self.arrayDS = @[
                      @"正则表达式与代码片段显示",
                      @"项目列表测试",
-                     @"玻璃效果,虚化(GPUImage)"
+                     @"玻璃效果,虚化(GPUImage)",
+                     @"UI测试"
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,6 +62,10 @@
     }
     else if ([self.arrayDS[indexPath.row] isEqualToString:@"玻璃效果,虚化(GPUImage)"]) {
         Class cla = NSClassFromString(@"GPU_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"UI测试"]) {
+        Class cla = NSClassFromString(@"UI_ViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
     }
 }
