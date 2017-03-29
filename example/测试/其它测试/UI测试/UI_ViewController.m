@@ -9,8 +9,9 @@
 #import "UI_ViewController.h"
 
 @interface UI_ViewController ()
-@property (nonatomic , strong)UITextField *myTextField;
-@property (nonatomic , strong)UISearchBar *searchBar;
+@property (nonatomic , strong)UITextField  *myTextField;
+@property (nonatomic , strong)UISearchBar  *searchBar;
+@property (nonatomic , strong)UIDatePicker *datePicker;
 @end
 
 @implementation UI_ViewController
@@ -24,10 +25,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.myTextField];
+//    [self.view addSubview:self.myTextField];
+//    
+//    [self.view addSubview:self.searchBar];
+//    
+//    [self.view addSubview:self.datePicker];
     
-    [self.view addSubview:self.searchBar];
+    [self specialLastTime];
     
+}
+
+- (void)aboutTime {
+    NSDate *nowDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"YYYY";
+}
+- (NSDate *)specialLastTime {
+    NSDate *nowDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"YYYY/MM/dd";
+    
+    NSDate   *lastDay = [NSDate dateWithTimeInterval:24*60*60 sinceDate:nowDate];
+    NSString *lastDateStr = [formatter stringFromDate:lastDay];
+    NSLog(@"lastDate:%@",lastDateStr);
+    
+    NSDateFormatter *formatter_1 = [[NSDateFormatter alloc] init];
+    formatter_1.dateFormat = @"YYYY/MM/dd HH:mm:ss";
+    NSString *str  = [NSString stringWithFormat:@"%@ 00:00:00",lastDateStr];
+    NSDate  *lastDate_1 = [formatter_1 dateFromString:str];
+    
+    NSLog(@"lastDate:%@",[formatter_1 stringFromDate:lastDate_1]);
+    return lastDate_1;
 }
 
 - (UITextField *)myTextField {
@@ -81,8 +109,67 @@
     return _searchBar;
 }
 
+- (UIDatePicker *)datePicker {
+    if (!_datePicker) {
+        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 200, SSize.width, 180)];
+        _datePicker.backgroundColor = [UIColor whiteColor];
+        [_datePicker setValue:[UIColor redColor] forKey:@"textColor"];
+        [_datePicker addTarget:self action:@selector(dataPickerChange:) forControlEvents:UIControlEventValueChanged];
+        
+        
+        NSDate *theDate = _datePicker.date;
+        NSTimeZone* sourceTimeZone =  [NSTimeZone timeZoneForSecondsFromGMT:0];
+        _datePicker.timeZone = sourceTimeZone;
 
+        unsigned outCount;
+        objc_property_t *pProperty = class_copyPropertyList([UIDatePicker class], &outCount);
+        for (int i = 0; i < outCount; i++) {
+            //属性名字
+             NSString *getPropertyName = [NSString stringWithCString:property_getName(pProperty[i]) encoding:NSUTF8StringEncoding];
+            
+             NSString *getPropertyNameString = [NSString stringWithCString:property_getAttributes(pProperty[i]) encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"%@====%@",getPropertyNameString,getPropertyName);
+        }
+        
+        
+        
 
+        
+        //比较时间与GMT 目标日期与本地时区的偏移量
+        NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:theDate];
+        
+        //本地时间与GMT 目标日期与本地时区的偏移量
+        NSTimeZone        *myTimeZone = [NSTimeZone localTimeZone];
+        NSInteger destinationGMTOffset = [myTimeZone secondsFromGMTForDate:theDate];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"YYYY-MM-dd HH-mm-ss";
+        dateFormatter.timeZone = sourceTimeZone;
+        NSLog(@"本地时间%@",[dateFormatter stringFromDate:theDate]);
+        
+
+        
+        //得到时间偏移量的差值
+        NSTimeInterval interval =  destinationGMTOffset - sourceGMTOffset;
+        NSDate *nowDate = [[NSDate alloc] initWithTimeInterval:interval sinceDate:theDate];
+//        NSLog(@"北京时间%@",[dateFormatter stringFromDate:nowDate]);
+        
+        
+        NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+        dateFormatter1.dateFormat = @"YYYY-MM-dd HH-mm-ss";
+        NSLog(@"北京时间%@",[dateFormatter stringFromDate:nowDate]);
+    }
+    return _datePicker;
+}
+
+- (void)dataPickerChange:(UIDatePicker *)datePicker {
+    NSDate *theDate = datePicker.date;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"YYYY-MM-dd HH-mm-ss";
+    NSLog(@"改变时间%@",[dateFormatter stringFromDate:theDate]);
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
