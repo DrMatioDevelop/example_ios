@@ -38,6 +38,7 @@
 		56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B71E53EEAB00C5DA8E /* AFNHelp.m */; };
 		56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */; };
 		56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */; };
+		56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */; };
 		5753D73F3E99A6366FE5B1DD /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF98F71CA09BC4EF1F035E8 /* libPods-example.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,8 @@
 		56D1AFD91DED61FB00B6E878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		56D6B83C1E1BAAC0005A5CBC /* YYTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextViewController.h; sourceTree = "<group>"; };
 		56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextViewController.m; sourceTree = "<group>"; };
+		56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_ViewController.h; sourceTree = "<group>"; };
+		56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_ViewController.m; sourceTree = "<group>"; };
 		648021377E39324018E9156E /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
 		9807C853E15BFDFD2B7E8406 /* Pods-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.debug.xcconfig"; sourceTree = "<group>"; };
 		ADF98F71CA09BC4EF1F035E8 /* libPods-example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +265,7 @@
 		561DCEC51E08C9E900CBAE04 /* 其它测试 */ = {
 			isa = PBXGroup;
 			children = (
+				56F7A3A41E8BCC3400DDBBC5 /* sharpLayerOrBezier */,
 				562AD93E1E81041B00480FE0 /* UI测试 */,
 				568488821E7A7D46004F8A06 /* GPUImage 毛玻璃 */,
 				5649D4861E5D26D8004E31DB /* 正则&html代码片段 */,
@@ -367,6 +371,15 @@
 				56C253B31E52A0A900C5DA8E /* YYText_1_ViewController.m */,
 			);
 			path = YYText;
+			sourceTree = "<group>";
+		};
+		56F7A3A41E8BCC3400DDBBC5 /* sharpLayerOrBezier */ = {
+			isa = PBXGroup;
+			children = (
+				56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */,
+				56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */,
+			);
+			path = sharpLayerOrBezier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,7 +551,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D7705F615E2CC6041685286 /* [CP] Embed Pods Frameworks */ = {
@@ -575,6 +588,7 @@
 				5614037D1DF118540027E3E6 /* People.m in Sources */,
 				562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */,
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
+				56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */,
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,

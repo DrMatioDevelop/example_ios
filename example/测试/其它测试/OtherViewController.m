@@ -26,7 +26,8 @@
                      @"正则表达式与代码片段显示",
                      @"项目列表测试",
                      @"玻璃效果,虚化(GPUImage)",
-                     @"UI测试"
+                     @"UI测试",
+                     @"SharpLayer Bezier"
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,6 +68,11 @@
     else if ([self.arrayDS[indexPath.row] isEqualToString:@"UI测试"]) {
         Class cla = NSClassFromString(@"UI_ViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"SharpLayer Bezier"]) {
+        Class cla = NSClassFromString(@"Layer_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+
     }
 }
 
