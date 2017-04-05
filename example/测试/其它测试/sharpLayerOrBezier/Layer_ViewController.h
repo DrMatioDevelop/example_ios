@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "QuartzCoreView.h"
 @interface Layer_ViewController : UIViewController
 
 @end
