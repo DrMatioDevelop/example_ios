@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QuartzCoreView.h"
-@interface Layer_ViewController : UIViewController
+#import "MyCAShapeLayer.h"
+@interface Layer_ViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

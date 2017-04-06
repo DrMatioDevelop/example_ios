@@ -39,6 +39,8 @@
 		56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */; };
 		56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */; };
 		56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */; };
+		56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC561E963185002D17BB /* MyCAShapeLayer.m */; };
+		56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */; };
 		56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */; };
 		5753D73F3E99A6366FE5B1DD /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF98F71CA09BC4EF1F035E8 /* libPods-example.a */; };
 /* End PBXBuildFile section */
@@ -122,6 +124,10 @@
 		56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextViewController.m; sourceTree = "<group>"; };
 		56F3CC4F1E94F9CA002D17BB /* QuartzCoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzCoreView.h; sourceTree = "<group>"; };
 		56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzCoreView.m; sourceTree = "<group>"; };
+		56F3CC551E963185002D17BB /* MyCAShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCAShapeLayer.h; sourceTree = "<group>"; };
+		56F3CC561E963185002D17BB /* MyCAShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCAShapeLayer.m; sourceTree = "<group>"; };
+		56F3CC581E9640AD002D17BB /* Layer_Event_TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_Event_TestVC.h; sourceTree = "<group>"; };
+		56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_Event_TestVC.m; sourceTree = "<group>"; };
 		56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_ViewController.h; sourceTree = "<group>"; };
 		56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_ViewController.m; sourceTree = "<group>"; };
 		648021377E39324018E9156E /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
@@ -381,6 +387,10 @@
 			children = (
 				56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */,
 				56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */,
+				56F3CC581E9640AD002D17BB /* Layer_Event_TestVC.h */,
+				56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */,
+				56F3CC551E963185002D17BB /* MyCAShapeLayer.h */,
+				56F3CC561E963185002D17BB /* MyCAShapeLayer.m */,
 				56F3CC4F1E94F9CA002D17BB /* QuartzCoreView.h */,
 				56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */,
 			);
@@ -588,6 +598,7 @@
 				56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */,
 				56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */,
 				5614037A1DF034580027E3E6 /* test.swift in Sources */,
+				56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */,
 				5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */,
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
@@ -606,6 +617,7 @@
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,
 				561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,
+				56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,20 +9,28 @@
 #import "Layer_ViewController.h"
 
 @interface Layer_ViewController ()
-
+@property(strong ,nonatomic)UIButton *nextBtn;
+@property(strong ,nonatomic)UIButton *graphyBtn;
+@property(strong ,nonatomic)UIButton *lastBtn;
 @end
 
-@implementation Layer_ViewController
+@implementation Layer_ViewController{
+    CAShapeLayer *_clickLayer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtons = @[self.lastBtn];
+
+    self.navigationItem.rightBarButtons = @[self.graphyBtn,self.nextBtn];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     //CAShapeLayer   UIBezierPath
     [self baseLayer];
     
     //tryCatchFinal
-//    [self trycatchfinally];
+    [self trycatchfinally];
     
 
 //    QuartzCoreView *view = [[QuartzCoreView alloc] initWithFrame:self.view.bounds];
@@ -62,6 +70,33 @@
 
     [self.view.layer addSublayer:shapeLayer_pai];
     [self animation_stroke:shapeLayer_pai];
+    
+    
+    //扇形
+    UIBezierPath *bezier_yh = [[UIBezierPath alloc] init];
+    [bezier_yh addArcWithCenter:CGPointMake(150, 200) radius:12.5 startAngle:0 endAngle:M_PI * 1.618 clockwise:YES];
+//    [bezier_yh addLineToPoint:CGPointMake(150, 200)];
+//    [bezier_yh closePath]; //（如果是静态的扇形  在path画好圆以后  再画一条到圆心的直线  闭合path）
+
+    MyCAShapeLayer *layer_yh  = [[MyCAShapeLayer alloc] init];
+    layer_yh.path = bezier_yh.CGPath;
+//    bezier_yh.lineWidth = 25.0;  //设置path的lineWidth与圆的半径相同 就会得到一个圆
+//    layer_yh.lineWidth  = 25.0;   //设置shapeLayer的lineWidth与圆的半径相同 也会得到一个圆
+    
+    layer_yh.fillColor = [UIColor clearColor].CGColor;
+    layer_yh.strokeColor = [UIColor redColor].CGColor;
+    layer_yh.lineWidth = 25.0;    //此时为半径的二倍  线宽会平分在圆弧的里面与外面  此时圆的半径为 划线的2倍
+    
+    layer_yh.mytag = 100;
+    layer_yh.infoDic = @{@"key" : @"value"};
+    [self.view.layer addSublayer:layer_yh];
+//    [self animation_stroke:layer_yh];
+
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickyh:)];
+    [self.view addGestureRecognizer:tap];
+    
+    
     //曲线 -----3
     
     //画点
@@ -188,17 +223,19 @@
 // http://www.cocoachina.com/ios/20141229/10787.html
 /**
  tryCatch 测试
- *  如果第6未注释  执行的顺序是  1->5->7->8->9->3->4
+ *  如果第6未注释  执行的顺序是  1->5->6->2->3->4
  *  已注释                    1->5->7->8->9->3->4
  */
 - (void)trycatchfinally {
     @try {
         // 1
+        NSLog(@"1");
         [self tryTwo];
     }
     @catch (NSException *exception) {
         // 2
         NSLog(@"2----%s\n%@", __FUNCTION__, exception);
+        return;
     }
     @finally {
         // 3
@@ -214,31 +251,99 @@
     @try {
         // 5
         // 程序到这里会崩
-        NSString *str = @"abc";
+        NSString *str = @"abc"; NSLog(@"5");
         [str substringFromIndex:111];
     }
     @catch (NSException *exception) {
-//        // 6
-//        // 抛出异常，即由上一级处理
-//        @throw exception;
+        // 6
+        // 抛出异常，即由上一级处理
+        @throw exception;
         // 7
         NSLog(@"7---%s\n%@", __FUNCTION__, exception);
     }
     @finally {
         // 8
-        NSLog(@"tryTwo -- 我一定会执行");
+        NSLog(@"8 -- 我一定会执行");
     }
     
     // 9  即 @throw     @throw会把错误抛向上一级
     // 如果抛出异常，那么这段代码则不会执行
-    NSLog(@"如果这里抛出异常，那么这段代码则不会执行");
+    NSLog(@"9--如果这里抛出异常，那么这段代码则不会执行");
 }
+
+
+#pragma makr - Click
+- (void)clickyh:(UITapGestureRecognizer *)tap {
+    CGPoint clickPoint = [tap locationInView:self.view];
+    CALayer *clicklayer = [self.view.layer hitTest:clickPoint];
+    
+    
+    for (CALayer *layer in self.view.layer.sublayers) {
+        if ([layer isMemberOfClass:[MyCAShapeLayer class]]) {
+            if (clicklayer == layer) {
+                NSLog(@"ggg");
+            }
+            
+            CGPoint mypoint = [layer convertPoint:clickPoint fromLayer:self.view.layer];
+            if ([layer containsPoint:mypoint]) {
+                NSLog(@"ggggg");
+            }
+        }
+    }
+
+
+    
+
+}
+
+
+- (void)clickNext:(UIButton *)button {
+    NSLog(@"%s",__func__);
+    Class cla = NSClassFromString(@"Layer_Event_TestVC");
+    [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+}
+
+- (void)clickGraphy:(UIButton *)button {
+    NSLog(@"%s",__func__);
+}
+- (void)clickLast:(UIButton *)button {
+    NSLog(@"%s",__func__);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma makr - Getter
+- (UIButton *)nextBtn {
+    if (!_nextBtn) {
+        _nextBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_nextBtn setTitle:@"layerClick" forState:UIControlStateNormal];
+        [_nextBtn addTarget:self action:@selector(clickNext:) forControlEvents:UIControlEventTouchUpInside];
+        _nextBtn.frame = CGRectMake(0, 0, 60.0, 44.0);
+    }
+    return _nextBtn;
+}
+
+- (UIButton *)graphyBtn {
+    if (!_graphyBtn) {
+        _graphyBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_graphyBtn setTitle:@"绘图" forState:UIControlStateNormal];
+        [_graphyBtn addTarget:self action:@selector(clickGraphy:) forControlEvents:UIControlEventTouchUpInside];
+        _graphyBtn.frame = CGRectMake(0, 0, 44.0, 44.0);
+    }
+    return _graphyBtn;
+}
+- (UIButton *)lastBtn {
+    if (!_lastBtn) {
+        _lastBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_lastBtn setTitle:@"last" forState:UIControlStateNormal];
+        [_lastBtn addTarget:self action:@selector(clickLast:) forControlEvents:UIControlEventTouchUpInside];
+        _lastBtn.frame = CGRectMake(0, 0, 44.0, 44.0);
+    }
+    return _lastBtn;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    
-    
 }
 
 @end
