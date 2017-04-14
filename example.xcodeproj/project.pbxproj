@@ -17,8 +17,6 @@
 		56077CDD1DED2EE300CC4D0D /* exampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CDC1DED2EE300CC4D0D /* exampleUITests.m */; };
 		561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561403761DF030B80027E3E6 /* CYRuntimeViewController.m */; };
 		5614037A1DF034580027E3E6 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561403791DF034580027E3E6 /* test.swift */; };
-		5614037D1DF118540027E3E6 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 5614037C1DF118540027E3E6 /* People.m */; };
-		561403801DF118B50027E3E6 /* PeopleProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5614037F1DF118B50027E3E6 /* PeopleProperty.m */; };
 		561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561DCEC91E08CA1200CBAE04 /* OtherViewController.m */; };
 		562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562AD9401E81043700480FE0 /* UI_ViewController.m */; };
 		56321F9B1E6E4DD60054A7D1 /* copyCode in Resources */ = {isa = PBXBuildFile; fileRef = 56321F9A1E6E4DD60054A7D1 /* copyCode */; };
@@ -36,11 +34,15 @@
 		56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B01E4C766A00C5DA8E /* UIImage+MYKit.m */; };
 		56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B31E52A0A900C5DA8E /* YYText_1_ViewController.m */; };
 		56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B71E53EEAB00C5DA8E /* AFNHelp.m */; };
+		56C50A321EA0C98B00316688 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A2F1EA0C98B00316688 /* People.m */; };
+		56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A311EA0C98B00316688 /* PeopleProperty.m */; };
+		56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A351EA0C9EA00316688 /* People+Categroy.m */; };
 		56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */; };
 		56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */; };
 		56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */; };
 		56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC561E963185002D17BB /* MyCAShapeLayer.m */; };
 		56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */; };
+		56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC5C1E977268002D17BB /* Line_ViewController.m */; };
 		56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */; };
 		5753D73F3E99A6366FE5B1DD /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF98F71CA09BC4EF1F035E8 /* libPods-example.a */; };
 /* End PBXBuildFile section */
@@ -83,10 +85,6 @@
 		561403761DF030B80027E3E6 /* CYRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRuntimeViewController.m; sourceTree = "<group>"; };
 		561403781DF034580027E3E6 /* example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example-Bridging-Header.h"; sourceTree = "<group>"; };
 		561403791DF034580027E3E6 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		5614037B1DF118540027E3E6 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
-		5614037C1DF118540027E3E6 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
-		5614037E1DF118B50027E3E6 /* PeopleProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleProperty.h; sourceTree = "<group>"; };
-		5614037F1DF118B50027E3E6 /* PeopleProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleProperty.m; sourceTree = "<group>"; };
 		561DCEC81E08CA1200CBAE04 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		561DCEC91E08CA1200CBAE04 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		562AD93F1E81043700480FE0 /* UI_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI_ViewController.h; sourceTree = "<group>"; };
@@ -117,6 +115,12 @@
 		56C253B31E52A0A900C5DA8E /* YYText_1_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYText_1_ViewController.m; sourceTree = "<group>"; };
 		56C253B61E53EEAB00C5DA8E /* AFNHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNHelp.h; sourceTree = "<group>"; };
 		56C253B71E53EEAB00C5DA8E /* AFNHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHelp.m; sourceTree = "<group>"; };
+		56C50A2E1EA0C98B00316688 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		56C50A2F1EA0C98B00316688 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		56C50A301EA0C98B00316688 /* PeopleProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleProperty.h; sourceTree = "<group>"; };
+		56C50A311EA0C98B00316688 /* PeopleProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleProperty.m; sourceTree = "<group>"; };
+		56C50A341EA0C9EA00316688 /* People+Categroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "People+Categroy.h"; sourceTree = "<group>"; };
+		56C50A351EA0C9EA00316688 /* People+Categroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "People+Categroy.m"; sourceTree = "<group>"; };
 		56D1AFD51DED61A400B6E878 /* CSWK_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWK_ViewController.h; sourceTree = "<group>"; };
 		56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWK_ViewController.m; sourceTree = "<group>"; };
 		56D1AFD91DED61FB00B6E878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		56F3CC561E963185002D17BB /* MyCAShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCAShapeLayer.m; sourceTree = "<group>"; };
 		56F3CC581E9640AD002D17BB /* Layer_Event_TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_Event_TestVC.h; sourceTree = "<group>"; };
 		56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_Event_TestVC.m; sourceTree = "<group>"; };
+		56F3CC5B1E977268002D17BB /* Line_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line_ViewController.h; sourceTree = "<group>"; };
+		56F3CC5C1E977268002D17BB /* Line_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line_ViewController.m; sourceTree = "<group>"; };
 		56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_ViewController.h; sourceTree = "<group>"; };
 		56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_ViewController.m; sourceTree = "<group>"; };
 		648021377E39324018E9156E /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,8 +187,8 @@
 		56077CAB1DED2EE300CC4D0D = {
 			isa = PBXGroup;
 			children = (
-				5637948E1E553CB700CA645C /* Resource */,
 				56077CB61DED2EE300CC4D0D /* example */,
+				5637948E1E553CB700CA645C /* Resource */,
 				56077CD01DED2EE300CC4D0D /* exampleTests */,
 				56077CDB1DED2EE300CC4D0D /* exampleUITests */,
 				56077CB51DED2EE300CC4D0D /* Products */,
@@ -251,10 +257,7 @@
 			children = (
 				561403751DF030B80027E3E6 /* CYRuntimeViewController.h */,
 				561403761DF030B80027E3E6 /* CYRuntimeViewController.m */,
-				5614037B1DF118540027E3E6 /* People.h */,
-				5614037C1DF118540027E3E6 /* People.m */,
-				5614037E1DF118B50027E3E6 /* PeopleProperty.h */,
-				5614037F1DF118B50027E3E6 /* PeopleProperty.m */,
+				56C50A2D1EA0C98B00316688 /* 类的方法属性测试 */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -348,6 +351,19 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		56C50A2D1EA0C98B00316688 /* 类的方法属性测试 */ = {
+			isa = PBXGroup;
+			children = (
+				56C50A2E1EA0C98B00316688 /* People.h */,
+				56C50A2F1EA0C98B00316688 /* People.m */,
+				56C50A341EA0C9EA00316688 /* People+Categroy.h */,
+				56C50A351EA0C9EA00316688 /* People+Categroy.m */,
+				56C50A301EA0C98B00316688 /* PeopleProperty.h */,
+				56C50A311EA0C98B00316688 /* PeopleProperty.m */,
+			);
+			path = "类的方法属性测试";
+			sourceTree = "<group>";
+		};
 		56D1AFD31DED615000B6E878 /* 测试 */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +407,8 @@
 				56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */,
 				56F3CC551E963185002D17BB /* MyCAShapeLayer.h */,
 				56F3CC561E963185002D17BB /* MyCAShapeLayer.m */,
+				56F3CC5B1E977268002D17BB /* Line_ViewController.h */,
+				56F3CC5C1E977268002D17BB /* Line_ViewController.m */,
 				56F3CC4F1E94F9CA002D17BB /* QuartzCoreView.h */,
 				56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */,
 			);
@@ -594,6 +612,7 @@
 				5684888E1E7A82D3004F8A06 /* GCD.m in Sources */,
 				5649D4851E5AC6F7004E31DB /* OprationViewController.m in Sources */,
 				56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */,
+				56C50A321EA0C98B00316688 /* People.m in Sources */,
 				561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */,
 				56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */,
 				56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */,
@@ -601,21 +620,22 @@
 				56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */,
 				5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */,
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
+				56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
-				5614037D1DF118540027E3E6 /* People.m in Sources */,
 				562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */,
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
+				56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */,
 				56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */,
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,
-				561403801DF118B50027E3E6 /* PeopleProperty.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,
 				561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */,
+				56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,
 				56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */,
 			);

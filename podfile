@@ -77,7 +77,7 @@ target 'example' do
     #pod 'MMPopupView'
     
     #自定义分类
-    pod 'ESCategories', '~> 0.1.9’
+    pod 'ESCategories', '~> 0.2.3'
     
     
     #颜色选择器

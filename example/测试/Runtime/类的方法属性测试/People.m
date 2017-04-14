@@ -8,8 +8,11 @@
 
 #import "People.h"
 
+@interface People ()
+@property(nonatomic, strong)UILabel *testLabel;
+@end
 @implementation People{
-    NSString *address;
+    NSString *_address;
 }
 
 

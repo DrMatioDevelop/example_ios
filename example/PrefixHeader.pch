@@ -18,7 +18,7 @@
 #import <Masonry.h>
 #import <UIButton+WebCache.h>
 #import <UIImageView+WebCache.h>
-#import <Categories.h>
+#import <ESCategories.h>
 #import <MBProgressHUD.h>
 #import "Function.h"
 

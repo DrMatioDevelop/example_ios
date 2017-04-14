@@ -12,6 +12,7 @@
 @property(strong ,nonatomic)UIButton *nextBtn;
 @property(strong ,nonatomic)UIButton *graphyBtn;
 @property(strong ,nonatomic)UIButton *lastBtn;
+@property(strong ,nonatomic)UIButton *lineBtn;
 @end
 
 @implementation Layer_ViewController{
@@ -23,7 +24,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtons = @[self.lastBtn];
 
-    self.navigationItem.rightBarButtons = @[self.graphyBtn,self.nextBtn];
+    self.navigationItem.rightBarButtons = @[self.nextBtn,self.graphyBtn,self.lineBtn];
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     //CAShapeLayer   UIBezierPath
@@ -310,6 +311,11 @@
     NSLog(@"%s",__func__);
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (void)clickLine:(UIButton *)button {
+    NSLog(@"%s",__func__);
+    Class cla = NSClassFromString(@"Line_ViewController");
+    [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+}
 #pragma makr - Getter
 - (UIButton *)nextBtn {
     if (!_nextBtn) {
@@ -340,6 +346,15 @@
     return _lastBtn;
 }
 
+- (UIButton *)lineBtn {
+    if (!_lineBtn) {
+        _lineBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_lineBtn setTitle:@"曲线" forState:UIControlStateNormal];
+        [_lineBtn addTarget:self action:@selector(clickLine:) forControlEvents:UIControlEventTouchUpInside];
+        _lineBtn.frame = CGRectMake(0, 0, 44.0, 44.0);
+    }
+    return _lineBtn;
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -17,26 +17,31 @@
 
 @implementation CYRuntimeViewController
 - (void)dealloc {
-    [self removeObserver:self forKeyPath:@"str"];
+    NSException *cratch = nil;
+    @try {
+        [self removeObserver:self forKeyPath:@"str"];
+    } @catch (NSException *exception) {
+        cratch = exception;
+    } @finally {
+        if (cratch) {
+            NSLog(@"%@",cratch.name);
+        }
+        else {
+            NSLog(@"没有错误");
+        }
+    }
+    
+    NSLog(@"%s",__func__);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //k=%E7%9A%AE%E8%8D%89&token=
-    NSString *picao = [@"k=皮草&token=" URLEncode];
-    NSLog(@"%@",picao);
-    picao = [picao URLDeCode];
-    NSLog(@"%@",picao);
-    picao = [picao URLDeCode];
-    NSLog(@"%@",picao);
-    picao = [picao URLDeCode];
-    NSLog(@"%@",picao);
+//    [self URLDecodeOrEncode];
 
-
-//    [self getAllIvarList];
-//    
-//    [self getProperty];
-//    
-//    
+    [self getAllIvarList];
+    
+    [self getProperty];
+//
+   
 //    self.p = [[People alloc] init];
 //    [self addObserver:self forKeyPath:@"str" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 //    self.str = @"gg";
@@ -51,6 +56,12 @@
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
 //    NSLog(@"%@",[object valueForKey:@"str"]);
 //}
+
+
+/**
+ 获取属性列表
+ 可以获取类的属性 但是不能获取 分类中属性
+ */
 - (void)getAllIvarList {
     unsigned int methodCount = 0;
     Ivar *ivars = class_copyIvarList([People class], &methodCount);
@@ -62,14 +73,23 @@
     }
     free(ivars);
 }
+
+/**
+ 获取属性列表  参考：http://blog.csdn.net/u010123208/article/details/50589288
+ 可以获得分类中的属性
+ */
 - (void)getProperty {
     unsigned int methodCount = 0;
+    //拿到属性列表
     objc_property_t *propertyList = class_copyPropertyList([People class], &methodCount);
     for (unsigned int i = 0; i < methodCount; i++) {
         objc_property_t property = propertyList[i];
+        //属性名字
         const char *name = property_getName(property);
-        NSLog(@"PeopleName:%s",name);
+        const char *attribute = property_getAttributes(property);
+        NSLog(@"PeopleName:%s attribute:%s",name,attribute);
     }
+    free(propertyList);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,6 +120,28 @@
  object_setIvar
  */
 }
+
+
+/**
+ 参数多次decode不会出现问题  但是多次encode会出现问题
+ 接受到encode的数据 没有进行处理  走网络层的AFN会自动加一次encode
+ */
+- (void)URLDecodeOrEncode {
+    //k=%E7%9A%AE%E8%8D%89&token=
+    NSString *picao = @"k=皮草&token=";
+    NSLog(@"原始参数:%@",picao);
+    picao = [@"k=皮草&token=" URLEncode];
+    
+    NSLog(@"Encode:%@",picao);
+    picao = [picao URLDeCode];
+    NSLog(@"firstDecode:%@",picao);
+    picao = [picao URLDeCode];
+    NSLog(@"secondDecode:%@",picao);
+    picao = [picao URLDeCode];
+    NSLog(@"thirdEDeode:%@",picao);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
