@@ -30,4 +30,19 @@
     }
     return [object integerValue];
 }
+- (UILabel *)peopleLabel {
+    UILabel *object = objc_getAssociatedObject(self, @selector(peopleLabel));
+    if (!object) {
+        object = [[UILabel alloc] init];
+        object.text = @"cyf god like";
+        object.frame = CGRectMake(0, 0, 100, 61.8);
+        object.backgroundColor = [UIColor yellowColor];
+        objc_setAssociatedObject(self, @selector(peopleLabel), object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return object;
+}
+
+- (void)setPeopleLabel:(UILabel *)peopleLabel {
+    objc_setAssociatedObject(self, @selector(peopleLabel), peopleLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 @end

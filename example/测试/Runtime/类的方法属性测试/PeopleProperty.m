@@ -10,4 +10,23 @@
 
 @implementation PeopleProperty
 
+- (UILabel *)createSmallCar:(NSArray *)array {
+    UILabel *label = [[UILabel alloc] init];
+    if (array) {
+        label.text = [array componentsJoinedByString:@","];
+    }
+    else {
+        label.text = @"null";
+    }
+    return label;
+}
+
++ (UIButton *)buyNewCar:(UIFont *)font {
+    UIButton *button = [UIButton  buttonWithType:UIButtonTypeCustom];
+    button.titleLabel.font = font;
+    
+    [button setTitle:@"newCar" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    return button;
+}
 @end

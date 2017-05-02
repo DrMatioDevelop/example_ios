@@ -37,6 +37,7 @@
 		56C50A321EA0C98B00316688 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A2F1EA0C98B00316688 /* People.m */; };
 		56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A311EA0C98B00316688 /* PeopleProperty.m */; };
 		56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A351EA0C9EA00316688 /* People+Categroy.m */; };
+		56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A391EA4725D00316688 /* MsgSend_ViewController.m */; };
 		56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */; };
 		56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */; };
 		56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */; };
@@ -121,6 +122,8 @@
 		56C50A311EA0C98B00316688 /* PeopleProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleProperty.m; sourceTree = "<group>"; };
 		56C50A341EA0C9EA00316688 /* People+Categroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "People+Categroy.h"; sourceTree = "<group>"; };
 		56C50A351EA0C9EA00316688 /* People+Categroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "People+Categroy.m"; sourceTree = "<group>"; };
+		56C50A381EA4725D00316688 /* MsgSend_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSend_ViewController.h; sourceTree = "<group>"; };
+		56C50A391EA4725D00316688 /* MsgSend_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSend_ViewController.m; sourceTree = "<group>"; };
 		56D1AFD51DED61A400B6E878 /* CSWK_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWK_ViewController.h; sourceTree = "<group>"; };
 		56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWK_ViewController.m; sourceTree = "<group>"; };
 		56D1AFD91DED61FB00B6E878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 			children = (
 				561403751DF030B80027E3E6 /* CYRuntimeViewController.h */,
 				561403761DF030B80027E3E6 /* CYRuntimeViewController.m */,
+				56C50A371EA4723200316688 /* objc_msgSend_test */,
 				56C50A2D1EA0C98B00316688 /* 类的方法属性测试 */,
 			);
 			path = Runtime;
@@ -362,6 +366,15 @@
 				56C50A311EA0C98B00316688 /* PeopleProperty.m */,
 			);
 			path = "类的方法属性测试";
+			sourceTree = "<group>";
+		};
+		56C50A371EA4723200316688 /* objc_msgSend_test */ = {
+			isa = PBXGroup;
+			children = (
+				56C50A381EA4725D00316688 /* MsgSend_ViewController.h */,
+				56C50A391EA4725D00316688 /* MsgSend_ViewController.m */,
+			);
+			path = objc_msgSend_test;
 			sourceTree = "<group>";
 		};
 		56D1AFD31DED615000B6E878 /* 测试 */ = {
@@ -485,7 +498,7 @@
 				TargetAttributes = {
 					56077CB31DED2EE300CC4D0D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZM8ZWSEQY4;
+						DevelopmentTeam = 8TQ5J5ANUH;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -629,6 +642,7 @@
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,
+				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
@@ -789,7 +803,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
+				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -811,7 +826,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
+				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

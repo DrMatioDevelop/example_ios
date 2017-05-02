@@ -14,4 +14,6 @@
 @property(nonatomic, strong, readonly)NSArray   *myHousesArray;
 
 @property(nonatomic, assign, readonly)NSInteger carNum;
+
+@property(nonatomic, strong)UILabel *peopleLabel;
 @end

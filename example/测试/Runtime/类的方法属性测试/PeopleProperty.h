@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface PeopleProperty : NSObject
 @property(nonatomic,copy  )NSString   *name;
 @property(nonatomic,assign)NSInteger  age;
 @property(nonatomic,strong)NSString   *sex;
+
++ (UIButton *)buyNewCar:(UIFont *)font;
+
+- (UILabel *)createSmallCar:(NSArray *)array;
 @end
