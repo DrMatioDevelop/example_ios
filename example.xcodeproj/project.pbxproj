@@ -31,6 +31,8 @@
 		5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488871E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m */; };
 		5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */; };
 		5684888E1E7A82D3004F8A06 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684888D1E7A82D3004F8A06 /* GCD.m */; };
+		56C0374B1EB9CC7500E79D43 /* Collection_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */; };
+		56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374D1EB9CD6300E79D43 /* CustomLayout.m */; };
 		56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B01E4C766A00C5DA8E /* UIImage+MYKit.m */; };
 		56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B31E52A0A900C5DA8E /* YYText_1_ViewController.m */; };
 		56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B71E53EEAB00C5DA8E /* AFNHelp.m */; };
@@ -110,6 +112,10 @@
 		568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPUImage.m"; sourceTree = "<group>"; };
 		5684888C1E7A82D3004F8A06 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		5684888D1E7A82D3004F8A06 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		56C037491EB9CC7500E79D43 /* Collection_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection_ViewController.h; sourceTree = "<group>"; };
+		56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection_ViewController.m; sourceTree = "<group>"; };
+		56C0374C1EB9CD6300E79D43 /* CustomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayout.h; sourceTree = "<group>"; };
+		56C0374D1EB9CD6300E79D43 /* CustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayout.m; sourceTree = "<group>"; };
 		56C253AF1E4C766A00C5DA8E /* UIImage+MYKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MYKit.h"; sourceTree = "<group>"; };
 		56C253B01E4C766A00C5DA8E /* UIImage+MYKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MYKit.m"; sourceTree = "<group>"; };
 		56C253B21E52A0A900C5DA8E /* YYText_1_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText_1_ViewController.h; sourceTree = "<group>"; };
@@ -281,6 +287,7 @@
 		561DCEC51E08C9E900CBAE04 /* 其它测试 */ = {
 			isa = PBXGroup;
 			children = (
+				56C037481EB9CC4700E79D43 /* 瀑布流 */,
 				56F7A3A41E8BCC3400DDBBC5 /* sharpLayerOrBezier */,
 				562AD93E1E81041B00480FE0 /* UI测试 */,
 				568488821E7A7D46004F8A06 /* GPUImage 毛玻璃 */,
@@ -340,6 +347,17 @@
 				568488841E7A7D71004F8A06 /* GPU_ViewController.m */,
 			);
 			path = "GPUImage 毛玻璃";
+			sourceTree = "<group>";
+		};
+		56C037481EB9CC4700E79D43 /* 瀑布流 */ = {
+			isa = PBXGroup;
+			children = (
+				56C037491EB9CC7500E79D43 /* Collection_ViewController.h */,
+				56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */,
+				56C0374C1EB9CD6300E79D43 /* CustomLayout.h */,
+				56C0374D1EB9CD6300E79D43 /* CustomLayout.m */,
+			);
+			path = "瀑布流";
 			sourceTree = "<group>";
 		};
 		56C253B51E53EE8A00C5DA8E /* Tools */ = {
@@ -624,10 +642,12 @@
 			files = (
 				5684888E1E7A82D3004F8A06 /* GCD.m in Sources */,
 				5649D4851E5AC6F7004E31DB /* OprationViewController.m in Sources */,
+				56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */,
 				56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */,
 				56C50A321EA0C98B00316688 /* People.m in Sources */,
 				561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */,
 				56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */,
+				56C0374B1EB9CC7500E79D43 /* Collection_ViewController.m in Sources */,
 				56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */,
 				5614037A1DF034580027E3E6 /* test.swift in Sources */,
 				56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */,

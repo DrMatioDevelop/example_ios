@@ -27,7 +27,8 @@
                      @"项目列表测试",
                      @"玻璃效果,虚化(GPUImage)",
                      @"UI测试",
-                     @"SharpLayer Bezier"
+                     @"SharpLayer Bezier",
+                     @"瀑布流"
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -74,7 +75,11 @@
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
 
     }
-}
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"瀑布流"]) {
+        Class cla = NSClassFromString(@"Collection_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+        
+    }}
 
 
 
