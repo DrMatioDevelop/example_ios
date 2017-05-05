@@ -35,7 +35,7 @@
 ////msgSend 是一个消息机制，会首先像class发送消息，如果class不存在就返回一个nil，像nil发送消息会返回nil
 ////msgSend 可以访问一个class的public方法与private方法  但是不能防卫类方法？
 - (void)msgSendTest {
-    id p =  objc_msgSend(objc_getClass("Peoplefsfsdfdsfsd"), sel_registerName("alloc"), sel_registerName("init"));
+    id p =  objc_msgSend(objc_getClass("People"), sel_registerName("alloc"), sel_registerName("init"));
     objc_msgSend(p, @selector(normalMsgSendTest:),@"cyf");
     objc_msgSend(p, sel_registerName("normalMsgSendTest:"),@"chen");
     objc_msgSend(p, sel_registerName("createBigHouse"));

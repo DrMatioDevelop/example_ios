@@ -36,16 +36,16 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self URLDecodeOrEncode];
-//
-//    [self getAllIvarList];
-//
-//    [self getProperty];
-//
-//    [self getMethodList];
-//
-//    
-//    [self observeKVO];
+    [self URLDecodeOrEncode];
+
+    [self getAllIvarList];
+
+    [self getProperty];
+
+    [self getMethodList];
+
+    
+    [self observeKVO];
     
     [self exchangeMethod];
 

@@ -516,7 +516,7 @@
 				TargetAttributes = {
 					56077CB31DED2EE300CC4D0D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8TQ5J5ANUH;
+						DevelopmentTeam = 959Q9RL588;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -820,10 +820,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
+				DEVELOPMENT_TEAM = 959Q9RL588;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
@@ -843,10 +843,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
+				DEVELOPMENT_TEAM = 959Q9RL588;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
