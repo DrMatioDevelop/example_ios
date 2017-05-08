@@ -160,7 +160,7 @@
 
 
 /**
- 方法交换
+ 方法交换 替换方法
  */
 - (void)exchangeMethod {
     People *p = [[People alloc] init];

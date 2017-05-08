@@ -24,37 +24,7 @@
 
 //    [self zhengze];
 
-    [self blureffect];
-
 }
-#pragma mark - IOS8毛玻璃
-- (void)blureffect {
-    UIImageView *img = [[UIImageView alloc] init];
-    img.image = [UIImage imageNamed:@"iphone.jpg"];
-    img.frame = CGRectMake(0, 0, SSize.width, SSize.height);
-    [self.view addSubview:img];
-    
-//    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-//    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//    effectView.frame = CGRectMake(0, 0, SSize.width, SSize.height);
-//    [self.view addSubview:effectView];
-    
-//    UIBlurEffect *blurEffect1 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    UIVisualEffectView *effectView1 = [[UIVisualEffectView alloc] initWithEffect:blurEffect1];
-//    effectView1.frame = CGRectMake(0, 0, SSize.width, SSize.height);
-//    [self.view addSubview:effectView1];
-    
-    UIBlurEffect *blurEffect2 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    UIVisualEffectView *effectView2 = [[UIVisualEffectView alloc] initWithEffect:blurEffect2];
-    effectView2.frame = CGRectMake(0, 0, SSize.width, SSize.height);
-    [self.view addSubview:effectView2];
-    
-//    UIBlurEffect *blurEffect3 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
-//    UIVisualEffectView *effectView3 = [[UIVisualEffectView alloc] initWithEffect:blurEffect3];
-//    effectView3.frame = CGRectMake(0, 320, SSize.width, 50);
-//    [self.view addSubview:effectView3];
-}
-
 #pragma mark - 正则表达式
 - (void)zhengze {
     //URLString = @"www.tmall.app/zegolive/watch/1114";    //直播或者录播

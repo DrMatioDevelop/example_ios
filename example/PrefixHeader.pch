@@ -20,6 +20,8 @@
 #import <UIImageView+WebCache.h>
 #import <ESCategories.h>
 #import <MBProgressHUD.h>
+#import <FMDB.h>
+#import <Aspects.h>
 #import "Function.h"
 
 #import "UIImage+MYKit.h"

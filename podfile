@@ -31,7 +31,7 @@ target 'example' do
     #pod 'CocoaLumberjack'
 
     # 方法拦截
-    #pod 'Aspects'
+    pod 'Aspects', '~>1.4.1'
 
     # 响应式编程框架
     #pod 'ReactiveCocoa', '2.5’
@@ -49,7 +49,7 @@ target 'example' do
     #pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
     
     #数据库
-    #pod 'FMDB'
+    pod 'FMDB', '~>2.6.2'
     
     
     #键盘控制

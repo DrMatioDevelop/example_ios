@@ -1,3 +1,7 @@
 /Pods/
 *.lock
 *.xcworkspace
+*.gitignore
+Podfile.lock
+
+example.xcworkspace/xcuserdata/d2c_cyf.xcuserdatad/UserInterfaceState.xcuserstate

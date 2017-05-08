@@ -33,6 +33,15 @@
     
     [self specialLastTime];
     
+    NSString *str;
+    if([str isKindOfClass:[NSNull class]]||[[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
+        NSLog(@"1");
+    }
+    else {
+        NSLog(@"2");
+
+    }
+    
 }
 
 - (void)aboutTime {

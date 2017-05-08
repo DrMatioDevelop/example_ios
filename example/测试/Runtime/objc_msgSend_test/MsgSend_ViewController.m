@@ -19,6 +19,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self msgSendTest];
     
+    [self arrayObjectTest];
+    
+    
+    
     
 }
 + (void)load {
@@ -33,7 +37,7 @@
  msgSend 消息机制  xcode5之后需要自己开启
  */
 ////msgSend 是一个消息机制，会首先像class发送消息，如果class不存在就返回一个nil，像nil发送消息会返回nil
-////msgSend 可以访问一个class的public方法与private方法  但是不能防卫类方法？
+////msgSend 可以访问一个class的public方法与private方法  也可以访问类方法
 - (void)msgSendTest {
     id p =  objc_msgSend(objc_getClass("People"), sel_registerName("alloc"), sel_registerName("init"));
     objc_msgSend(p, @selector(normalMsgSendTest:),@"cyf");
@@ -43,12 +47,26 @@
     
     [self.view addSubview:label];
     @try {
-        objc_msgSend(p, @selector(classMsgSendTest:), @"god like");
+        objc_msgSend([p class], @selector(classMsgSendTest:), @"god like");
     } @catch (NSException *exception) {
         NSLog(@"%s error",__FUNCTION__);
     } @finally {
         
     }
+}
+
+- (void)arrayObjectTest {
+    NSArray *array = [[NSArray alloc] init];
+    
+    @try {
+        objc_msgSend(array, @selector(objectAtIndex:),4);
+
+    } @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+    } @finally {
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
