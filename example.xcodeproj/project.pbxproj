@@ -25,8 +25,8 @@
 		563794971E56A0CB00CA645C /* FileHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 563794961E56A0CB00CA645C /* FileHelp.m */; };
 		5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */; };
 		565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E01EC97CCC0025064E /* IMG_ViewController.m */; };
-		565891E51ECA8EF90025064E /* Face_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E41ECA8EF90025064E /* Face_ViewController.m */; };
 		565891E91ECA91420025064E /* OprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E81ECA91420025064E /* OprationViewController.m */; };
+		565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565891EA1ECAA5B80025064E /* Face_ViewController.swift */; };
 		565C18E41DF68C57001BF07E /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C18E31DF68C57001BF07E /* Function.m */; };
 		568488771E7920C6004F8A06 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 568488761E7920C6004F8A06 /* iphone.jpg */; };
 		568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488841E7A7D71004F8A06 /* GPU_ViewController.m */; };
@@ -103,10 +103,9 @@
 		5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegurOrHtmlViewController.m; sourceTree = "<group>"; };
 		565891DF1EC97CCC0025064E /* IMG_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMG_ViewController.h; sourceTree = "<group>"; };
 		565891E01EC97CCC0025064E /* IMG_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMG_ViewController.m; sourceTree = "<group>"; };
-		565891E31ECA8EF90025064E /* Face_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Face_ViewController.h; sourceTree = "<group>"; };
-		565891E41ECA8EF90025064E /* Face_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Face_ViewController.m; sourceTree = "<group>"; };
 		565891E71ECA91420025064E /* OprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OprationViewController.h; sourceTree = "<group>"; };
 		565891E81ECA91420025064E /* OprationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OprationViewController.m; sourceTree = "<group>"; };
+		565891EA1ECAA5B80025064E /* Face_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Face_ViewController.swift; sourceTree = "<group>"; };
 		565C18E21DF68C57001BF07E /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
 		565C18E31DF68C57001BF07E /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function.m; sourceTree = "<group>"; };
 		568488761E7920C6004F8A06 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
@@ -347,8 +346,7 @@
 		565891E21ECA8EE00025064E /* 人脸识别 */ = {
 			isa = PBXGroup;
 			children = (
-				565891E31ECA8EF90025064E /* Face_ViewController.h */,
-				565891E41ECA8EF90025064E /* Face_ViewController.m */,
+				565891EA1ECAA5B80025064E /* Face_ViewController.swift */,
 			);
 			path = "人脸识别";
 			sourceTree = "<group>";
@@ -691,8 +689,8 @@
 				565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */,
 				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
-				565891E51ECA8EF90025064E /* Face_ViewController.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
+				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,

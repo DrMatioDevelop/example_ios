@@ -94,8 +94,8 @@
         
     }
     else if ([self.arrayDS[indexPath.row] isEqualToString:@"人脸识别"]) {
-        Class cla = NSClassFromString(@"Face_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+        Face_ViewController *vc = [[Face_ViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }
     
