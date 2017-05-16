@@ -28,7 +28,10 @@
                      @"玻璃效果,虚化(GPUImage)",
                      @"UI测试",
                      @"SharpLayer Bezier",
-                     @"瀑布流"
+                     @"瀑布流",
+                     @"图片显示",
+                     @"多线程",
+                     @"人脸识别"
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,7 +82,24 @@
         Class cla = NSClassFromString(@"Collection_ViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
         
-    }}
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"图片显示"]) {
+        Class cla = NSClassFromString(@"IMG_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+        
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"多线程"]) {
+        Class cla = NSClassFromString(@"OprationViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+        
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"人脸识别"]) {
+        Class cla = NSClassFromString(@"Face_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+        
+    }
+    
+}
 
 
 

@@ -19,14 +19,32 @@
     self.title = NSStringFromClass([self class]);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
+//    //字符串常量
+//    [self constFont];
+//
+//    //简单的html加载到UILabel
 //    [self htmlAddLabel];
 
-//    [self zhengze];
+//    //字符串检索
+//    [self predicateTest];
+    
+//    //正则表达式
+    [self zhengze];
 
+}
+#pragma mark - constFont
+//字符常量区 修改后只是把修改当前的变量
+- (void)constFont {
+    NSString *str = @"str1";
+    NSString *str1 = str;
+    str = @"this is  my str1";
+    NSLog(@"%p  %p",&str, &str1);
+
+    NSLog(@"%@  %@",str, str1);
 }
 #pragma mark - 正则表达式
 - (void)zhengze {
+    
     //URLString = @"www.tmall.app/zegolive/watch/1114";    //直播或者录播
     NSString *searchText = @"/zegolive/watch/1114";
     NSString *regexStr   = @".*zegolive/watch/(\\d+)";
@@ -35,6 +53,7 @@
     NSString *searchText_1 = @"<p><img src=\"http://img.d2c.cn/2017/02/21/060132d03057ebe536af746c9f4054d5f3f5e8.jpg\"><br></p>";
     NSString *regexStr_1   = @".*src=\\s?\"([^\"]*)\".*";
     NSLog(@"%@",[[self class] matchString:searchText_1 toRegexString:regexStr_1]);
+    NSLog(@"%@",[[self class] matchStr:searchText_1 toRegexStr:regexStr_1]);
 
 }
 
@@ -67,12 +86,25 @@
     }
     return muArray;
 }
+
++ (NSArray *)matchStr:(NSString *)string toRegexStr:(NSString *)regexStr {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionCaseInsensitive error:nil];
+    NSArray *matches = [regex matchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length)];
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (NSTextCheckingResult *match  in matches) {
+        for (NSInteger i = 0; i < [match numberOfRanges]; i++) {
+            NSString *comment = [string substringWithRange:[match rangeAtIndex:i]];
+            [array addObject:comment];
+        }
+    }
+    return array;
+}
 #pragma mark - NSPredicate
 - (void)predicateTest {
     //    NSArray *array1 = [NSArray arrayWithObjects:@1,@2,@3,@4,@5,@5,@6,@7, nil];
     //    NSArray *array2 = [NSArray arrayWithObjects:@3,@5, nil];
-    NSArray *array3 = [NSArray arrayWithObjects:@"shanghai",@"guangzhou",@"wuhan",@"jinan",@"anhui", nil];
-    NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"self  like [c] 'an*'"];
+    NSArray *array3 = [NSArray arrayWithObjects:@"shanghai",@"guangzhou",@"wuhan",@"jinan",@"Anhui",@"anhui", nil];
+    NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"self  in[cd] 'anhui'"];
     NSArray *temp1 = [array3 filteredArrayUsingPredicate:predicate1];
     NSLog(@"%@, %@",predicate1,temp1);
     // >, ==,  !=, like, contains, beginswith , endswith
@@ -85,7 +117,7 @@
  */
 - (void)htmlAddLabel {
     NSString *htmlString=@"<html><body><img src=https://upload-images.jianshu.io/upload_images/937405-50a8ad2d8866fc12.png>                <font size=\"5\" color=\"#220022\">我改了你的影子在什么地方 你好呀 来相互伤害好不好，我改了你的影子在什么地方 你好呀 来相互伤害好不好，我改了你的影子在什么地方 你好呀 来相互伤害好不好</font></body></html>";
-    NSString *htmlString_2 = @"<p><span style=\"color: rgb(1, 1, 1); font-family: tahoma, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(236, 235, 234); display: inline !important; float: none;\">我改了你的影子在什么地方 你好呀 来相互伤害好不好</span><!--EndFragment--><br><br><br></p>";
+    NSString *htmlString_2 = @"<p><span style=\"color: rgb(255, 0, 255); font-family: tahoma, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(0, 255, 0); display: inline !important; float: none;\">我改了你的影子在什么地方 你好呀 来相互伤害好不好，今天开始新版本</span><!--EndFragment--><br><br><br></p>";
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
     paragraphStyle.lineSpacing   = 7.0;
@@ -97,32 +129,33 @@
     NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithData:[htmlString_2 dataUsingEncoding:NSUnicodeStringEncoding] options:dic documentAttributes:nil error:nil];
     
     
-    self.htmlLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, SSize.width - 20, 54)];
+    self.htmlLabel = [[UILabel alloc] init];
     self.htmlLabel.textColor = [UIColor darkTextColor];
-    self.htmlLabel.backgroundColor = [UIColor cyanColor];
+    self.htmlLabel.backgroundColor = ColorRGBA(0, 0, 255, 1);
     self.htmlLabel.text = NSStringFromClass([self class]);
     self.htmlLabel.attributedText = attributeStr;
     self.htmlLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    self.htmlLabel.numberOfLines = 3;
+    self.htmlLabel.numberOfLines = 0;
     self.htmlLabel.layer.borderColor = [UIColor redColor].CGColor;
     self.htmlLabel.layer.borderWidth = 2.0;
     [self.htmlLabel sizeToFit];
-    CGSize size = [self.htmlLabel sizeThatFits:CGSizeMake(SSize.width - 20.0, 0)];
-    NSLog(@"--w:%f--h:%f",size.width,size.height);
-    NSLog(@"++w:%f++h:%f",self.htmlLabel.width,self.htmlLabel.height);
+    NSLog(@"--w:%f--h:%f",self.htmlLabel.width,self.htmlLabel.height);
     NSLog(@"%lf",self.htmlLabel.font.lineHeight);
+    self.htmlLabel.frame = CGRectMake(10, 70, SSize.width - 20, 102);
+    NSLog(@"++w:%f++h:%f",self.htmlLabel.width,self.htmlLabel.height);
+
     [self.view addSubview:self.htmlLabel];
     
     
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.center.y, SSize.width - 20.0, 0)];
-    label2.textColor = [UIColor redColor];
-    label2.backgroundColor = [UIColor blueColor];
-    label2.text = @"我的名字好长啊";
-    [label2 sizeToFit];
-    CGSize size2 = [label2 sizeThatFits:CGSizeZero];
-    NSLog(@"--w:%f--h:%f",size2.width,size2.height);
-    NSLog(@"++w:%f++h:%f",label2.width,label2.height);
-    [self.view addSubview:label2];
+//    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.center.y, SSize.width - 20.0, 0)];
+//    label2.textColor = [UIColor redColor];
+//    label2.backgroundColor = [UIColor blueColor];
+//    label2.text = @"我的名字好长啊";
+//    [label2 sizeToFit];
+//    CGSize size2 = [label2 sizeThatFits:CGSizeZero];
+//    NSLog(@"--w:%f--h:%f",size2.width,size2.height);
+//    NSLog(@"++w:%f++h:%f",label2.width,label2.height);
+//    [self.view addSubview:label2];
 }
 
 

@@ -27,23 +27,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.operationQueue = [[NSOperationQueue alloc] init];
-    self.operationQueue.maxConcurrentOperationCount = 1;
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    button.backgroundColor = [UIColor redColor];
-    button.frame = CGRectMake(0, 64, 100, 50);
-    [self.view bringSubviewToFront:button];
-    [button addTarget:self action:@selector(gifBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
-    
-    self.btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.btn.backgroundColor = [UIColor blueColor];
-    self.btn.frame = CGRectMake(0, 200, 100, 50);
-    [self.view bringSubviewToFront:self.btn];
-    [self.btn addTarget:self action:@selector(clickOperation:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.btn];
+//    self.operationQueue = [[NSOperationQueue alloc] init];
+//    self.operationQueue.maxConcurrentOperationCount = 1;
+//    
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+//    button.backgroundColor = [UIColor redColor];
+//    button.frame = CGRectMake(0, 64, 100, 50);
+//    [self.view bringSubviewToFront:button];
+//    [button addTarget:self action:@selector(gifBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+//    
+//    
+//    self.btn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    self.btn.backgroundColor = [UIColor blueColor];
+//    self.btn.frame = CGRectMake(0, 200, 100, 50);
+//    [self.view bringSubviewToFront:self.btn];
+//    [self.btn addTarget:self action:@selector(clickOperation:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.btn];
     
     
 
@@ -86,6 +86,10 @@
 //    imgView.image = background;
 //    [self.view addSubview:imgView];
     
+    
+    [self nsoperationQueue];
+    
+//    [self groupGCD];
 }
 
 
@@ -212,10 +216,9 @@
     [operation_2 addDependency:operation_1];
     [operation_3 addDependency:operation_2];
     
-    NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
-    [operationQueue addOperations:@[operation_1,operation_2,operation_3] waitUntilFinished:NO];
-    
-    
+    self.operationQueue = [[NSOperationQueue alloc] init];
+    [self.operationQueue addOperations:@[operation_1,operation_2,operation_3] waitUntilFinished:NO];
+    NSLog(@"ggg");
     NSLog(@"\n\n");
     
 }
@@ -240,50 +243,68 @@
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         NSLog(@"notify");
     });
-    
-
 }
-- (void)requestA {
-//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
 
+
+- (void)requestA {
+    NSLog(@"1");
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+
+//    [self.operationQueue setSuspended:YES];
     [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=li" parameters:@{} success:^(NSDictionary *responseJson) {
-        NSLog(@"1");
-//        dispatch_semaphore_signal(sema);
+        NSLog(@"%s",__func__);
+        [self.operationQueue setSuspended:NO];
+
+        dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-//        dispatch_semaphore_signal(sema);
+        dispatch_semaphore_signal(sema);
+        [self.operationQueue setSuspended:NO];
     }];
-//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 }
 
 - (void)requestB {
-//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSLog(@"2");
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+//    [self.operationQueue setSuspended:YES];
 
     [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
-        NSLog(@"2");
-//        dispatch_semaphore_signal(sema);
+        NSLog(@"%s",__func__);
+        [self.operationQueue setSuspended:NO];
+
+        dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-//        dispatch_semaphore_signal(sema);
+        [self.operationQueue setSuspended:NO];
+
+        dispatch_semaphore_signal(sema);
 
     }];
-//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 }
 
 - (void)requestC {
-//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSLog(@"3");
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+//    [self.operationQueue setSuspended:YES];
 
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/detail/list?designerId=10438" parameters:@{} success:^(NSDictionary *responseJson) {
-        NSLog(@"3");
-//        dispatch_semaphore_signal(sema);
+    //https://test.api.d2cmall.com/v2/api/product/detail/list?designerId=10438
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"%s",__func__);
+        [self.operationQueue setSuspended:NO];
+
+        dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-//        dispatch_semaphore_signal(sema);
+        [self.operationQueue setSuspended:NO];
+
+        dispatch_semaphore_signal(sema);
 
     }];
-//    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 
 }
 #pragma mark -  const相关

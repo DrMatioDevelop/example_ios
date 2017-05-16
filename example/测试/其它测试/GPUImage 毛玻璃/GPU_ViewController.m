@@ -99,6 +99,7 @@
     [GCD GCDGlobalTask:^{
         [self configImageOne];
     } mainTask:^{
+        
     }];
     
     [GCD GCDGlobalTask:^{
