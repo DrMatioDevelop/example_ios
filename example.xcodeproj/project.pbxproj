@@ -27,6 +27,8 @@
 		565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E01EC97CCC0025064E /* IMG_ViewController.m */; };
 		565891E91ECA91420025064E /* OprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E81ECA91420025064E /* OprationViewController.m */; };
 		565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565891EA1ECAA5B80025064E /* Face_ViewController.swift */; };
+		565891ED1ECC17270025064E /* JSBridgeOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 565891EC1ECC17270025064E /* JSBridgeOC.html */; };
+		565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891EF1ECC1BC50025064E /* KIUIContainerControl.m */; };
 		565C18E41DF68C57001BF07E /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C18E31DF68C57001BF07E /* Function.m */; };
 		568488771E7920C6004F8A06 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 568488761E7920C6004F8A06 /* iphone.jpg */; };
 		568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488841E7A7D71004F8A06 /* GPU_ViewController.m */; };
@@ -106,6 +108,9 @@
 		565891E71ECA91420025064E /* OprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OprationViewController.h; sourceTree = "<group>"; };
 		565891E81ECA91420025064E /* OprationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OprationViewController.m; sourceTree = "<group>"; };
 		565891EA1ECAA5B80025064E /* Face_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Face_ViewController.swift; sourceTree = "<group>"; };
+		565891EC1ECC17270025064E /* JSBridgeOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSBridgeOC.html; sourceTree = "<group>"; };
+		565891EE1ECC1BC50025064E /* KIUIContainerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIUIContainerControl.h; sourceTree = "<group>"; };
+		565891EF1ECC1BC50025064E /* KIUIContainerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIUIContainerControl.m; sourceTree = "<group>"; };
 		565C18E21DF68C57001BF07E /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
 		565C18E31DF68C57001BF07E /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function.m; sourceTree = "<group>"; };
 		568488761E7920C6004F8A06 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
@@ -393,6 +398,8 @@
 				563794961E56A0CB00CA645C /* FileHelp.m */,
 				5684888C1E7A82D3004F8A06 /* GCD.h */,
 				5684888D1E7A82D3004F8A06 /* GCD.m */,
+				565891EE1ECC1BC50025064E /* KIUIContainerControl.h */,
+				565891EF1ECC1BC50025064E /* KIUIContainerControl.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -436,6 +443,7 @@
 		56D1AFD41DED618200B6E878 /* WkWebView */ = {
 			isa = PBXGroup;
 			children = (
+				565891EC1ECC17270025064E /* JSBridgeOC.html */,
 				56D1AFD51DED61A400B6E878 /* CSWK_ViewController.h */,
 				56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */,
 			);
@@ -590,6 +598,7 @@
 				56321F9B1E6E4DD60054A7D1 /* copyCode in Resources */,
 				56077CC71DED2EE300CC4D0D /* LaunchScreen.storyboard in Resources */,
 				563794901E553CC000CA645C /* view-wechat-chat.gif in Resources */,
+				565891ED1ECC17270025064E /* JSBridgeOC.html in Resources */,
 				56077CC41DED2EE300CC4D0D /* Assets.xcassets in Resources */,
 				56077CC21DED2EE300CC4D0D /* Main.storyboard in Resources */,
 			);
@@ -666,6 +675,7 @@
 			files = (
 				5684888E1E7A82D3004F8A06 /* GCD.m in Sources */,
 				56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */,
+				565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */,
 				56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */,
 				56C50A321EA0C98B00316688 /* People.m in Sources */,
 				561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */,

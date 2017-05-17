@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface CSWK_ViewController : UIViewController
-
+<
+WKNavigationDelegate,   //WK代理
+WKUIDelegate,           //提示  警告   输入框
+WKScriptMessageHandler //JS交互
+>
 @end
