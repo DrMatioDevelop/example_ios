@@ -122,7 +122,7 @@
     if (self.myWkWebView.loading) {
         return;
     }
-    if (btn.tag == 0) { //清空
+    if (btn.tag == 0) { //清空    //第一个参数可以接收JavaScript的返回值
         [self.myWkWebView evaluateJavaScript:@"clear()" completionHandler:^(id _Nullable response, NSError * _Nullable error) {
             NSLog(@"clear:%@ %@",response,error);
         }];

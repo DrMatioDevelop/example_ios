@@ -15,6 +15,8 @@
 		56077CC71DED2EE300CC4D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56077CC51DED2EE300CC4D0D /* LaunchScreen.storyboard */; };
 		56077CD21DED2EE300CC4D0D /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CD11DED2EE300CC4D0D /* exampleTests.m */; };
 		56077CDD1DED2EE300CC4D0D /* exampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CDC1DED2EE300CC4D0D /* exampleUITests.m */; };
+		561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561185861ECD72010051B761 /* AlertOrActionSheet_ViewController.m */; };
+		5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 561185891ECD72500051B761 /* SureCustomActionSheet.m */; };
 		561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561403761DF030B80027E3E6 /* CYRuntimeViewController.m */; };
 		5614037A1DF034580027E3E6 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561403791DF034580027E3E6 /* test.swift */; };
 		561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561DCEC91E08CA1200CBAE04 /* OtherViewController.m */; };
@@ -88,6 +90,10 @@
 		56077CD81DED2EE300CC4D0D /* exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56077CDC1DED2EE300CC4D0D /* exampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleUITests.m; sourceTree = "<group>"; };
 		56077CDE1DED2EE300CC4D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		561185851ECD72010051B761 /* AlertOrActionSheet_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertOrActionSheet_ViewController.h; sourceTree = "<group>"; };
+		561185861ECD72010051B761 /* AlertOrActionSheet_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertOrActionSheet_ViewController.m; sourceTree = "<group>"; };
+		561185881ECD72500051B761 /* SureCustomActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureCustomActionSheet.h; sourceTree = "<group>"; };
+		561185891ECD72500051B761 /* SureCustomActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SureCustomActionSheet.m; sourceTree = "<group>"; };
 		561403751DF030B80027E3E6 /* CYRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRuntimeViewController.h; sourceTree = "<group>"; };
 		561403761DF030B80027E3E6 /* CYRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRuntimeViewController.m; sourceTree = "<group>"; };
 		561403781DF034580027E3E6 /* example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -271,6 +277,17 @@
 			path = exampleUITests;
 			sourceTree = "<group>";
 		};
+		561185841ECD71E50051B761 /* ActionSheetOrAlert */ = {
+			isa = PBXGroup;
+			children = (
+				561185881ECD72500051B761 /* SureCustomActionSheet.h */,
+				561185891ECD72500051B761 /* SureCustomActionSheet.m */,
+				561185851ECD72010051B761 /* AlertOrActionSheet_ViewController.h */,
+				561185861ECD72010051B761 /* AlertOrActionSheet_ViewController.m */,
+			);
+			path = ActionSheetOrAlert;
+			sourceTree = "<group>";
+		};
 		561403741DF030A10027E3E6 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +331,7 @@
 		562AD93E1E81041B00480FE0 /* UI测试 */ = {
 			isa = PBXGroup;
 			children = (
+				561185841ECD71E50051B761 /* ActionSheetOrAlert */,
 				562AD93F1E81043700480FE0 /* UI_ViewController.h */,
 				562AD9401E81043700480FE0 /* UI_ViewController.m */,
 			);
@@ -695,12 +713,14 @@
 				56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */,
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
+				5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,
 				565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */,
 				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
 				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
+				561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,

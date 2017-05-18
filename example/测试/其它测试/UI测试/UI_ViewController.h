@@ -8,6 +8,6 @@
 //  http://blog.csdn.net/qq_29284809/article/details/50156797   UISearchBar 修改内容
 #import <UIKit/UIKit.h>
 
-@interface UI_ViewController : UIViewController
+@interface UI_ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

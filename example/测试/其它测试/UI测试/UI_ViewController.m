@@ -12,6 +12,8 @@
 @property (nonatomic , strong)UITextField  *myTextField;
 @property (nonatomic , strong)UISearchBar  *searchBar;
 @property (nonatomic , strong)UIDatePicker *datePicker;
+@property (nonatomic , strong)UITableView  *uiTableView;
+@property (nonatomic , strong)NSArray      *arrayDS;
 @end
 
 @implementation UI_ViewController
@@ -19,12 +21,13 @@
     if (self = [super init]) {
         self.view.backgroundColor = [UIColor lightGrayColor];
         self.title = @"UI测试";
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 //    [self.view addSubview:self.myTextField];
 //    
 //    [self.view addSubview:self.searchBar];
@@ -42,7 +45,10 @@
 
     }
     
+    [self.uiTableView reloadData];
+    
 }
+
 
 - (void)aboutTime {
     NSDate *nowDate = [NSDate date];
@@ -179,19 +185,50 @@
     NSLog(@"改变时间%@",[dateFormatter stringFromDate:theDate]);
 
 }
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayDS.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"uitest"];
+    cell.textLabel.text = [self.arrayDS objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([@"弹窗与sheet" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
+        Class cla = NSClassFromString(@"AlertOrActionSheet_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
+    else if ([@"" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
+        Class cla = NSClassFromString(@"OprationViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
+}
+
+
+
+- (UITableView *)uiTableView {
+    if (!_uiTableView) {
+        _uiTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SSize.width, SSize.height) style:UITableViewStylePlain];
+        _uiTableView.delegate   = self;
+        _uiTableView.dataSource = self;
+        [_uiTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"uitest"];
+        [self.view addSubview:_uiTableView];
+    }
+    return _uiTableView;
+}
+
+- (NSArray *)arrayDS {
+    _arrayDS = @[
+                 @"弹窗与sheet"
+                 ];
+    return _arrayDS;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
