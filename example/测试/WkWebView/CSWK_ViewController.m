@@ -42,6 +42,17 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(nonnull WKNavigationAction *)navigationAction decisionHandler:(nonnull void (^)(WKNavigationActionPolicy))decisionHandler {
     NSLog(@"发送请求之前,决定是否跳转:%s",__func__);
     NSLog(@"%@\n\n",navigationAction.request.URL.absoluteString);
+
+    //网页代码
+    NSString *doc = @"document.body.outerHTML";
+    [self.myWkWebView evaluateJavaScript:doc
+                     completionHandler:^(id _Nullable htmlStr, NSError * _Nullable error) {
+                         if (error) {
+                             NSLog(@"JSError:%@",error);
+                         }
+                         NSLog(@"thishtml:%@",htmlStr);
+                     }] ;
+
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
@@ -140,35 +151,37 @@
 }
 
 - (void)clickReload:(UIButton *)btn {
-//    //request
-//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.d2cmall.com/appToWap?params=dGltZVN0YW1wPTE4NTQyNzcyNkBkMmNAYXBwSWQ9aW9zYXBwQGQyY0BzaWduPWJiNzE1MThhN2M5ZDU4MWJiN2E2ZTIzMDliNDFjYzFmQGQyY0B1cmw9L3Nob3dyb29tL2Jhc2ljL3N0eWxl"]];
-//    [self.myWkWebView loadRequest:urlRequest];
+    //request
+    //http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1
+    //http://www.d2cmall.com/page/520sheji
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1"]];
+    [self.myWkWebView loadRequest:urlRequest];
     
     
     
     
-    //locol
-    //初始化时 设置config
-//    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-//    config.preferences.minimumFontSize = 14;
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"JSBridgeOC.html" ofType:nil];
-    [self.myWkWebView loadHTMLString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil] baseURL:[[NSBundle mainBundle] bundleURL]];
-    WKUserContentController *userCC = self.myWkWebView.configuration.userContentController;
-    
-    //JavaScript调用OC
-    [userCC addScriptMessageHandler:self name:@"showMobile"];
-    [userCC addScriptMessageHandler:self name:@"showName"];
-    [userCC addScriptMessageHandler:self name:@"showSendMsg"];
-
-    //OC调用JavaScript
-    UIButton *clearButton = [KIUIContainerControl getButton:CGRectMake(0, 64.0, 50, 40) tag:0 target:self action:@selector(OCCallJavaScript:)];
-    [clearButton setTitle:@"清空" forState:UIControlStateNormal];
-    [self.view addSubview:clearButton];
-    
-    UIButton *huanMobile = [KIUIContainerControl getButton:CGRectMake(60, 64, 70, 40) tag:1 target:self action:@selector(OCCallJavaScript:)];
-    [huanMobile setTitle:@"黄mobile" forState:UIControlStateNormal];
-    [self.view addSubview:huanMobile];
+//    //locol
+//    //初始化时 设置config
+////    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+////    config.preferences.minimumFontSize = 14;
+//    
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"JSBridgeOC.html" ofType:nil];
+//    [self.myWkWebView loadHTMLString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil] baseURL:[[NSBundle mainBundle] bundleURL]];
+//    WKUserContentController *userCC = self.myWkWebView.configuration.userContentController;
+//    
+//    //JavaScript调用OC
+//    [userCC addScriptMessageHandler:self name:@"showMobile"];
+//    [userCC addScriptMessageHandler:self name:@"showName"];
+//    [userCC addScriptMessageHandler:self name:@"showSendMsg"];
+//
+//    //OC调用JavaScript
+//    UIButton *clearButton = [KIUIContainerControl getButton:CGRectMake(0, 64.0, 50, 40) tag:0 target:self action:@selector(OCCallJavaScript:)];
+//    [clearButton setTitle:@"清空" forState:UIControlStateNormal];
+//    [self.view addSubview:clearButton];
+//    
+//    UIButton *huanMobile = [KIUIContainerControl getButton:CGRectMake(60, 64, 70, 40) tag:1 target:self action:@selector(OCCallJavaScript:)];
+//    [huanMobile setTitle:@"黄mobile" forState:UIControlStateNormal];
+//    [self.view addSubview:huanMobile];
 }
 #pragma mark - Getter
 - (WKWebView *)myWkWebView {
