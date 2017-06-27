@@ -31,7 +31,8 @@
                      @"瀑布流",
                      @"图片显示",
                      @"多线程",
-                     @"人脸识别"
+                     @"人脸识别",
+                     @"滚动边缘动画",
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -96,6 +97,11 @@
     else if ([self.arrayDS[indexPath.row] isEqualToString:@"人脸识别"]) {
         Face_ViewController *vc = [[Face_ViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"滚动边缘动画"]) {
+        Class cla = NSClassFromString(@"ScrollviewAnimationVC");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
         
     }
     

@@ -37,6 +37,7 @@
 		5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488871E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m */; };
 		5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */; };
 		5684888E1E7A82D3004F8A06 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684888D1E7A82D3004F8A06 /* GCD.m */; };
+		569CD4371EE91E08008933EC /* ScrollviewAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CD4361EE91E08008933EC /* ScrollviewAnimationVC.m */; };
 		56C0374B1EB9CC7500E79D43 /* Collection_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */; };
 		56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374D1EB9CD6300E79D43 /* CustomLayout.m */; };
 		56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C253B01E4C766A00C5DA8E /* UIImage+MYKit.m */; };
@@ -128,6 +129,8 @@
 		568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPUImage.m"; sourceTree = "<group>"; };
 		5684888C1E7A82D3004F8A06 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		5684888D1E7A82D3004F8A06 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		569CD4351EE91E08008933EC /* ScrollviewAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollviewAnimationVC.h; path = ../../../../../../ScrollviewAnimationVC.h; sourceTree = "<group>"; };
+		569CD4361EE91E08008933EC /* ScrollviewAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollviewAnimationVC.m; path = ../../../../../../ScrollviewAnimationVC.m; sourceTree = "<group>"; };
 		56C037491EB9CC7500E79D43 /* Collection_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection_ViewController.h; sourceTree = "<group>"; };
 		56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection_ViewController.m; sourceTree = "<group>"; };
 		56C0374C1EB9CD6300E79D43 /* CustomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayout.h; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		561DCEC51E08C9E900CBAE04 /* 其它测试 */ = {
 			isa = PBXGroup;
 			children = (
+				569CD4341EE91DEA008933EC /* 滚动边缘动画 */,
 				565891E61ECA91420025064E /* 多线程 */,
 				565891E21ECA8EE00025064E /* 人脸识别 */,
 				56C037481EB9CC4700E79D43 /* 瀑布流 */,
@@ -394,6 +398,15 @@
 				568488841E7A7D71004F8A06 /* GPU_ViewController.m */,
 			);
 			path = "GPUImage 毛玻璃";
+			sourceTree = "<group>";
+		};
+		569CD4341EE91DEA008933EC /* 滚动边缘动画 */ = {
+			isa = PBXGroup;
+			children = (
+				569CD4351EE91E08008933EC /* ScrollviewAnimationVC.h */,
+				569CD4361EE91E08008933EC /* ScrollviewAnimationVC.m */,
+			);
+			path = "滚动边缘动画";
 			sourceTree = "<group>";
 		};
 		56C037481EB9CC4700E79D43 /* 瀑布流 */ = {
@@ -724,6 +737,7 @@
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,
+				569CD4371EE91E08008933EC /* ScrollviewAnimationVC.m in Sources */,
 				561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */,
 				56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,

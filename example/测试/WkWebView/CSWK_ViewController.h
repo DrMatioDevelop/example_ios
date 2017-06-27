@@ -13,6 +13,7 @@
 <
 WKNavigationDelegate,   //WK代理
 WKUIDelegate,           //提示  警告   输入框
-WKScriptMessageHandler //JS交互
+WKScriptMessageHandler, //JS交互
+UIWebViewDelegate
 >
 @end

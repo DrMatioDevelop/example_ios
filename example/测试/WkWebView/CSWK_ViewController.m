@@ -25,9 +25,9 @@
     NSArray *array = nil;
     [array objectAtIndex:100];
     NSLog(@"%@,%@ ",array,[NSNull null]);
-    
+
     [self initUI];
-    [self clickReload:nil];
+//    [self clickReload:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,6 +70,11 @@
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     NSLog(@"页面加载完成之后调用:%s\n\n",__func__);
+    [webView evaluateJavaScript:@"document.body.scrollHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        double heights = [result doubleValue];
+        NSLog(@"-----%lf",heights);
+        self.myWkWebView.height = 300;
+    }];
 }
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"页面加载失败时调用:%s\n\n",__func__);
@@ -149,16 +154,51 @@
         }];
     }
 }
-
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+//    //定义JS字符串
+//    NSString *script = [NSString stringWithFormat: @"var script = document.createElement('script');"
+//                        "script.type = 'text/javascript';"
+//                        "script.text = \"function ResizeImages() { "
+//                        "var myimg;"
+//                        "var maxwidth=%f;" //屏幕宽度
+//                        "for(i=0;i <document.images.length;i++){"
+//                        "myimg = document.images[i];"
+//                        "myimg.height = maxwidth / (myimg.width/myimg.height);"
+//                        "myimg.width = maxwidth;"
+//                        "}"
+//                        "}\";"
+//                        "document.getElementsByTagName('p')[0].appendChild(script);",SSize.width];
+//    
+//    //添加JS
+//    [webView stringByEvaluatingJavaScriptFromString:script];
+//    
+//    //添加调用JS执行的语句
+//    [webView stringByEvaluatingJavaScriptFromString:@"ResizeImages();"];
+    
+    // 获取webView的高度
+    CGFloat webViewHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.scrollHeight"] floatValue];
+    CGFloat webViewHeight1 = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue];
+    CGFloat webViewHeight2 = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.clientHeight"] floatValue];
+    NSLog(@"%lf  %lf %lf",webViewHeight,webViewHeight1,webViewHeight2);
+}
 - (void)clickReload:(UIButton *)btn {
+    self.myWkWebView.backgroundColor = [UIColor blueColor];
     //request
-    //http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1
-    //http://www.d2cmall.com/page/520sheji
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1"]];
-    [self.myWkWebView loadRequest:urlRequest];
+//    //http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1
+//    //http://www.d2cmall.com/page/520sheji
+//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1"]];
+//    [self.myWkWebView loadRequest:urlRequest];
     
+    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, SSize.width, SSize.height - 64)];
+    web.delegate = self;
+    NSString *str = @"<div style=\"width:100%;background-color:#ff0000;word-wrap: break-word;font-size:50;word-break: break-all;\"><p ><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">经调查：风控部对借款人各项信息进行了全面的实地征信，一切资料真实可靠。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\"><br/></span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">抵押物锋范汽车,牌号：浙B0***0，新车购买于2009年4月，本地新车价15万，现评估价3.95万元。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">权  证：已办理完相关手续。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">担  保：抵押物担保。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人信息介绍： </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人基本情况：借款人俞先生，1982年出生，浙江奉化人，企业员工，收入稳定。</span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人资产介绍：一辆锋范车</span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">详细资金用途：用于个人资金周转</span></strong></span></p><p><br/></p></div>";
     
+//    [web loadHTMLString:str baseURL:nil];
+//    web.scalesPageToFit = YES;
+//    [self.view addSubview:web];
     
+    [self.myWkWebView loadHTMLString:str baseURL:nil];
     
 //    //locol
 //    //初始化时 设置config
