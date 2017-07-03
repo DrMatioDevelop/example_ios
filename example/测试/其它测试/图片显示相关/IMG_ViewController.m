@@ -19,7 +19,7 @@
     self.title = NSStringFromClass([self class]);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //    [self showImageWithSize];
+//    [self showImageWithSize];
 //    [self webPImage];
 
     [self cutImage];
@@ -27,7 +27,6 @@
     CGFloat scale = [UIScreen mainScreen].scale;
     CGFloat scale1 = [UIScreen mainScreen].nativeScale;
     NSLog(@"%lf  %lf",scale,scale1);
-    
 }
 - (void)webPImage {
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, 100, 155)];
@@ -98,7 +97,9 @@
             thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
         }
     }
-    UIGraphicsBeginImageContext(targetSize); // this will crop
+    
+    //可以防止图片模糊
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, [UIScreen mainScreen].scale);
     CGRect thumbnailRect = CGRectZero;
     thumbnailRect.origin = thumbnailPoint;
     thumbnailRect.size.width= scaledWidth;

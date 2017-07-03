@@ -33,6 +33,7 @@
                      @"多线程",
                      @"人脸识别",
                      @"滚动边缘动画",
+                     @"转场动画",
                      ];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,6 +104,10 @@
         Class cla = NSClassFromString(@"ScrollviewAnimationVC");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
         
+    }
+    else if ([self.arrayDS[indexPath.row] isEqualToString:@"转场动画"]){
+        Class cla = NSClassFromString(@"Transition_ViewController");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
     }
     
 }
