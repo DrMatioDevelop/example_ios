@@ -54,15 +54,15 @@
 - (void)beginTask:(UIButton *)button {
     //按照顺序完成(1,2,3)task 使用NSOperation的暂停功能与 GCD的信号都是可以的
     //如果不使用只是在调用的时候会是按照依赖的顺序  但是执行的时候还是并发执行
-    //suspend 暂停只会暂定队列 不会暂停当天的task，只是简单的阻止调用显得operation（可以继续加入 减少？）
+    //suspend 暂停只会暂定队列 不会暂停当前的task，只是简单的阻止调用显得operation（可以继续加入 减少？）
     //semaphone 信号量 当不为<=0的时候会一直等待   当信号量 > 0时会执行  并且会让信号量减1
     
     
     //所有的任务都完成后  再出发新的任务
-    [self GCD_allFinish];
+//    [self GCD_allFinish];
     
 //    //一个任务完成之后再完成另一个任务
-//    [self operationSerial];
+    [self operationSerial];
 }
 #pragma mark - GCD
 - (void)GCD_allFinish {
@@ -108,15 +108,13 @@
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
     //    [self.operationQueue setSuspended:YES];
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/designer/alphabetical" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/designer/alphabetical" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
-        [self.operationQueue setSuspended:NO];
         
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
         dispatch_semaphore_signal(sema);
-        [self.operationQueue setSuspended:NO];
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     
@@ -127,14 +125,12 @@
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     //    [self.operationQueue setSuspended:YES];
     
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
-        [self.operationQueue setSuspended:NO];
         
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        [self.operationQueue setSuspended:NO];
         
         dispatch_semaphore_signal(sema);
         
@@ -148,15 +144,12 @@
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     //    [self.operationQueue setSuspended:YES];
     
-    //https://test.api.d2cmall.com/v2/api/product/detail/list?designerId=10438
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
-        [self.operationQueue setSuspended:NO];
         
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        [self.operationQueue setSuspended:NO];
         
         dispatch_semaphore_signal(sema);
         
@@ -173,8 +166,8 @@
     NSLog(@"1");
 //    dispatch_semaphore_t sema = dispatch_semaphore_create(0);  //创建信号量
     
-//        [self.operationQueueRequest setSuspended:YES];
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=li" parameters:@{} success:^(NSDictionary *responseJson) {
+        [self.operationQueueRequest setSuspended:YES];
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=li" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         [self.operationQueueRequest setSuspended:NO];
         
@@ -191,9 +184,9 @@
 - (void)operaRequestB {
     NSLog(@"2");
 //    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-//        [self.operationQueueRequest setSuspended:YES];
+        [self.operationQueueRequest setSuspended:YES];
     
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         [self.operationQueueRequest setSuspended:NO];
         
@@ -212,9 +205,9 @@
 - (void)operaRequestC {
     NSLog(@"3");
 //    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-//        [self.operationQueueRequest setSuspended:YES];
+        [self.operationQueueRequest setSuspended:YES];
     
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://test.api.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         [self.operationQueueRequest setSuspended:NO];
         

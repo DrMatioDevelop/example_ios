@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560287791F0254E600EB1E48 /* Transition_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560287781F0254E600EB1E48 /* Transition_ViewController.m */; };
 		56077CB91DED2EE300CC4D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CB81DED2EE300CC4D0D /* main.m */; };
 		56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CBB1DED2EE300CC4D0D /* AppDelegate.m */; };
 		56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CBE1DED2EE300CC4D0D /* ViewController.m */; };
@@ -26,11 +25,13 @@
 		563794901E553CC000CA645C /* view-wechat-chat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5637948F1E553CC000CA645C /* view-wechat-chat.gif */; };
 		563794941E553D1400CA645C /* gifImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563794931E553D1400CA645C /* gifImageViewController.swift */; };
 		563794971E56A0CB00CA645C /* FileHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 563794961E56A0CB00CA645C /* FileHelp.m */; };
+		5646227B1F0B2CB900AF4B91 /* ChangeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 564622751F0B2CB900AF4B91 /* ChangeArray.m */; };
+		564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5646227F1F0B2CD800AF4B91 /* Transition_ViewController.m */; };
+		564622831F0B2CFE00AF4B91 /* Swift_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564622821F0B2CFE00AF4B91 /* Swift_ViewController.m */; };
+		564622891F0B2D4800AF4B91 /* GCD_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564622881F0B2D4800AF4B91 /* GCD_ViewController.m */; };
+		5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5646228B1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m */; };
+		564622951F0B488000AF4B91 /* ObjectC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564622941F0B488000AF4B91 /* ObjectC_ViewController.m */; };
 		5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */; };
-		564F38EF1F063E7000DA0F9F /* ChangeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 564F38EE1F063E7000DA0F9F /* ChangeArray.m */; };
-		564F38F41F07342D00DA0F9F /* ObjectC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564F38F31F07342D00DA0F9F /* ObjectC_ViewController.m */; };
-		564F38F71F07343A00DA0F9F /* Swift_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564F38F61F07343A00DA0F9F /* Swift_ViewController.m */; };
-		564F38FB1F074CBA00DA0F9F /* ObjectCOther_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564F38FA1F074CBA00DA0F9F /* ObjectCOther_ViewController.m */; };
 		565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E01EC97CCC0025064E /* IMG_ViewController.m */; };
 		565891E91ECA91420025064E /* OprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E81ECA91420025064E /* OprationViewController.m */; };
 		565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565891EA1ECAA5B80025064E /* Face_ViewController.swift */; };
@@ -80,8 +81,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		560287771F0254E600EB1E48 /* Transition_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transition_ViewController.h; path = ../../../../../../Transition_ViewController.h; sourceTree = "<group>"; };
-		560287781F0254E600EB1E48 /* Transition_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transition_ViewController.m; path = ../../../../../../Transition_ViewController.m; sourceTree = "<group>"; };
 		56077CB41DED2EE300CC4D0D /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56077CB81DED2EE300CC4D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56077CBA1DED2EE300CC4D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,16 +114,20 @@
 		563794931E553D1400CA645C /* gifImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifImageViewController.swift; sourceTree = "<group>"; };
 		563794951E56A0CB00CA645C /* FileHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelp.h; sourceTree = "<group>"; };
 		563794961E56A0CB00CA645C /* FileHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelp.m; sourceTree = "<group>"; };
+		564622741F0B2CB900AF4B91 /* ChangeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeArray.h; sourceTree = "<group>"; };
+		564622751F0B2CB900AF4B91 /* ChangeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeArray.m; sourceTree = "<group>"; };
+		5646227E1F0B2CD800AF4B91 /* Transition_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transition_ViewController.h; sourceTree = "<group>"; };
+		5646227F1F0B2CD800AF4B91 /* Transition_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transition_ViewController.m; sourceTree = "<group>"; };
+		564622811F0B2CFE00AF4B91 /* Swift_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swift_ViewController.h; sourceTree = "<group>"; };
+		564622821F0B2CFE00AF4B91 /* Swift_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swift_ViewController.m; sourceTree = "<group>"; };
+		564622871F0B2D4800AF4B91 /* GCD_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD_ViewController.h; sourceTree = "<group>"; };
+		564622881F0B2D4800AF4B91 /* GCD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD_ViewController.m; sourceTree = "<group>"; };
+		5646228A1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectCOther_ViewController.h; sourceTree = "<group>"; };
+		5646228B1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectCOther_ViewController.m; sourceTree = "<group>"; };
+		564622931F0B488000AF4B91 /* ObjectC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectC_ViewController.h; sourceTree = "<group>"; };
+		564622941F0B488000AF4B91 /* ObjectC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectC_ViewController.m; sourceTree = "<group>"; };
 		5649D4871E5D2700004E31DB /* RegurOrHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegurOrHtmlViewController.h; sourceTree = "<group>"; };
 		5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegurOrHtmlViewController.m; sourceTree = "<group>"; };
-		564F38ED1F063E7000DA0F9F /* ChangeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeArray.h; path = ../../../../../../ChangeArray.h; sourceTree = "<group>"; };
-		564F38EE1F063E7000DA0F9F /* ChangeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeArray.m; path = ../../../../../../ChangeArray.m; sourceTree = "<group>"; };
-		564F38F21F07342D00DA0F9F /* ObjectC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectC_ViewController.h; path = ../../../../../ObjectC_ViewController.h; sourceTree = "<group>"; };
-		564F38F31F07342D00DA0F9F /* ObjectC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectC_ViewController.m; path = ../../../../../ObjectC_ViewController.m; sourceTree = "<group>"; };
-		564F38F51F07343A00DA0F9F /* Swift_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swift_ViewController.h; path = ../../../../../Swift_ViewController.h; sourceTree = "<group>"; };
-		564F38F61F07343A00DA0F9F /* Swift_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Swift_ViewController.m; path = ../../../../../Swift_ViewController.m; sourceTree = "<group>"; };
-		564F38F91F074CBA00DA0F9F /* ObjectCOther_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectCOther_ViewController.h; path = ../../../../../../ObjectCOther_ViewController.h; sourceTree = "<group>"; };
-		564F38FA1F074CBA00DA0F9F /* ObjectCOther_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectCOther_ViewController.m; path = ../../../../../../ObjectCOther_ViewController.m; sourceTree = "<group>"; };
 		565891DF1EC97CCC0025064E /* IMG_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMG_ViewController.h; sourceTree = "<group>"; };
 		565891E01EC97CCC0025064E /* IMG_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMG_ViewController.m; sourceTree = "<group>"; };
 		565891E71ECA91420025064E /* OprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OprationViewController.h; sourceTree = "<group>"; };
@@ -230,10 +233,10 @@
 		560287761F02549E00EB1E48 /* 转场动画 */ = {
 			isa = PBXGroup;
 			children = (
-				560287771F0254E600EB1E48 /* Transition_ViewController.h */,
-				560287781F0254E600EB1E48 /* Transition_ViewController.m */,
-				564F38ED1F063E7000DA0F9F /* ChangeArray.h */,
-				564F38EE1F063E7000DA0F9F /* ChangeArray.m */,
+				5646227E1F0B2CD800AF4B91 /* Transition_ViewController.h */,
+				5646227F1F0B2CD800AF4B91 /* Transition_ViewController.m */,
+				564622741F0B2CB900AF4B91 /* ChangeArray.h */,
+				564622751F0B2CB900AF4B91 /* ChangeArray.m */,
 			);
 			path = "转场动画";
 			sourceTree = "<group>";
@@ -391,8 +394,8 @@
 		564F38F01F0733B900DA0F9F /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				564F38F51F07343A00DA0F9F /* Swift_ViewController.h */,
-				564F38F61F07343A00DA0F9F /* Swift_ViewController.m */,
+				564622811F0B2CFE00AF4B91 /* Swift_ViewController.h */,
+				564622821F0B2CFE00AF4B91 /* Swift_ViewController.m */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -400,9 +403,10 @@
 		564F38F11F0733C200DA0F9F /* ObjectC */ = {
 			isa = PBXGroup;
 			children = (
+				564622931F0B488000AF4B91 /* ObjectC_ViewController.h */,
+				564622941F0B488000AF4B91 /* ObjectC_ViewController.m */,
+				56ECBEB61F09EF2A0021071C /* GCD */,
 				564F38F81F074C9B00DA0F9F /* 杂 */,
-				564F38F21F07342D00DA0F9F /* ObjectC_ViewController.h */,
-				564F38F31F07342D00DA0F9F /* ObjectC_ViewController.m */,
 			);
 			path = ObjectC;
 			sourceTree = "<group>";
@@ -410,8 +414,8 @@
 		564F38F81F074C9B00DA0F9F /* 杂 */ = {
 			isa = PBXGroup;
 			children = (
-				564F38F91F074CBA00DA0F9F /* ObjectCOther_ViewController.h */,
-				564F38FA1F074CBA00DA0F9F /* ObjectCOther_ViewController.m */,
+				5646228A1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.h */,
+				5646228B1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m */,
 			);
 			path = "杂";
 			sourceTree = "<group>";
@@ -549,6 +553,15 @@
 			path = YYText;
 			sourceTree = "<group>";
 		};
+		56ECBEB61F09EF2A0021071C /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				564622871F0B2D4800AF4B91 /* GCD_ViewController.h */,
+				564622881F0B2D4800AF4B91 /* GCD_ViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		56F7A3A41E8BCC3400DDBBC5 /* sharpLayerOrBezier */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,7 +649,7 @@
 				TargetAttributes = {
 					56077CB31DED2EE300CC4D0D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 959Q9RL588;
+						DevelopmentTeam = ZM8ZWSEQY4;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -762,30 +775,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				5684888E1E7A82D3004F8A06 /* GCD.m in Sources */,
+				5646227B1F0B2CB900AF4B91 /* ChangeArray.m in Sources */,
 				56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */,
 				565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */,
-				560287791F0254E600EB1E48 /* Transition_ViewController.m in Sources */,
 				56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */,
 				56C50A321EA0C98B00316688 /* People.m in Sources */,
 				561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */,
-				564F38FB1F074CBA00DA0F9F /* ObjectCOther_ViewController.m in Sources */,
 				56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */,
 				56C0374B1EB9CC7500E79D43 /* Collection_ViewController.m in Sources */,
 				56C253B41E52A0A900C5DA8E /* YYText_1_ViewController.m in Sources */,
 				5614037A1DF034580027E3E6 /* test.swift in Sources */,
+				564622951F0B488000AF4B91 /* ObjectC_ViewController.m in Sources */,
 				56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */,
-				564F38F71F07343A00DA0F9F /* Swift_ViewController.m in Sources */,
 				5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */,
-				564F38F41F07342D00DA0F9F /* ObjectC_ViewController.m in Sources */,
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
 				56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */,
+				564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
+				5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */,
 				562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */,
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
 				565891E91ECA91420025064E /* OprationViewController.m in Sources */,
 				56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */,
 				56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */,
-				564F38EF1F063E7000DA0F9F /* ChangeArray.m in Sources */,
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
 				5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */,
@@ -794,6 +806,7 @@
 				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
+				564622891F0B2D4800AF4B91 /* GCD_ViewController.m in Sources */,
 				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
 				561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
@@ -804,6 +817,7 @@
 				56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,
 				56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */,
+				564622831F0B2CFE00AF4B91 /* Swift_ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,7 +969,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 959Q9RL588;
+				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
@@ -978,7 +992,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 959Q9RL588;
+				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = example/PrefixHeader.pch;
 				INFOPLIST_FILE = example/Info.plist;
