@@ -43,6 +43,10 @@
 		5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488871E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m */; };
 		5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */; };
 		5684888E1E7A82D3004F8A06 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684888D1E7A82D3004F8A06 /* GCD.m */; };
+		5693198C1F0B6D0E00FDA6BD /* PresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5693198B1F0B6D0E00FDA6BD /* PresentationController.m */; };
+		5693198F1F0B74E700FDA6BD /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5693198E1F0B74E700FDA6BD /* TransitionDelegate.m */; };
+		569319921F0B754E00FDA6BD /* AnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 569319911F0B754E00FDA6BD /* AnimatedTransitioning.m */; };
+		569319951F0B7F0600FDA6BD /* TargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569319941F0B7F0600FDA6BD /* TargetViewController.m */; };
 		569CD4371EE91E08008933EC /* ScrollviewAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CD4361EE91E08008933EC /* ScrollviewAnimationVC.m */; };
 		56C0374B1EB9CC7500E79D43 /* Collection_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */; };
 		56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0374D1EB9CD6300E79D43 /* CustomLayout.m */; };
@@ -147,6 +151,15 @@
 		568488891E7A7DA0004F8A06 /* UIImage+GPUImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPUImage.m"; sourceTree = "<group>"; };
 		5684888C1E7A82D3004F8A06 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		5684888D1E7A82D3004F8A06 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		569319891F0B6CC800FDA6BD /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		5693198A1F0B6D0E00FDA6BD /* PresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationController.h; sourceTree = "<group>"; };
+		5693198B1F0B6D0E00FDA6BD /* PresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationController.m; sourceTree = "<group>"; };
+		5693198D1F0B74E700FDA6BD /* TransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionDelegate.h; sourceTree = "<group>"; };
+		5693198E1F0B74E700FDA6BD /* TransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionDelegate.m; sourceTree = "<group>"; };
+		569319901F0B754E00FDA6BD /* AnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedTransitioning.h; sourceTree = "<group>"; };
+		569319911F0B754E00FDA6BD /* AnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedTransitioning.m; sourceTree = "<group>"; };
+		569319931F0B7F0600FDA6BD /* TargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetViewController.h; sourceTree = "<group>"; };
+		569319941F0B7F0600FDA6BD /* TargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetViewController.m; sourceTree = "<group>"; };
 		569CD4351EE91E08008933EC /* ScrollviewAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollviewAnimationVC.h; path = ../../../../../../ScrollviewAnimationVC.h; sourceTree = "<group>"; };
 		569CD4361EE91E08008933EC /* ScrollviewAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollviewAnimationVC.m; path = ../../../../../../ScrollviewAnimationVC.m; sourceTree = "<group>"; };
 		56C037491EB9CC7500E79D43 /* Collection_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection_ViewController.h; sourceTree = "<group>"; };
@@ -233,10 +246,19 @@
 		560287761F02549E00EB1E48 /* 转场动画 */ = {
 			isa = PBXGroup;
 			children = (
+				569319891F0B6CC800FDA6BD /* Singleton.h */,
 				5646227E1F0B2CD800AF4B91 /* Transition_ViewController.h */,
 				5646227F1F0B2CD800AF4B91 /* Transition_ViewController.m */,
+				569319931F0B7F0600FDA6BD /* TargetViewController.h */,
+				569319941F0B7F0600FDA6BD /* TargetViewController.m */,
 				564622741F0B2CB900AF4B91 /* ChangeArray.h */,
 				564622751F0B2CB900AF4B91 /* ChangeArray.m */,
+				5693198A1F0B6D0E00FDA6BD /* PresentationController.h */,
+				5693198B1F0B6D0E00FDA6BD /* PresentationController.m */,
+				569319901F0B754E00FDA6BD /* AnimatedTransitioning.h */,
+				569319911F0B754E00FDA6BD /* AnimatedTransitioning.m */,
+				5693198D1F0B74E700FDA6BD /* TransitionDelegate.h */,
+				5693198E1F0B74E700FDA6BD /* TransitionDelegate.m */,
 			);
 			path = "转场动画";
 			sourceTree = "<group>";
@@ -788,13 +810,16 @@
 				564622951F0B488000AF4B91 /* ObjectC_ViewController.m in Sources */,
 				56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */,
 				5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */,
+				5693198C1F0B6D0E00FDA6BD /* PresentationController.m in Sources */,
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
 				56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */,
 				564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
+				5693198F1F0B74E700FDA6BD /* TransitionDelegate.m in Sources */,
 				5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */,
 				562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */,
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
+				569319951F0B7F0600FDA6BD /* TargetViewController.m in Sources */,
 				565891E91ECA91420025064E /* OprationViewController.m in Sources */,
 				56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */,
 				56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */,
@@ -805,6 +830,7 @@
 				565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */,
 				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
+				569319921F0B754E00FDA6BD /* AnimatedTransitioning.m in Sources */,
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
 				564622891F0B2D4800AF4B91 /* GCD_ViewController.m in Sources */,
 				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
