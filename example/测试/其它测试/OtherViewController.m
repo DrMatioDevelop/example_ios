@@ -19,22 +19,23 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.hidesBottomBarWhenPushed = YES;
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.tableView];
     self.arrayDS = @[
-                     @"正则表达式与代码片段显示",
-                     @"项目列表测试",
-                     @"玻璃效果,虚化(GPUImage)",
-                     @"UI测试",
-                     @"SharpLayer Bezier",
-                     @"瀑布流",
-                     @"图片显示",
-                     @"多线程",
-                     @"人脸识别",
-                     @"滚动边缘动画",
-                     @"转场动画",
-                     ];
+                     @{@"index":@"0",@"name":@"列表视图"                ,@"class":@"TableVIew_ViewController"},
+                     @{@"index":@"1",@"name":@"正则表达式与代码片段显示"   ,@"class":@"RegurOrHtmlViewController"},
+                     @{@"index":@"1",@"name":@"项目列表测试"            ,@"class":@"OtherViewController"},
+                     @{@"index":@"1",@"name":@"玻璃效果,虚化(GPUImage)" ,@"class":@"GPU_ViewController"},
+                     @{@"index":@"1",@"name":@"UI测试"                 ,@"class":@"UI_ViewController"},
+                     @{@"index":@"1",@"name":@"SharpLayer Bezier"     ,@"class":@"Layer_ViewController"},
+                     @{@"index":@"1",@"name":@"瀑布流"                 ,@"class":@"Collection_ViewController"},
+                     @{@"index":@"1",@"name":@"图片显示"                ,@"class":@"IMG_ViewController"},
+                     @{@"index":@"1",@"name":@"多线程"                 ,@"class":@"OprationViewController"},
+                     @{@"index":@"1",@"name":@"人脸识别"               ,@"class":@"TableVIew_ViewController"},
+                     @{@"index":@"1",@"name":@"滚动边缘动画"            ,@"class":@"ScrollviewAnimationVC"},
+                     @{@"index":@"1",@"name":@"转场动画"               ,@"class":@"Transition_ViewController"},
+    ];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -53,63 +54,25 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = self.arrayDS[indexPath.row];
+    cell.textLabel.text = [self.arrayDS[indexPath.row] objectForKey:@"name"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if ([[self.arrayDS[indexPath.row] objectForKey:@"index"] isEqualToString:@"0"]) {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    else if ([[self.arrayDS[indexPath.row] objectForKey:@"index"] isEqualToString:@"1"]) {
+        cell.backgroundColor = [UIColor cyanColor];
+    }
+    else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.arrayDS[indexPath.row] isEqualToString:@"正则表达式与代码片段显示"]) {
-        Class cla = NSClassFromString(@"RegurOrHtmlViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"项目列表测试"]) {
-        Class cla = NSClassFromString(@"OtherViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"玻璃效果,虚化(GPUImage)"]) {
-        Class cla = NSClassFromString(@"GPU_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"UI测试"]) {
-        Class cla = NSClassFromString(@"UI_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"SharpLayer Bezier"]) {
-        Class cla = NSClassFromString(@"Layer_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"瀑布流"]) {
-        Class cla = NSClassFromString(@"Collection_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-        
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"图片显示"]) {
-        Class cla = NSClassFromString(@"IMG_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-        
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"多线程"]) {
-        Class cla = NSClassFromString(@"OprationViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-        
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"人脸识别"]) {
-        Face_ViewController *vc = [[Face_ViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-        
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"滚动边缘动画"]) {
-        Class cla = NSClassFromString(@"ScrollviewAnimationVC");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-        
-    }
-    else if ([self.arrayDS[indexPath.row] isEqualToString:@"转场动画"]){
-        Class cla = NSClassFromString(@"Transition_ViewController");
-        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
-    }
-    
+    NSString *className = [self.arrayDS[indexPath.row] objectForKey:@"class"];
+    Class cla = NSClassFromString(className);
+    UIViewController *vc = [[cla alloc] init];
+    vc.title = [self.arrayDS[indexPath.row] objectForKey:@"name"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -89,7 +89,7 @@
         }
     }
     
-    //计算当前item的高度好宽度
+    //计算当前item的高度和宽度
     CGFloat x = self.edgeInsets.left + destColumn * (itemWidth + self.columnMargin);
     CGFloat y = minColumnHeight;
     if (y != self.edgeInsets.top) {

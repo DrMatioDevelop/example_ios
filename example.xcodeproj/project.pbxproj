@@ -19,6 +19,9 @@
 		5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 561185891ECD72500051B761 /* SureCustomActionSheet.m */; };
 		561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561403761DF030B80027E3E6 /* CYRuntimeViewController.m */; };
 		5614037A1DF034580027E3E6 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561403791DF034580027E3E6 /* test.swift */; };
+		56155F4A1F0F2D8100DC17AC /* TableVIew_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56155F491F0F2D8100DC17AC /* TableVIew_ViewController.m */; };
+		56155F501F0F9F9800DC17AC /* Custom_CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56155F4F1F0F9F9800DC17AC /* Custom_CollectionViewCell.m */; };
+		56155F531F0F9FC800DC17AC /* CustomLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56155F521F0F9FC800DC17AC /* CustomLineLayout.m */; };
 		561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561DCEC91E08CA1200CBAE04 /* OtherViewController.m */; };
 		562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562AD9401E81043700480FE0 /* UI_ViewController.m */; };
 		56321F9B1E6E4DD60054A7D1 /* copyCode in Resources */ = {isa = PBXBuildFile; fileRef = 56321F9A1E6E4DD60054A7D1 /* copyCode */; };
@@ -109,6 +112,12 @@
 		561403761DF030B80027E3E6 /* CYRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRuntimeViewController.m; sourceTree = "<group>"; };
 		561403781DF034580027E3E6 /* example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example-Bridging-Header.h"; sourceTree = "<group>"; };
 		561403791DF034580027E3E6 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		56155F481F0F2D8100DC17AC /* TableVIew_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableVIew_ViewController.h; sourceTree = "<group>"; };
+		56155F491F0F2D8100DC17AC /* TableVIew_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVIew_ViewController.m; sourceTree = "<group>"; };
+		56155F4E1F0F9F9800DC17AC /* Custom_CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Custom_CollectionViewCell.h; sourceTree = "<group>"; };
+		56155F4F1F0F9F9800DC17AC /* Custom_CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Custom_CollectionViewCell.m; sourceTree = "<group>"; };
+		56155F511F0F9FC800DC17AC /* CustomLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLineLayout.h; sourceTree = "<group>"; };
+		56155F521F0F9FC800DC17AC /* CustomLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLineLayout.m; sourceTree = "<group>"; };
 		561DCEC81E08CA1200CBAE04 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		561DCEC91E08CA1200CBAE04 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		562AD93F1E81043700480FE0 /* UI_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI_ViewController.h; sourceTree = "<group>"; };
@@ -365,9 +374,19 @@
 			path = YYkit;
 			sourceTree = "<group>";
 		};
+		56155F471F0F2D5600DC17AC /* 列表视图 */ = {
+			isa = PBXGroup;
+			children = (
+				56155F481F0F2D8100DC17AC /* TableVIew_ViewController.h */,
+				56155F491F0F2D8100DC17AC /* TableVIew_ViewController.m */,
+			);
+			path = "列表视图";
+			sourceTree = "<group>";
+		};
 		561DCEC51E08C9E900CBAE04 /* 其它测试 */ = {
 			isa = PBXGroup;
 			children = (
+				56155F471F0F2D5600DC17AC /* 列表视图 */,
 				560287761F02549E00EB1E48 /* 转场动画 */,
 				569CD4341EE91DEA008933EC /* 滚动边缘动画 */,
 				565891E61ECA91420025064E /* 多线程 */,
@@ -495,8 +514,12 @@
 			children = (
 				56C037491EB9CC7500E79D43 /* Collection_ViewController.h */,
 				56C0374A1EB9CC7500E79D43 /* Collection_ViewController.m */,
+				56155F4E1F0F9F9800DC17AC /* Custom_CollectionViewCell.h */,
+				56155F4F1F0F9F9800DC17AC /* Custom_CollectionViewCell.m */,
 				56C0374C1EB9CD6300E79D43 /* CustomLayout.h */,
 				56C0374D1EB9CD6300E79D43 /* CustomLayout.m */,
+				56155F511F0F9FC800DC17AC /* CustomLineLayout.h */,
+				56155F521F0F9FC800DC17AC /* CustomLineLayout.m */,
 			);
 			path = "瀑布流";
 			sourceTree = "<group>";
@@ -814,11 +837,13 @@
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
 				56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */,
 				564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */,
+				56155F4A1F0F2D8100DC17AC /* TableVIew_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
 				5693198F1F0B74E700FDA6BD /* TransitionDelegate.m in Sources */,
 				5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */,
 				562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */,
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
+				56155F501F0F9F9800DC17AC /* Custom_CollectionViewCell.m in Sources */,
 				569319951F0B7F0600FDA6BD /* TargetViewController.m in Sources */,
 				565891E91ECA91420025064E /* OprationViewController.m in Sources */,
 				56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */,
@@ -834,6 +859,7 @@
 				5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */,
 				564622891F0B2D4800AF4B91 /* GCD_ViewController.m in Sources */,
 				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
+				56155F531F0F9FC800DC17AC /* CustomLineLayout.m in Sources */,
 				561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,

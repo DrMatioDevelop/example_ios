@@ -8,6 +8,8 @@
 
 // 参考地址 https://github.com/Joker-388/JKRComplexFallsDemo
 #import "Collection_ViewController.h"
+#import "CustomLineLayout.h"
+#import "Custom_CollectionViewCell.h"
 
 @interface Collection_ViewController ()<UICollectionViewDelegate ,UICollectionViewDataSource,CustomLayoutDelegate>
 @property (nonatomic, strong)UICollectionView *myCollectionView;
@@ -27,11 +29,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    UIButton *button = [KIUIContainerControl getButton:CGRectMake(0, 0, 44, 44) title:@"变" tag:1 target:self action:@selector(clickChange:)];
+    self.navigationItem.rightBarButtons = @[button];
+    
     _arrayDS = @[@(1),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(1),@(0),@(0),@(0),@(0),@(0),@(1),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(0),@(0)];
     
     [self.myCollectionView reloadData];
 }
 
+- (void)clickChange:(UIButton *)button {
+    if (button.selected) {
+        [self.myCollectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] animated:YES];
+
+    }
+    else {
+        [self.myCollectionView setCollectionViewLayout:[[CustomLineLayout alloc] init] animated:YES];
+
+    }
+    button.selected = !button.selected;
+
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.arrayDS.count;

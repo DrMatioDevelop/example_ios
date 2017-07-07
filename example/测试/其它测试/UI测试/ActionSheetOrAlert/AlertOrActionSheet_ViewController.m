@@ -22,16 +22,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *button = [KIUIContainerControl getButton:CGRectMake(50, 100, 100, 30) tag:1 target:self action:@selector(btnSheetBefore8:)];
+    UIButton *button = [KIUIContainerControl getButton:CGRectMake(50, 100, 100, 30) title:@"8之前的sheet" tag:1 target:self action:@selector(btnSheetBefore8:)];
     [button setTitle:@"8之前的sheet" forState:UIControlStateNormal];
     [self.view addSubview:button];
     
-    UIButton *after8Sheet = [KIUIContainerControl getButton:CGRectMake(50, 160, 100, 30) tag:2 target:self action:@selector(btnSheetAfter8:)];
-    [after8Sheet setTitle:@"8之后的sheet" forState:UIControlStateNormal];
+    UIButton *after8Sheet = [KIUIContainerControl getButton:CGRectMake(50, 160, 100, 30) title:@"8之后的sheet"  tag:2 target:self action:@selector(btnSheetAfter8:)];
     [self.view addSubview:after8Sheet];
     
-    UIButton *customSheet = [KIUIContainerControl getButton:CGRectMake(50, 220, 100, 30) tag:2 target:self action:@selector(btnSheetCustom:)];
-    [customSheet setTitle:@"自定义的sheet" forState:UIControlStateNormal];
+    UIButton *customSheet = [KIUIContainerControl getButton:CGRectMake(50, 220, 100, 30) title:@"自定义的sheet"  tag:2 target:self action:@selector(btnSheetCustom:)];
     [self.view addSubview:customSheet];
 
 }

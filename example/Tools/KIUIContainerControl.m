@@ -32,13 +32,15 @@
     return lable;
 }
 
-+ (UIButton *)getButton:(CGRect)frame tag:(NSInteger)tag target:(id)target action:(SEL)action {
++ (UIButton *)getButton:(CGRect)frame title:(NSString *)title tag:(NSInteger)tag target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = frame;
     button.titleLabel.textAlignment   = NSTextAlignmentCenter;
-    button.titleLabel.backgroundColor = [UIColor cyanColor];
+    button.titleLabel.backgroundColor = [UIColor whiteColor];
     button.titleLabel.font            = [UIFont systemFontOfSize:15];
     button.tag = tag;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }

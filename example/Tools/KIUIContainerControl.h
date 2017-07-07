@@ -51,7 +51,7 @@
  @param action action
  @return button
  */
-+ (UIButton *)getButton:(CGRect)frame tag:(NSInteger)tag target:(id)target action:(SEL)action;
++ (UIButton *)getButton:(CGRect)frame title:(NSString *)title tag:(NSInteger)tag target:(id)target action:(SEL)action;
 
 + (UIButton *)getSpecificButton:(CGRect)frame text:(NSString *)text textColor:(UIColor *)textColor
                           image:(UIImage *)image backGroundColor:(UIColor *)backGroundColor tag:(NSInteger)tag
