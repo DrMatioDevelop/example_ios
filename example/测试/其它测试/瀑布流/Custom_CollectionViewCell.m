@@ -12,8 +12,8 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
-        _titleLabel.backgroundColor = [UIColor whiteColor];
-        _titleLabel.tintColor = [UIColor blackColor];
+        _titleLabel.textColor = [UIColor blackColor];
+        [self addSubview:_titleLabel];
     }
     return _titleLabel;
 }

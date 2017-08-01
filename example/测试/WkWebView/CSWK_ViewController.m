@@ -10,6 +10,7 @@
 
 @interface CSWK_ViewController ()
 @property(nonatomic, strong)WKWebView *myWkWebView;
+@property(nonatomic, strong)UILabel   *label;
 @end
 
 @implementation CSWK_ViewController
@@ -25,6 +26,10 @@
     NSArray *array = nil;
     [array objectAtIndex:100];
     NSLog(@"%@,%@ ",array,[NSNull null]);
+    
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, 30, 0)];
+    self.label.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.label];
 
     [self initUI];
 //    [self clickReload:nil];
@@ -70,11 +75,13 @@
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     NSLog(@"页面加载完成之后调用:%s\n\n",__func__);
-    [webView evaluateJavaScript:@"document.body.scrollHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         double heights = [result doubleValue];
         NSLog(@"-----%lf",heights);
-        self.myWkWebView.height = 300;
     }];
+    NSLog(@"++++++%lf",self.myWkWebView.scrollView.contentSize.height);
+    NSLog(@"******%lf",webView.scrollView.contentSize.height);
+
 }
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"页面加载失败时调用:%s\n\n",__func__);
@@ -197,8 +204,10 @@
 //    [web loadHTMLString:str baseURL:nil];
 //    web.scalesPageToFit = YES;
 //    [self.view addSubview:web];
-    
-    [self.myWkWebView loadHTMLString:str baseURL:nil];
+    NSString *strUrl = @"http://m.d2cmall.com/product/detail/162592;jsessionid=88E1F024DFAA6156EFB4DE1EA1146E26?invoked=1";
+//    NSString *strurl = @"http://test2.d2cmall.com/navigation";
+    [self.myWkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:strUrl]]];
+
     
 //    //locol
 //    //初始化时 设置config
@@ -226,7 +235,7 @@
 #pragma mark - Getter
 - (WKWebView *)myWkWebView {
     if (!_myWkWebView) {
-        _myWkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, SSize.width, SSize.height - 64 - 40)];
+        _myWkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(SSize.width / 2.0, 64, SSize.width / 2.0, SSize.height - 64 - 40)];
         _myWkWebView.navigationDelegate = self;
         _myWkWebView.UIDelegate = self;
         [self.view addSubview:_myWkWebView];

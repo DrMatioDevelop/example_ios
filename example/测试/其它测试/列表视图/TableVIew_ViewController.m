@@ -7,9 +7,11 @@
 //
 
 #import "TableVIew_ViewController.h"
-
+#import "UITableView+Extension.h"
 @interface TableVIew_ViewController ()
 @property(strong, nonatomic)UITableView *testTableView;
+@property(strong, nonatomic)NSMutableArray *arrayDS;
+@property(strong, nonatomic)NSArray        *sectionDS;
 @end
 
 @implementation TableVIew_ViewController
@@ -17,8 +19,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *buttonPlain = [KIUIContainerControl getButton:CGRectMake(0, 0, 44, 44) title:@"Plain" tag:1 target:self action:@selector(clickPlain:)];
-    UIButton *buttonGroup = [KIUIContainerControl getButton:CGRectMake(0, 0, 44, 44) title:@"Group" tag:1 target:self action:@selector(clickGroup:)];
+    UIButton *buttonPlain = [KIUIContainerControl getButton:CGRectMake(0, 0, 44, 44) title:@"Group" tag:1 target:self action:@selector(clickPlain:)];
+    UIButton *buttonGroup = [KIUIContainerControl getButton:CGRectMake(0, 0, 44, 44) title:@"edit" tag:1 target:self action:@selector(clickGroup:)];
     
     self.navigationItem.rightBarButtons = @[buttonGroup,buttonPlain];
     
@@ -27,7 +29,8 @@
     //plain 会折叠  grop不会
     [self.view addSubview:self.testTableView];
     
-    
+    _testTableView.indexView = [[SectionIndexView alloc] initOfSectionTiltle:self.sectionDS letterColor:[UIColor redColor] letterFont:Font(12) letterBGColor:[UIColor blueColor]];
+    [_testTableView layoutCustomIndexView];
     
     /**
      获取NSIndexpath
@@ -38,15 +41,14 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return self.arrayDS.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+    return [[self.arrayDS objectAtIndex:section] count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    NSString *str = [NSString stringWithFormat:@"section:%ld row:%ld",indexPath.section,indexPath.row];
-    cell.textLabel.text = str;
+    cell.textLabel.text = [[self.arrayDS objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     return cell;
 }
@@ -62,18 +64,34 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SSize.width, 50)];
-    label.text = [NSString stringWithFormat:@"Header--section:%ld",section];
+    label.text = [NSString stringWithFormat:@"↓↓↓↓↓↓ section-header:%c count:%ld",65 + (int)section, [self.arrayDS[section] count]];
     label.backgroundColor = [UIColor cyanColor];
     return label;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SSize.width, 50)];
-    label.text = [NSString stringWithFormat:@"footer--section:%ld",section];
+    label.text = [NSString stringWithFormat:@"↑↑↑↑↑↑↑↑↑↑ section-foot:%c",65 + (int)section];
     label.backgroundColor = [UIColor cyanColor];
     return label;
 }
 
+
+#pragma mark - 索引
+////返回索引数组
+//- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    return self.sectionDS;
+//}
+////响应点击索引时的代理方法
+//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+//    NSLog(@"title:%@",title);
+//    return index;
+//}
+#pragma mark - TODO what??????
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSLog(@"");
+    return @"";
+}
 
 
 /**
@@ -132,11 +150,16 @@
 }
 
 - (void)clickPlain:(UIButton *)btn {
+    if (self.testTableView.style == UITableViewStyleGrouped) {
+    }
+    else {
+        
+    }
 }
 
 - (UITableView *)testTableView {
     if (!_testTableView) {
-        _testTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SSize.width, SSize.height) style:UITableViewStyleGrouped];
+        _testTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SSize.width, SSize.height) style:UITableViewStylePlain];
         _testTableView.delegate = self;
         _testTableView.dataSource = self;
         [_testTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -151,16 +174,45 @@
         footerLabel.text = @"FOOT";
         _testTableView.tableFooterView = footerLabel;
         
-        [self.view addSubview:_testTableView];
+//        //索引颜色
+//        _testTableView.sectionIndexColor = [UIColor redColor];
+//        //索引背景颜色
+//        _testTableView.sectionIndexBackgroundColor = [UIColor blueColor];
+        
+
     }
     return _testTableView;
 }
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (NSMutableArray *)arrayDS {
+    if (!_arrayDS) {
+        _arrayDS = [[NSMutableArray alloc] init];
+        for (int i = 0; i < self.sectionDS.count; i++) {
+            NSMutableArray *array = [[NSMutableArray alloc] init];
+            NSInteger randomIndex = arc4random() % 15;
+            for (int j = 0; j < randomIndex; j++) {
+                [array addObject:[NSString stringWithFormat:@"section:%c row:%d",65+i,j]];
+            }
+            
+            [_arrayDS addObject:array];
+        }
+    }
+    return _arrayDS;
+}
 
-
+- (NSArray *)sectionDS {
+    if (!_sectionDS) {
+        _sectionDS = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z", nil];
+    }
+    return _sectionDS;
+}
 
 @end

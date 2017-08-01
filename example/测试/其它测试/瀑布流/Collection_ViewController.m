@@ -10,7 +10,7 @@
 #import "Collection_ViewController.h"
 #import "CustomLineLayout.h"
 #import "Custom_CollectionViewCell.h"
-
+#import "Collection_VC.h"
 @interface Collection_ViewController ()<UICollectionViewDelegate ,UICollectionViewDataSource,CustomLayoutDelegate>
 @property (nonatomic, strong)UICollectionView *myCollectionView;
 @property (nonatomic, strong)NSArray *arrayDS;
@@ -39,16 +39,17 @@
 }
 
 - (void)clickChange:(UIButton *)button {
-    if (button.selected) {
-        [self.myCollectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] animated:YES];
-
-    }
-    else {
-        [self.myCollectionView setCollectionViewLayout:[[CustomLineLayout alloc] init] animated:YES];
-
-    }
-    button.selected = !button.selected;
-
+//    if (button.selected) {
+//        [self.myCollectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] animated:YES];
+//
+//    }
+//    else {
+//        [self.myCollectionView setCollectionViewLayout:[[CustomLineLayout alloc] init] animated:YES];
+//
+//    }
+//    button.selected = !button.selected;
+    Collection_VC *vc = [[Collection_VC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

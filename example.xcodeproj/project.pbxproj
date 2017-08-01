@@ -23,6 +23,7 @@
 		56155F501F0F9F9800DC17AC /* Custom_CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56155F4F1F0F9F9800DC17AC /* Custom_CollectionViewCell.m */; };
 		56155F531F0F9FC800DC17AC /* CustomLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56155F521F0F9FC800DC17AC /* CustomLineLayout.m */; };
 		561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561DCEC91E08CA1200CBAE04 /* OtherViewController.m */; };
+		56245C8C1F1349F100202D75 /* Collection_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 56245C8B1F1349F100202D75 /* Collection_VC.m */; };
 		562AD9411E81043700480FE0 /* UI_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562AD9401E81043700480FE0 /* UI_ViewController.m */; };
 		56321F9B1E6E4DD60054A7D1 /* copyCode in Resources */ = {isa = PBXBuildFile; fileRef = 56321F9A1E6E4DD60054A7D1 /* copyCode */; };
 		563794901E553CC000CA645C /* view-wechat-chat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5637948F1E553CC000CA645C /* view-wechat-chat.gif */; };
@@ -40,6 +41,7 @@
 		565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565891EA1ECAA5B80025064E /* Face_ViewController.swift */; };
 		565891ED1ECC17270025064E /* JSBridgeOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 565891EC1ECC17270025064E /* JSBridgeOC.html */; };
 		565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891EF1ECC1BC50025064E /* KIUIContainerControl.m */; };
+		565B101F1F3057BE0076400C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 565B101E1F3057BE0076400C /* UITableView+Extension.m */; };
 		565C18E41DF68C57001BF07E /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C18E31DF68C57001BF07E /* Function.m */; };
 		568488771E7920C6004F8A06 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 568488761E7920C6004F8A06 /* iphone.jpg */; };
 		568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488841E7A7D71004F8A06 /* GPU_ViewController.m */; };
@@ -120,6 +122,8 @@
 		56155F521F0F9FC800DC17AC /* CustomLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLineLayout.m; sourceTree = "<group>"; };
 		561DCEC81E08CA1200CBAE04 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		561DCEC91E08CA1200CBAE04 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		56245C8A1F1349F100202D75 /* Collection_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection_VC.h; sourceTree = "<group>"; };
+		56245C8B1F1349F100202D75 /* Collection_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection_VC.m; sourceTree = "<group>"; };
 		562AD93F1E81043700480FE0 /* UI_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI_ViewController.h; sourceTree = "<group>"; };
 		562AD9401E81043700480FE0 /* UI_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UI_ViewController.m; sourceTree = "<group>"; };
 		56321F9A1E6E4DD60054A7D1 /* copyCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyCode; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		565891EC1ECC17270025064E /* JSBridgeOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSBridgeOC.html; sourceTree = "<group>"; };
 		565891EE1ECC1BC50025064E /* KIUIContainerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIUIContainerControl.h; sourceTree = "<group>"; };
 		565891EF1ECC1BC50025064E /* KIUIContainerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIUIContainerControl.m; sourceTree = "<group>"; };
+		565B101D1F3057BE0076400C /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
+		565B101E1F3057BE0076400C /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		565C18E21DF68C57001BF07E /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
 		565C18E31DF68C57001BF07E /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function.m; sourceTree = "<group>"; };
 		568488761E7920C6004F8A06 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
@@ -379,6 +385,8 @@
 			children = (
 				56155F481F0F2D8100DC17AC /* TableVIew_ViewController.h */,
 				56155F491F0F2D8100DC17AC /* TableVIew_ViewController.m */,
+				565B101D1F3057BE0076400C /* UITableView+Extension.h */,
+				565B101E1F3057BE0076400C /* UITableView+Extension.m */,
 			);
 			path = "列表视图";
 			sourceTree = "<group>";
@@ -520,6 +528,8 @@
 				56C0374D1EB9CD6300E79D43 /* CustomLayout.m */,
 				56155F511F0F9FC800DC17AC /* CustomLineLayout.h */,
 				56155F521F0F9FC800DC17AC /* CustomLineLayout.m */,
+				56245C8A1F1349F100202D75 /* Collection_VC.h */,
+				56245C8B1F1349F100202D75 /* Collection_VC.m */,
 			);
 			path = "瀑布流";
 			sourceTree = "<group>";
@@ -853,6 +863,7 @@
 				5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,
 				565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */,
+				56245C8C1F1349F100202D75 /* Collection_VC.m in Sources */,
 				56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				569319921F0B754E00FDA6BD /* AnimatedTransitioning.m in Sources */,
@@ -860,6 +871,7 @@
 				564622891F0B2D4800AF4B91 /* GCD_ViewController.m in Sources */,
 				565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */,
 				56155F531F0F9FC800DC17AC /* CustomLineLayout.m in Sources */,
+				565B101F1F3057BE0076400C /* UITableView+Extension.m in Sources */,
 				561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */,
 				5684888B1E7A7DA0004F8A06 /* UIImage+GPUImage.m in Sources */,
 				56077CB91DED2EE300CC4D0D /* main.m in Sources */,
