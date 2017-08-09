@@ -28,7 +28,7 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     //CAShapeLayer   UIBezierPath
-    [self baseLayer];
+//    [self baseLayer];
     
     //tryCatchFinal
     [self trycatchfinally];
@@ -252,8 +252,11 @@
     @try {
         // 5
         // 程序到这里会崩
-        NSString *str = @"abc"; NSLog(@"5");
-        [str substringFromIndex:111];
+//        NSString *str = @"abc"; NSLog(@"5");
+//        [str substringFromIndex:111];
+        
+        NSArray *array = @[@(0)];
+        array[5];
     }
     @catch (NSException *exception) {
         // 6
