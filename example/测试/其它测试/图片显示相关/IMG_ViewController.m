@@ -27,6 +27,10 @@
     CGFloat scale = [UIScreen mainScreen].scale;
     CGFloat scale1 = [UIScreen mainScreen].nativeScale;
     NSLog(@"%lf  %lf",scale,scale1);
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 200, 50, 50)];
+    imgView.image = [UIImage imageNamed:@"弧形（定制）"];
+    [self.view addSubview:imgView];
 }
 - (void)webPImage {
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, 100, 155)];
