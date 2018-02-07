@@ -45,6 +45,8 @@
 		565B101F1F3057BE0076400C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 565B101E1F3057BE0076400C /* UITableView+Extension.m */; };
 		565C18E41DF68C57001BF07E /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 565C18E31DF68C57001BF07E /* Function.m */; };
 		56641B4C1F39F49A003CFF34 /* Flur_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56641B4B1F39F49A003CFF34 /* Flur_ViewController.m */; };
+		5682818B20297FFF004C880F /* BreakPoint_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682818A20297FFF004C880F /* BreakPoint_ViewController.m */; };
+		5682818F20299E62004C880F /* UI_Input_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682818E20299E62004C880F /* UI_Input_VC.m */; };
 		568488771E7920C6004F8A06 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 568488761E7920C6004F8A06 /* iphone.jpg */; };
 		568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488841E7A7D71004F8A06 /* GPU_ViewController.m */; };
 		5684888A1E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 568488871E7A7DA0004F8A06 /* UIImage+FEBoxBlur.m */; };
@@ -163,6 +165,10 @@
 		565C18E31DF68C57001BF07E /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Function.m; sourceTree = "<group>"; };
 		56641B4A1F39F49A003CFF34 /* Flur_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flur_ViewController.h; sourceTree = "<group>"; };
 		56641B4B1F39F49A003CFF34 /* Flur_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flur_ViewController.m; sourceTree = "<group>"; };
+		5682818920297FFF004C880F /* BreakPoint_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakPoint_ViewController.h; sourceTree = "<group>"; };
+		5682818A20297FFF004C880F /* BreakPoint_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakPoint_ViewController.m; sourceTree = "<group>"; };
+		5682818D20299E61004C880F /* UI_Input_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI_Input_VC.h; sourceTree = "<group>"; };
+		5682818E20299E62004C880F /* UI_Input_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI_Input_VC.m; sourceTree = "<group>"; };
 		568488761E7920C6004F8A06 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
 		568488831E7A7D71004F8A06 /* GPU_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPU_ViewController.h; sourceTree = "<group>"; };
 		568488841E7A7D71004F8A06 /* GPU_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPU_ViewController.m; sourceTree = "<group>"; };
@@ -420,6 +426,7 @@
 		562AD93E1E81041B00480FE0 /* UI测试 */ = {
 			isa = PBXGroup;
 			children = (
+				5682818C20299E40004C880F /* 输入框 */,
 				561185841ECD71E50051B761 /* ActionSheetOrAlert */,
 				562AD93F1E81043700480FE0 /* UI_ViewController.h */,
 				562AD9401E81043700480FE0 /* UI_ViewController.m */,
@@ -462,6 +469,7 @@
 				564622941F0B488000AF4B91 /* ObjectC_ViewController.m */,
 				56ECBEB61F09EF2A0021071C /* GCD */,
 				564F38F81F074C9B00DA0F9F /* 杂 */,
+				5682818820297FBF004C880F /* 断点测试 */,
 			);
 			path = ObjectC;
 			sourceTree = "<group>";
@@ -499,6 +507,24 @@
 				565891E81ECA91420025064E /* OprationViewController.m */,
 			);
 			path = "多线程";
+			sourceTree = "<group>";
+		};
+		5682818820297FBF004C880F /* 断点测试 */ = {
+			isa = PBXGroup;
+			children = (
+				5682818920297FFF004C880F /* BreakPoint_ViewController.h */,
+				5682818A20297FFF004C880F /* BreakPoint_ViewController.m */,
+			);
+			path = "断点测试";
+			sourceTree = "<group>";
+		};
+		5682818C20299E40004C880F /* 输入框 */ = {
+			isa = PBXGroup;
+			children = (
+				5682818D20299E61004C880F /* UI_Input_VC.h */,
+				5682818E20299E62004C880F /* UI_Input_VC.m */,
+			);
+			path = "输入框";
 			sourceTree = "<group>";
 		};
 		568488821E7A7D46004F8A06 /* GPUImage 毛玻璃 */ = {
@@ -793,9 +819,19 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-example/Pods-example-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/QMUIKit/QMUIKit/UIResources/QMUIResources.bundle",
+				"${PODS_ROOT}/QMUIKit/QMUIKit/UIResources/QMUI_QQEmotion.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -808,13 +844,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D7705F615E2CC6041685286 /* [CP] Embed Pods Frameworks */ = {
@@ -859,6 +898,7 @@
 				564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */,
 				56155F4A1F0F2D8100DC17AC /* TableVIew_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
+				5682818F20299E62004C880F /* UI_Input_VC.m in Sources */,
 				562EA1FD1F3AAEB400819173 /* GPUFlur_ViewController.m in Sources */,
 				5693198F1F0B74E700FDA6BD /* TransitionDelegate.m in Sources */,
 				5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */,
@@ -890,6 +930,7 @@
 				56C253B11E4C766A00C5DA8E /* UIImage+MYKit.m in Sources */,
 				569CD4371EE91E08008933EC /* ScrollviewAnimationVC.m in Sources */,
 				561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */,
+				5682818B20297FFF004C880F /* BreakPoint_ViewController.m in Sources */,
 				56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,
 				56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */,

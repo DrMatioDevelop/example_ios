@@ -9,7 +9,8 @@
 #import "Swift_ViewController.h"
 
 @interface Swift_ViewController ()
-
+@property(nonatomic, strong)NSArray *currentArray;
+@property(nonatomic, strong)NSArray *cCopyArray;
 @end
 
 @implementation Swift_ViewController
@@ -20,6 +21,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    
+    _currentArray = @[@"1",@"test",@(666)];
+    
+    NSMutableArray *muarray = [[NSMutableArray alloc] initWithArray:_currentArray];
+    
+    NSMutableArray *copyArray = [muarray mutableCopy];
+    
+    [copyArray removeLastObject];
+
     
     [self.tabBarController.tabBar setHidden:YES];
 }

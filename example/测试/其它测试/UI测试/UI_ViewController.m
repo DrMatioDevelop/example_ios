@@ -201,6 +201,11 @@
     if ([@"弹窗与sheet" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
         Class cla = NSClassFromString(@"AlertOrActionSheet_ViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }else if ([@"TextField TextView" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
+        Class cla = NSClassFromString(@"UI_Input_VC");
+        UIViewController *vc = [[cla alloc] init];
+        vc.title = [self.arrayDS objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([@"" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
         Class cla = NSClassFromString(@"OprationViewController");
@@ -223,7 +228,8 @@
 
 - (NSArray *)arrayDS {
     _arrayDS = @[
-                 @"弹窗与sheet"
+                 @"弹窗与sheet",
+                 @"TextField TextView"
                  ];
     return _arrayDS;
 }

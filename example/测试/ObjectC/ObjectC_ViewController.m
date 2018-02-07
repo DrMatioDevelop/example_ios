@@ -19,8 +19,9 @@
     [super viewDidLoad];
     self.muarray = @[
                      @{@"name":@"GCD",@"class":@"GCD_ViewController"},
-
                      @{@"name":@"杂",@"class":@"ObjectCOther_ViewController"},
+                     @{@"name":@"断点测试",@"class":@"BreakPoint_ViewController"},
+
                      ];
     [self.objectTabView reloadData];
 }

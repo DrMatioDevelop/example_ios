@@ -204,9 +204,11 @@
 //    [web loadHTMLString:str baseURL:nil];
 //    web.scalesPageToFit = YES;
 //    [self.view addSubview:web];
-    NSString *strUrl = @"http://m.d2cmall.com/product/detail/162592;jsessionid=88E1F024DFAA6156EFB4DE1EA1146E26?invoked=1";
+ //   NSString *strUrl = @"http://m.d2cmall.com/product/detail/162592;jsessionid=88E1F024DFAA6156EFB4DE1EA1146E26?invoked=1";
+    
+    NSString *str123 = @"http://test2.d2cmall.com/bargain/detail/42?token=";
 //    NSString *strurl = @"http://test2.d2cmall.com/navigation";
-    [self.myWkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:strUrl]]];
+    [self.myWkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str123]]];
 
     
 //    //locol
@@ -235,7 +237,7 @@
 #pragma mark - Getter
 - (WKWebView *)myWkWebView {
     if (!_myWkWebView) {
-        _myWkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(SSize.width / 2.0, 64, SSize.width / 2.0, SSize.height - 64 - 40)];
+        _myWkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, SSize.width, SSize.height - 64 - 40)];
         _myWkWebView.navigationDelegate = self;
         _myWkWebView.UIDelegate = self;
         [self.view addSubview:_myWkWebView];

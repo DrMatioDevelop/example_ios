@@ -9,12 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/YYkit/YYText/YYText_1_ViewController.m"
-            timestampString = "508757051.874262"
+            filePath = "example/&#x6d4b;&#x8bd5;/Runtime/CYRuntimeViewController.m"
+            timestampString = "532341344.40579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,205 +24,15 @@
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
+            condition = "[str containsString:@&quot;F&quot;]"
             continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/gifImageViewController.swift"
-            timestampString = "508992120.031973"
+            filePath = "example/&#x6d4b;&#x8bd5;/ObjectC/&#x65ad;&#x70b9;&#x6d4b;&#x8bd5;/BreakPoint_ViewController.m"
+            timestampString = "539600940.441249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/YYkit/YYText/YYTextViewController.m"
-            timestampString = "509266777.692303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-stopAnimationWithImgView:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/YYkit/YYText/YYTextViewController.m"
-            timestampString = "509266777.692303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "-optationAnimation"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[YYTextViewController optationAnimation]_block_invoke.49"
-                  moduleName = "example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/d2c_cyf/Documents/cyfGitHub/example_ios/example/%E6%B5%8B%E8%AF%95/YYkit/YYText/YYTextViewController.m"
-                  timestampString = "512479271.387131"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "245">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.50"
-                  moduleName = "example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/d2c_cyf/Documents/cyfGitHub/example_ios/example/%E6%B5%8B%E8%AF%95/YYkit/YYText/YYTextViewController.m"
-                  timestampString = "512479271.390434"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "51">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.51"
-                  moduleName = "example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/d2c_cyf/Documents/cyfGitHub/example_ios/example/%E6%B5%8B%E8%AF%95/YYkit/YYText/YYTextViewController.m"
-                  timestampString = "512479271.393437"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "29">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/YYkit/YYText/YYTextViewController.m"
-            timestampString = "509266777.692303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-optationAnimation"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/&#x5176;&#x5b83;&#x6d4b;&#x8bd5;/OprationViewController.m"
-            timestampString = "509423457.518323"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-addOperation:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[OprationViewController addOperation:]"
-                  moduleName = "example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/d2c_cyf/Documents/cyfGitHub/example_ios/example/%E6%B5%8B%E8%AF%95/%E5%85%B6%E5%AE%83%E6%B5%8B%E8%AF%95/OprationViewController.m"
-                  timestampString = "512479271.406238"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "81">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[OprationViewController addOperation:]_block_invoke"
-                  moduleName = "example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/d2c_cyf/Documents/cyfGitHub/example_ios/example/%E6%B5%8B%E8%AF%95/%E5%85%B6%E5%AE%83%E6%B5%8B%E8%AF%95/OprationViewController.m"
-                  timestampString = "512479271.408604"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/&#x5176;&#x5b83;&#x6d4b;&#x8bd5;/&#x6b63;&#x5219;&amp;html&#x4ee3;&#x7801;&#x7247;&#x6bb5;/RegurOrHtmlViewController.m"
-            timestampString = "511254542.096901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "-htmlAddLabel"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/&#x5176;&#x5b83;&#x6d4b;&#x8bd5;/&#x6b63;&#x5219;&amp;html&#x4ee3;&#x7801;&#x7247;&#x6bb5;/RegurOrHtmlViewController.m"
-            timestampString = "511254542.096901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-zhengze"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "example/&#x6d4b;&#x8bd5;/&#x5176;&#x5b83;&#x6d4b;&#x8bd5;/UI&#x6d4b;&#x8bd5;/UI_ViewController.m"
-            timestampString = "511775564.737149"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-searchBar"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-viewDidAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

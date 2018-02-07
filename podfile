@@ -17,7 +17,7 @@ target 'example' do
     pod 'SDWebImage/WebP', '~> 3.8.2'
 
     # 表格单元格侧滑
-    #pod 'SWTableViewCell'
+    #pod 'SWTabeViewCell'
 
     # 引导页
     #pod 'EAIntroView', '2.8.1'
@@ -52,7 +52,7 @@ target 'example' do
     #数据库
     pod 'FMDB', '~>2.6.2'
     
-    
+    pod 'RTRootNavigationController', '~>0.6.3'
     #键盘控制
     #pod 'IQKeyboardManager'
     
@@ -79,7 +79,7 @@ target 'example' do
     
     #自定义分类
     pod 'ESCategories', '~> 0.2.3'
-    
+
     
     #颜色选择器
     #pod 'Color-Picker-for-iOS', '~> 2.0'
