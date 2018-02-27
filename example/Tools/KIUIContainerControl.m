@@ -33,7 +33,7 @@
 }
 
 + (UIButton *)getButton:(CGRect)frame title:(NSString *)title tag:(NSInteger)tag target:(id)target action:(SEL)action {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = frame;
     button.titleLabel.textAlignment   = NSTextAlignmentCenter;
     button.titleLabel.backgroundColor = [UIColor whiteColor];

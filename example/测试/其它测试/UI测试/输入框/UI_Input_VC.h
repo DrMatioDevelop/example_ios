@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 1️⃣输入框的弹出效果的键盘
+ 2️⃣copy与mutablecopy
+ 3️⃣属性便令重写getset方法
+ */
 @interface UI_Input_VC : UIViewController
 
 @end

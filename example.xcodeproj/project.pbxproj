@@ -15,6 +15,11 @@
 		56077CC71DED2EE300CC4D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56077CC51DED2EE300CC4D0D /* LaunchScreen.storyboard */; };
 		56077CD21DED2EE300CC4D0D /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CD11DED2EE300CC4D0D /* exampleTests.m */; };
 		56077CDD1DED2EE300CC4D0D /* exampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CDC1DED2EE300CC4D0D /* exampleUITests.m */; };
+		560D1750204162C7009115E5 /* APPIcon_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560D174F204162C7009115E5 /* APPIcon_ViewController.m */; };
+		560D175F20416DEC009115E5 /* oneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560D175B20416DEC009115E5 /* oneIcon@2x.png */; };
+		560D176020416DEC009115E5 /* oneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560D175C20416DEC009115E5 /* oneIcon@3x.png */; };
+		560D176120416DEC009115E5 /* twoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560D175D20416DEC009115E5 /* twoIcon@2x.png */; };
+		560D176220416DEC009115E5 /* twoIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560D175E20416DEC009115E5 /* twoIcon@3x.png */; };
 		561185871ECD72010051B761 /* AlertOrActionSheet_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561185861ECD72010051B761 /* AlertOrActionSheet_ViewController.m */; };
 		5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 561185891ECD72500051B761 /* SureCustomActionSheet.m */; };
 		561403771DF030B80027E3E6 /* CYRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561403761DF030B80027E3E6 /* CYRuntimeViewController.m */; };
@@ -110,6 +115,12 @@
 		56077CD81DED2EE300CC4D0D /* exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56077CDC1DED2EE300CC4D0D /* exampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleUITests.m; sourceTree = "<group>"; };
 		56077CDE1DED2EE300CC4D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		560D174E204162C7009115E5 /* APPIcon_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPIcon_ViewController.h; sourceTree = "<group>"; };
+		560D174F204162C7009115E5 /* APPIcon_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPIcon_ViewController.m; sourceTree = "<group>"; };
+		560D175B20416DEC009115E5 /* oneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oneIcon@2x.png"; sourceTree = "<group>"; };
+		560D175C20416DEC009115E5 /* oneIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oneIcon@3x.png"; sourceTree = "<group>"; };
+		560D175D20416DEC009115E5 /* twoIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twoIcon@2x.png"; sourceTree = "<group>"; };
+		560D175E20416DEC009115E5 /* twoIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twoIcon@3x.png"; sourceTree = "<group>"; };
 		561185851ECD72010051B761 /* AlertOrActionSheet_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertOrActionSheet_ViewController.h; sourceTree = "<group>"; };
 		561185861ECD72010051B761 /* AlertOrActionSheet_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertOrActionSheet_ViewController.m; sourceTree = "<group>"; };
 		561185881ECD72500051B761 /* SureCustomActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureCustomActionSheet.h; sourceTree = "<group>"; };
@@ -326,6 +337,7 @@
 		56077CB71DED2EE300CC4D0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				560D175A20416DEC009115E5 /* customIcon */,
 				56077CBA1DED2EE300CC4D0D /* AppDelegate.h */,
 				56077CBB1DED2EE300CC4D0D /* AppDelegate.m */,
 				56077CBD1DED2EE300CC4D0D /* ViewController.h */,
@@ -357,6 +369,26 @@
 			);
 			path = exampleUITests;
 			sourceTree = "<group>";
+		};
+		560D174D2041628E009115E5 /* 更换图标 */ = {
+			isa = PBXGroup;
+			children = (
+				560D174E204162C7009115E5 /* APPIcon_ViewController.h */,
+				560D174F204162C7009115E5 /* APPIcon_ViewController.m */,
+			);
+			path = "更换图标";
+			sourceTree = "<group>";
+		};
+		560D175A20416DEC009115E5 /* customIcon */ = {
+			isa = PBXGroup;
+			children = (
+				560D175B20416DEC009115E5 /* oneIcon@2x.png */,
+				560D175C20416DEC009115E5 /* oneIcon@3x.png */,
+				560D175D20416DEC009115E5 /* twoIcon@2x.png */,
+				560D175E20416DEC009115E5 /* twoIcon@3x.png */,
+			);
+			path = customIcon;
+			sourceTree = SOURCE_ROOT;
 		};
 		561185841ECD71E50051B761 /* ActionSheetOrAlert */ = {
 			isa = PBXGroup;
@@ -406,6 +438,7 @@
 		561DCEC51E08C9E900CBAE04 /* 其它测试 */ = {
 			isa = PBXGroup;
 			children = (
+				560D174D2041628E009115E5 /* 更换图标 */,
 				56155F471F0F2D5600DC17AC /* 列表视图 */,
 				560287761F02549E00EB1E48 /* 转场动画 */,
 				569CD4341EE91DEA008933EC /* 滚动边缘动画 */,
@@ -790,8 +823,12 @@
 				56321F9B1E6E4DD60054A7D1 /* copyCode in Resources */,
 				56077CC71DED2EE300CC4D0D /* LaunchScreen.storyboard in Resources */,
 				563794901E553CC000CA645C /* view-wechat-chat.gif in Resources */,
+				560D176220416DEC009115E5 /* twoIcon@3x.png in Resources */,
+				560D176120416DEC009115E5 /* twoIcon@2x.png in Resources */,
+				560D176020416DEC009115E5 /* oneIcon@3x.png in Resources */,
 				565891ED1ECC17270025064E /* JSBridgeOC.html in Resources */,
 				56077CC41DED2EE300CC4D0D /* Assets.xcassets in Resources */,
+				560D175F20416DEC009115E5 /* oneIcon@2x.png in Resources */,
 				56077CC21DED2EE300CC4D0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,6 +920,7 @@
 				56C0374E1EB9CD6300E79D43 /* CustomLayout.m in Sources */,
 				565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */,
 				56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */,
+				560D1750204162C7009115E5 /* APPIcon_ViewController.m in Sources */,
 				56C50A321EA0C98B00316688 /* People.m in Sources */,
 				561DCECA1E08CA1200CBAE04 /* OtherViewController.m in Sources */,
 				56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */,

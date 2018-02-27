@@ -23,9 +23,10 @@
 
     [self.view addSubview:self.tableView];
     self.arrayDS = @[
-                     @{@"index":@"0",@"name":@"GPU毛玻璃"                ,@"class":@"GPUFlur_ViewController"},
+                     @{@"index":@"0",@"name":@"GPU毛玻璃"               ,@"class":@"GPUFlur_ViewController"},
                      @{@"index":@"0",@"name":@"列表视图"                ,@"class":@"TableVIew_ViewController"},
-                     @{@"index":@"1",@"name":@"系统会毛玻璃"                ,@"class":@"Flur_ViewController"},
+                     @{@"index":@"1",@"name":@"10.3更换app图标"         ,@"class":@"APPIcon_ViewController"},
+                     @{@"index":@"1",@"name":@"系统会毛玻璃"             ,@"class":@"Flur_ViewController"},
                      @{@"index":@"1",@"name":@"正则表达式与代码片段显示"   ,@"class":@"RegurOrHtmlViewController"},
                      @{@"index":@"1",@"name":@"项目列表测试"            ,@"class":@"OtherViewController"},
                      @{@"index":@"1",@"name":@"玻璃效果,虚化(GPUImage)" ,@"class":@"GPU_ViewController"},
