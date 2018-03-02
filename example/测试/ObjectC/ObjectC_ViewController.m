@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.muarray = @[
-                     @{@"name":@"GCD",@"class":@"GCD_ViewController"},
-                     @{@"name":@"杂",@"class":@"ObjectCOther_ViewController"},
-                     @{@"name":@"断点测试",@"class":@"BreakPoint_ViewController"},
-
+                     @{@"q":@"1",@"name":@"GCD",@"class":@"GCD_ViewController"},
+                     @{@"q":@"1",@"name":@"杂",@"class":@"ObjectCOther_ViewController"},
+                     @{@"q":@"1",@"name":@"断点测试",@"class":@"BreakPoint_ViewController"},
+                     @{@"q":@"0",@"name":@"weakSelf Strongify",@"class":@"KINSTestViewController"},
                      ];
     [self.objectTabView reloadData];
 }
@@ -38,11 +38,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"objectCell"];
     cell.textLabel.text = [[self.muarray objectAtIndex:indexPath.row] objectForKey:@"name"];
+    if ([[[self.muarray objectAtIndex:indexPath.row] objectForKey:@"q"] isEqualToString:@"1"]) {
+        cell.backgroundColor = [UIColor cyanColor];
+    }
+    else {
+        cell.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
+    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Class clas = NSClassFromString([[self.muarray objectAtIndex:indexPath.row] objectForKey:@"class"]);
-    [self.navigationController pushViewController:[[clas alloc] init] animated:YES];
+    UIViewController *vc = [[clas alloc] init];
+    vc.title = [[self.muarray objectAtIndex:indexPath.row] objectForKey:@"name"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (UITableView *)objectTabView {
     if (!_objectTabView) {

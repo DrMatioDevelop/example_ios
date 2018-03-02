@@ -77,6 +77,7 @@
 		56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC561E963185002D17BB /* MyCAShapeLayer.m */; };
 		56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */; };
 		56F3CC5D1E977268002D17BB /* Line_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC5C1E977268002D17BB /* Line_ViewController.m */; };
+		56F731DB20450CD700218DE6 /* KINSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F731DA20450CD700218DE6 /* KINSTestViewController.m */; };
 		56F7A3A71E8BCC9C00DDBBC5 /* Layer_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */; };
 		5753D73F3E99A6366FE5B1DD /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF98F71CA09BC4EF1F035E8 /* libPods-example.a */; };
 /* End PBXBuildFile section */
@@ -231,6 +232,8 @@
 		56F3CC591E9640AD002D17BB /* Layer_Event_TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_Event_TestVC.m; sourceTree = "<group>"; };
 		56F3CC5B1E977268002D17BB /* Line_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line_ViewController.h; sourceTree = "<group>"; };
 		56F3CC5C1E977268002D17BB /* Line_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line_ViewController.m; sourceTree = "<group>"; };
+		56F731D920450CD700218DE6 /* KINSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINSTestViewController.h; sourceTree = "<group>"; };
+		56F731DA20450CD700218DE6 /* KINSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINSTestViewController.m; sourceTree = "<group>"; };
 		56F7A3A51E8BCC9C00DDBBC5 /* Layer_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer_ViewController.h; sourceTree = "<group>"; };
 		56F7A3A61E8BCC9C00DDBBC5 /* Layer_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layer_ViewController.m; sourceTree = "<group>"; };
 		648021377E39324018E9156E /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
@@ -503,6 +506,7 @@
 				56ECBEB61F09EF2A0021071C /* GCD */,
 				564F38F81F074C9B00DA0F9F /* 杂 */,
 				5682818820297FBF004C880F /* 断点测试 */,
+				56F731D820450CD700218DE6 /* 强弱引用测试 */,
 			);
 			path = ObjectC;
 			sourceTree = "<group>";
@@ -686,6 +690,15 @@
 			path = GCD;
 			sourceTree = "<group>";
 		};
+		56F731D820450CD700218DE6 /* 强弱引用测试 */ = {
+			isa = PBXGroup;
+			children = (
+				56F731D920450CD700218DE6 /* KINSTestViewController.h */,
+				56F731DA20450CD700218DE6 /* KINSTestViewController.m */,
+			);
+			path = "强弱引用测试";
+			sourceTree = "<group>";
+		};
 		56F7A3A41E8BCC3400DDBBC5 /* sharpLayerOrBezier */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +781,7 @@
 		56077CAC1DED2EE300CC4D0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KI;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = d2c_cyf;
 				TargetAttributes = {
@@ -937,6 +951,7 @@
 				56155F4A1F0F2D8100DC17AC /* TableVIew_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
 				5682818F20299E62004C880F /* UI_Input_VC.m in Sources */,
+				56F731DB20450CD700218DE6 /* KINSTestViewController.m in Sources */,
 				562EA1FD1F3AAEB400819173 /* GPUFlur_ViewController.m in Sources */,
 				5693198F1F0B74E700FDA6BD /* TransitionDelegate.m in Sources */,
 				5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */,
