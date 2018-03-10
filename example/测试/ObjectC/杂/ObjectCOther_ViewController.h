@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+//
+extern NSString * const testChangLiangNotification;
+
 
 @interface ObjectCOther_ViewController : UIViewController
+@property(nonatomic, assign, readonly, getter=isOtherNameFlag)BOOL otherNameFlag;
 
 @end

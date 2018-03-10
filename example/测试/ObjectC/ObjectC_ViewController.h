@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ObjectCOther_ViewController;
 @interface ObjectC_ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

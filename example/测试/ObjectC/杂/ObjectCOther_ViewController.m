@@ -7,19 +7,39 @@
 //
 
 #import "ObjectCOther_ViewController.h"
+NSString *const testChangLiangNotification = @"testChangLiangNotification";
 
 @interface ObjectCOther_ViewController ()
-
 @end
 
+//加上static作用域仅限制与本类
+static const NSString *testChangLiang = @"测试";
 @implementation ObjectCOther_ViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    [self timeWithCalendar_Component];
+//    //日历
+//    [self timeWithCalendar_Component];
+    NSString *str1 = @"1";
+    NSString *str2 = nil;
+    NSString *str3 = @"2";
+    _otherNameFlag = YES;
+    
+    NSLog(@"%@",testChangLiang);
+    NSArray *array1 = [NSArray arrayWithObjects:str1,testChangLiang,str2,str3, nil];
+//    NSArray *array2 = @[str1,str2, str3];
 }
+- (void)setOtherNameFlag:(BOOL)otherNameFlag {
+    _otherNameFlag = YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.otherNameFlag = NO;
+}
+
 #pragma mark - NSCalendar NSDateComponents
 //NSCalender封装了 世界常用日历 NSDateComponents 可以分割组合时间
 - (void)timeWithCalendar_Component {

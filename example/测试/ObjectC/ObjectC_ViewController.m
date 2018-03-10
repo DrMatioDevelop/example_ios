@@ -7,6 +7,7 @@
 //
 
 #import "ObjectC_ViewController.h"
+#import "ObjectCOther_ViewController.h"
 
 @interface ObjectC_ViewController ()
 @property(strong,nonatomic)UITableView    *objectTabView;
@@ -24,6 +25,10 @@
                      @{@"q":@"0",@"name":@"weakSelf Strongify",@"class":@"KINSTestViewController"},
                      ];
     [self.objectTabView reloadData];
+    
+    ObjectCOther_ViewController *vc = [[ObjectCOther_ViewController alloc] init];
+    NSLog(@"%d   %d",vc.otherNameFlag, vc.isOtherNameFlag);
+    NSLog(@"%@",testChangLiangNotification);
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
