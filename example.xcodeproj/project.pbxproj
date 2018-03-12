@@ -42,6 +42,7 @@
 		5646228C1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5646228B1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m */; };
 		564622951F0B488000AF4B91 /* ObjectC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564622941F0B488000AF4B91 /* ObjectC_ViewController.m */; };
 		5649D4891E5D2700004E31DB /* RegurOrHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */; };
+		5652A7302056201B00600DF6 /* HotFix_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652A72F2056201B00600DF6 /* HotFix_ViewController.m */; };
 		565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E01EC97CCC0025064E /* IMG_ViewController.m */; };
 		565891E91ECA91420025064E /* OprationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565891E81ECA91420025064E /* OprationViewController.m */; };
 		565891EB1ECAA5B80025064E /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565891EA1ECAA5B80025064E /* Face_ViewController.swift */; };
@@ -72,6 +73,8 @@
 		56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A351EA0C9EA00316688 /* People+Categroy.m */; };
 		56C50A3A1EA4725D00316688 /* MsgSend_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C50A391EA4725D00316688 /* MsgSend_ViewController.m */; };
 		56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */; };
+		56D55323205629C200A33DE9 /* KIHotFixTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D55322205629C200A33DE9 /* KIHotFixTool.m */; };
+		56D553292056648400A33DE9 /* KIHotFixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D553282056648400A33DE9 /* KIHotFixTest.m */; };
 		56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */; };
 		56F3CC511E94F9CA002D17BB /* QuartzCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC501E94F9CA002D17BB /* QuartzCoreView.m */; };
 		56F3CC571E963185002D17BB /* MyCAShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3CC561E963185002D17BB /* MyCAShapeLayer.m */; };
@@ -163,6 +166,8 @@
 		564622941F0B488000AF4B91 /* ObjectC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectC_ViewController.m; sourceTree = "<group>"; };
 		5649D4871E5D2700004E31DB /* RegurOrHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegurOrHtmlViewController.h; sourceTree = "<group>"; };
 		5649D4881E5D2700004E31DB /* RegurOrHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegurOrHtmlViewController.m; sourceTree = "<group>"; };
+		5652A72E2056201B00600DF6 /* HotFix_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotFix_ViewController.h; sourceTree = "<group>"; };
+		5652A72F2056201B00600DF6 /* HotFix_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotFix_ViewController.m; sourceTree = "<group>"; };
 		565891DF1EC97CCC0025064E /* IMG_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMG_ViewController.h; sourceTree = "<group>"; };
 		565891E01EC97CCC0025064E /* IMG_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMG_ViewController.m; sourceTree = "<group>"; };
 		565891E71ECA91420025064E /* OprationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OprationViewController.h; sourceTree = "<group>"; };
@@ -222,6 +227,10 @@
 		56D1AFD51DED61A400B6E878 /* CSWK_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSWK_ViewController.h; sourceTree = "<group>"; };
 		56D1AFD61DED61A400B6E878 /* CSWK_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSWK_ViewController.m; sourceTree = "<group>"; };
 		56D1AFD91DED61FB00B6E878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		56D55321205629C200A33DE9 /* KIHotFixTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIHotFixTool.h; sourceTree = "<group>"; };
+		56D55322205629C200A33DE9 /* KIHotFixTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIHotFixTool.m; sourceTree = "<group>"; };
+		56D553272056648400A33DE9 /* KIHotFixTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIHotFixTest.h; sourceTree = "<group>"; };
+		56D553282056648400A33DE9 /* KIHotFixTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIHotFixTest.m; sourceTree = "<group>"; };
 		56D6B83C1E1BAAC0005A5CBC /* YYTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextViewController.h; sourceTree = "<group>"; };
 		56D6B83D1E1BAAC0005A5CBC /* YYTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextViewController.m; sourceTree = "<group>"; };
 		56F3CC4F1E94F9CA002D17BB /* QuartzCoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzCoreView.h; sourceTree = "<group>"; };
@@ -503,6 +512,7 @@
 			children = (
 				564622931F0B488000AF4B91 /* ObjectC_ViewController.h */,
 				564622941F0B488000AF4B91 /* ObjectC_ViewController.m */,
+				5652A72A20561FD200600DF6 /* HotFix */,
 				56ECBEB61F09EF2A0021071C /* GCD */,
 				564F38F81F074C9B00DA0F9F /* 杂 */,
 				5682818820297FBF004C880F /* 断点测试 */,
@@ -518,6 +528,19 @@
 				5646228B1F0B2D4E00AF4B91 /* ObjectCOther_ViewController.m */,
 			);
 			path = "杂";
+			sourceTree = "<group>";
+		};
+		5652A72A20561FD200600DF6 /* HotFix */ = {
+			isa = PBXGroup;
+			children = (
+				5652A72E2056201B00600DF6 /* HotFix_ViewController.h */,
+				5652A72F2056201B00600DF6 /* HotFix_ViewController.m */,
+				56D55321205629C200A33DE9 /* KIHotFixTool.h */,
+				56D55322205629C200A33DE9 /* KIHotFixTool.m */,
+				56D553272056648400A33DE9 /* KIHotFixTest.h */,
+				56D553282056648400A33DE9 /* KIHotFixTest.m */,
+			);
+			path = HotFix;
 			sourceTree = "<group>";
 		};
 		565891DE1EC97CAD0025064E /* 图片显示相关 */ = {
@@ -948,6 +971,7 @@
 				56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */,
 				56C50A361EA0C9EA00316688 /* People+Categroy.m in Sources */,
 				564622801F0B2CD800AF4B91 /* Transition_ViewController.m in Sources */,
+				56D55323205629C200A33DE9 /* KIHotFixTool.m in Sources */,
 				56155F4A1F0F2D8100DC17AC /* TableVIew_ViewController.m in Sources */,
 				565C18E41DF68C57001BF07E /* Function.m in Sources */,
 				5682818F20299E62004C880F /* UI_Input_VC.m in Sources */,
@@ -965,6 +989,7 @@
 				56641B4C1F39F49A003CFF34 /* Flur_ViewController.m in Sources */,
 				56D6B83E1E1BAAC0005A5CBC /* YYTextViewController.m in Sources */,
 				568488851E7A7D71004F8A06 /* GPU_ViewController.m in Sources */,
+				56D553292056648400A33DE9 /* KIHotFixTest.m in Sources */,
 				5611858A1ECD72500051B761 /* SureCustomActionSheet.m in Sources */,
 				56D1AFD71DED61A400B6E878 /* CSWK_ViewController.m in Sources */,
 				565891E11EC97CCC0025064E /* IMG_ViewController.m in Sources */,
@@ -987,6 +1012,7 @@
 				56C50A331EA0C98B00316688 /* PeopleProperty.m in Sources */,
 				563794941E553D1400CA645C /* gifImageViewController.swift in Sources */,
 				56F3CC5A1E9640AD002D17BB /* Layer_Event_TestVC.m in Sources */,
+				5652A7302056201B00600DF6 /* HotFix_ViewController.m in Sources */,
 				564622831F0B2CFE00AF4B91 /* Swift_ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

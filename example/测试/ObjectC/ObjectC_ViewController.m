@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.muarray = @[
                      @{@"q":@"1",@"name":@"GCD",@"class":@"GCD_ViewController"},
+                     @{@"q":@"0",@"name":@"轻量级热更新",@"class":@"HotFix_ViewController"},
                      @{@"q":@"1",@"name":@"杂",@"class":@"ObjectCOther_ViewController"},
                      @{@"q":@"1",@"name":@"断点测试",@"class":@"BreakPoint_ViewController"},
                      @{@"q":@"0",@"name":@"weakSelf Strongify",@"class":@"KINSTestViewController"},
@@ -49,6 +50,7 @@
     else {
         cell.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

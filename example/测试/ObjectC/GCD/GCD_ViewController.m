@@ -21,23 +21,25 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.backgroundColor = [UIColor redColor];
     [button setTitle:@"开始执行" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 64, 100, 50);
+    button.frame = CGRectMake(0, 100, 100, 50);
     [self.view bringSubviewToFront:button];
     [button addTarget:self action:@selector(beginTask:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
 
 - (void)beginTask:(UIButton *)btn {
-//    [self GCD_Seamphone];
+    [self GCD_Seamphone];
     
-    [self gcd_test];
-    NSLog(@"\n\n\n");
+//    [self gcd_test];
+//    NSLog(@"\n\n\n");
 }
 
 
 - (void)gcd_test {
     //队列分为串行与并行
+    //串行
     dispatch_queue_t serialQueue = dispatch_queue_create("com.163.cyfsoftwareSerial", DISPATCH_QUEUE_SERIAL);
+    //并行
     dispatch_queue_t concurrentQueue = dispatch_queue_create("com.16.cyfsoftwareCon", DISPATCH_QUEUE_CONCURRENT);
     //线程分为同步与异步
 //    dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
@@ -84,7 +86,7 @@
 - (void)requestA {
     NSLog(@"start -requestA");
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/designer/alphabetical" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/designer/alphabetical" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
@@ -96,7 +98,7 @@
 - (void)requestB {
     NSLog(@"start -requestB");
     dispatch_semaphore_t sema =  dispatch_semaphore_create(0);
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
@@ -108,7 +110,7 @@
 - (void)requestC {
     NSLog(@"start -requestC");
     dispatch_semaphore_t sema =  dispatch_semaphore_create(0);
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v2/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
