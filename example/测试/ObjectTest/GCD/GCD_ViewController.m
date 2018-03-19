@@ -60,7 +60,7 @@
 }
 
 /**
- Seamphore 当value <= 0时一直等待  当>0时会执行并且信号量会减一
+ Seamphore 当value < 0时一直等待  当>0时会执行并且信号量会减一
  */
 - (void)GCD_Seamphone {
     dispatch_group_t group = dispatch_group_create();
@@ -86,7 +86,7 @@
 - (void)requestA {
     NSLog(@"start -requestA");
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/designer/alphabetical" parameters:@{} success:^(NSDictionary *responseJson) {
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=liwei" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
         dispatch_semaphore_signal(sema);
     } failure:^(NSError *error) {
@@ -94,6 +94,7 @@
         NSLog(@"%@",error);
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    NSLog(@"");
 }
 - (void)requestB {
     NSLog(@"start -requestB");
@@ -106,6 +107,8 @@
         dispatch_semaphore_signal(sema);
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    NSLog(@"");
+
 }
 - (void)requestC {
     NSLog(@"start -requestC");
@@ -118,5 +121,7 @@
         dispatch_semaphore_signal(sema);
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    NSLog(@"");
+
 }
 @end
