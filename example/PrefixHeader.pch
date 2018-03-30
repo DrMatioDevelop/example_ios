@@ -16,17 +16,21 @@
 #import <objc/runtime.h>
 
 //third
-#import <MJRefresh.h>
-#import <AFNetworking.h>
-#import <Masonry.h>
-#import <FMDB.h>
-#import <Aspects.h>
+#import <MJRefresh/MJRefresh.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+#import <FMDB/FMDB.h>
+#import <Aspects/Aspects.h>
+#import <SwiftMonkeyPaws/SwiftMonkeyPaws-Swift.h>
+#import <SwiftMonkey/SwiftMonkey-Swift.h>
+#import <YYModel/YYModel.h>
 
 //third category
-#import <UIButton+WebCache.h>
-#import <UIImageView+WebCache.h>
-#import <ESCategories.h>
-#import <MBProgressHUD.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <ESCategories/ESCategories.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <GPUImage/GPUImage.h>
 
 //category
 #import "Function.h"

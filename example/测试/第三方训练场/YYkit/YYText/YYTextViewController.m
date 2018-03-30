@@ -10,6 +10,7 @@
 #import "YYText_1_ViewController.h"
 #import <ImageIO/ImageIO.h>
 #import "OprationViewController.h"
+#import "KICustomBean.h"
 @interface YYTextViewController ()
 
 /**
@@ -27,6 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *str = @"{\"mall_name\":\"U7c73U91d1U793e\",\"mer_no\":\"BOB-MJS-C-20180117\",\"mall_no\":\"BOB-MJS-20180117\",\"version\":\"SDK\",\"sign\":\"Gq8X5ErjJ%2FZDpXrxCyRGcn4zNYKfyXvLXK%2Bs4AVnrsC5wE%2BDPczLCIijrMqCy9LzkwDI1%2FUzQVSv%0D%0ArymKGGc%2FSrJf2TlHzWZnZ73qMXfbRoe6AYTh9uBRjd03a89wSe7jEIXFez9274XT1wHNKOb9wX0n%0D%0ALnJgcKjz5c6GbkSZldY%3D\",\"mer_name\":\"U7c73U91d1U793e\",\"pay_code\":\"040\",\"trans_pwd\":\"0L5nweEdY6sfdqjmGuve8qLQ9kaCdR7gSah/VK7Vx/D0A/Ei/79SbrSREjVPjEtaiIsbz72ggPHrsDbI2TBl5b35HP4K4KvC5LOc4rUhN8RBa8UgC6fGITPZlExiY3KBYukSBB1coLODZF/MGLr4PQETiuQqKKryqiDTx38xhcUW3JegvJiVK7JLSqHqSHmpqkq2ENEkmH0M32ofZ5aueQqXSwvs1qWC5mVNcLTjr90=\",\"platcust\":\"201803131422430458108294810318\",\"identifying_code\":\"5555\",\"remark\":\"\",\"partner_trans_date\":\"20180320\",\"order_no\":\"RECAUTHCON2018032011323469117\",\"origin_order_no\":\"RECAPP2018032011323409857\",\"random_key\":\"30871124382381001893545701820322\",\"partner_trans_time\":\"113234\"}";
+    KICustomBean *dic = [KICustomBean yy_modelWithJSON:str];
+    NSDictionary *dic1 = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding ] options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@",dic);
+    NSLog(@"%@",dic1);
+    
+    
 //    self.operationQueue = [[NSOperationQueue alloc] init];
 //    self.operationQueue.maxConcurrentOperationCount = 1;
 //    
@@ -87,7 +95,7 @@
 //    [self.view addSubview:imgView];
     
     
-    [self nsoperationQueue];
+//    [self nsoperationQueue];
     
 //    [self groupGCD];
 }

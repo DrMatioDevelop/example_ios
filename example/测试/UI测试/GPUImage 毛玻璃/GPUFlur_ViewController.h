@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GPUImage.h>
 
 @interface GPUFlur_ViewController : UIViewController
 

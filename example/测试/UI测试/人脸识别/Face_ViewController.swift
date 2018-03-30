@@ -34,7 +34,7 @@ public class Face_ViewController: UIViewController, UIImagePickerControllerDeleg
         faceDetect();
     }
     
-    func clickPhone(sender:UIButton)  {
+    @objc func clickPhone(sender:UIButton)  {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             return
         }

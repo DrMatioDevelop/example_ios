@@ -20,6 +20,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"d2c" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBar:)];
     _a = 100;
     // Do any additional setup after loading the view.
+
 }
 
 

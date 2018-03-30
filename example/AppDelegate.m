@@ -12,7 +12,9 @@
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    MonkeyPaws *_paws;
+}
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     return YES;
 }
@@ -42,6 +44,12 @@
         redView.text = [NSString stringWithFormat:@"dic1:%@", loacl.userInfo];
         [self.window.rootViewController.view addSubview:redView];
     }
+    
+//#if DEBUG
+//    _paws = [[MonkeyPaws alloc] init];
+//
+//#endif
+    
     return YES;
 }
 

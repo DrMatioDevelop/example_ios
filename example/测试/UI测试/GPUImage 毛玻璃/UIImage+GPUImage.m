@@ -7,7 +7,6 @@
 //
 
 #import "UIImage+GPUImage.h"
-#import <GPUImage.h>
 @implementation UIImage (GPUImage)
 + (UIImage *)applayGaussianSelectiveBlur:(UIImage *)image withBlurNumber:(CGFloat)blur {
 //    GPUImageGaussianBlurFilter *filter = [[GPUImageGaussianBlurFilter alloc] init];

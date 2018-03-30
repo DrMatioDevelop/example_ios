@@ -25,7 +25,8 @@
     self.arrayDS = @[
                      @{@"index":@"0",@"name":@"GPU毛玻璃"               ,@"class":@"GPUFlur_ViewController"},
                      @{@"index":@"0",@"name":@"列表视图"                ,@"class":@"TableVIew_ViewController"},
-                     @{@"index":@"1",@"name":@"Masonry测试"                ,@"class":@"KIMasonryViewController"},
+                     @{@"index":@"1",@"name":@"重用视图 悬停"            ,@"class":@"KICustomBarOfColVC"},
+                     @{@"index":@"1",@"name":@"Masonry测试"             ,@"class":@"KIMasonryViewController"},
                      @{@"index":@"1",@"name":@"10.3更换app图标"         ,@"class":@"APPIcon_ViewController"},
                      @{@"index":@"1",@"name":@"系统会毛玻璃"             ,@"class":@"Flur_ViewController"},
                      @{@"index":@"1",@"name":@"正则表达式与代码片段显示"   ,@"class":@"RegurOrHtmlViewController"},
