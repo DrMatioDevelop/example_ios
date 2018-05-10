@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15AB67CC208604C50094924B /* KIUIMasonryConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */; };
 		56077CB91DED2EE300CC4D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CB81DED2EE300CC4D0D /* main.m */; };
 		56077CBC1DED2EE300CC4D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CBB1DED2EE300CC4D0D /* AppDelegate.m */; };
 		56077CBF1DED2EE300CC4D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56077CBE1DED2EE300CC4D0D /* ViewController.m */; };
@@ -124,6 +125,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		15AB67CA208604C50094924B /* KIUIMasonryConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIUIMasonryConstraint.h; sourceTree = "<group>"; };
+		15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIUIMasonryConstraint.m; sourceTree = "<group>"; };
 		54145D33AAEE7E86D6F3F9C6 /* Pods_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56077CB41DED2EE300CC4D0D /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56077CB81DED2EE300CC4D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -300,6 +303,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15AB67C9208604860094924B /* Masonry约束 */ = {
+			isa = PBXGroup;
+			children = (
+				15AB67CA208604C50094924B /* KIUIMasonryConstraint.h */,
+				15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */,
+			);
+			path = "Masonry约束";
+			sourceTree = "<group>";
+		};
 		18975058ABE26A127CB52D80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +405,7 @@
 		563286E8205F92C300271875 /* UI测试 */ = {
 			isa = PBXGroup;
 			children = (
+				15AB67C9208604860094924B /* Masonry约束 */,
 				563286F9205F92C300271875 /* OtherViewController.h */,
 				563286FA205F92C300271875 /* OtherViewController.m */,
 				563287AA205F964900271875 /* 工具条悬停 */,
@@ -778,7 +791,6 @@
 				56077CB11DED2EE300CC4D0D /* Frameworks */,
 				56077CB21DED2EE300CC4D0D /* Resources */,
 				8D7705F615E2CC6041685286 /* [CP] Embed Pods Frameworks */,
-				1B7051D2F36238224A956946 /* [CP] Copy Pods Resources */,
 				569145DB2060A12C00A657E0 /* CopyFiles */,
 			);
 			buildRules = (
@@ -917,31 +929,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B7051D2F36238224A956946 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-example/Pods-example-resources.sh",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/QMUIKit/QMUIKit/UIResources/QMUIResources.bundle",
-				"${PODS_ROOT}/QMUIKit/QMUIKit/UIResources/QMUI_QQEmotion.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-example/Pods-example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3DCB52003F8E73A825177FFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -982,7 +969,6 @@
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1001,7 +987,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1030,6 +1015,7 @@
 				563287A0205F92C300271875 /* People+Categroy.m in Sources */,
 				563287A9205F92C300271875 /* YYTextViewController.m in Sources */,
 				56328798205F92C300271875 /* test.swift in Sources */,
+				15AB67CC208604C50094924B /* KIUIMasonryConstraint.m in Sources */,
 				56328783205F92C300271875 /* UI_Input_VC.m in Sources */,
 				5632878F205F92C300271875 /* CustomLineLayout.m in Sources */,
 				565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */,

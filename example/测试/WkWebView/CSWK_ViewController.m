@@ -197,9 +197,6 @@
 //    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test2.d2cmall.com/o2oSubscribe/my/list;jsessionid=074E6AC632C656EFC671A9F4D3E46E9F?invoked=1"]];
 //    [self.myWkWebView loadRequest:urlRequest];
     
-    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, SSize.width, SSize.height - 64)];
-    web.delegate = self;
-    NSString *str = @"<div style=\"width:100%;background-color:#ff0000;word-wrap: break-word;font-size:50;word-break: break-all;\"><p ><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">经调查：风控部对借款人各项信息进行了全面的实地征信，一切资料真实可靠。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\"><br/></span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">抵押物锋范汽车,牌号：浙B0***0，新车购买于2009年4月，本地新车价15万，现评估价3.95万元。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">权  证：已办理完相关手续。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">担  保：抵押物担保。 </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人信息介绍： </span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人基本情况：借款人俞先生，1982年出生，浙江奉化人，企业员工，收入稳定。</span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">借款人资产介绍：一辆锋范车</span></strong></span></p><p><span  ><strong><span style=\"color:#000000;font-family:楷体, 楷体_GB2312, SimKai\">详细资金用途：用于个人资金周转</span></strong></span></p><p><br/></p></div>";
     
 //    [web loadHTMLString:str baseURL:nil];
 //    web.scalesPageToFit = YES;
@@ -216,23 +213,23 @@
 ////    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
 ////    config.preferences.minimumFontSize = 14;
 //    
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"JSBridgeOC.html" ofType:nil];
-//    [self.myWkWebView loadHTMLString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil] baseURL:[[NSBundle mainBundle] bundleURL]];
-//    WKUserContentController *userCC = self.myWkWebView.configuration.userContentController;
-//    
-//    //JavaScript调用OC
-//    [userCC addScriptMessageHandler:self name:@"showMobile"];
-//    [userCC addScriptMessageHandler:self name:@"showName"];
-//    [userCC addScriptMessageHandler:self name:@"showSendMsg"];
-//
-//    //OC调用JavaScript
-//    UIButton *clearButton = [KIUIContainerControl getButton:CGRectMake(0, 64.0, 50, 40) tag:0 target:self action:@selector(OCCallJavaScript:)];
-//    [clearButton setTitle:@"清空" forState:UIControlStateNormal];
-//    [self.view addSubview:clearButton];
-//    
-//    UIButton *huanMobile = [KIUIContainerControl getButton:CGRectMake(60, 64, 70, 40) tag:1 target:self action:@selector(OCCallJavaScript:)];
-//    [huanMobile setTitle:@"黄mobile" forState:UIControlStateNormal];
-//    [self.view addSubview:huanMobile];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"JSBridgeOC.html" ofType:nil];
+    [self.myWkWebView loadHTMLString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil] baseURL:[[NSBundle mainBundle] bundleURL]];
+    WKUserContentController *userCC = self.myWkWebView.configuration.userContentController;
+
+    //JavaScript调用OC
+    [userCC addScriptMessageHandler:self name:@"showMobile"];
+    [userCC addScriptMessageHandler:self name:@"showName"];
+    [userCC addScriptMessageHandler:self name:@"showSendMsg"];
+
+    //OC调用JavaScript
+    UIButton *clearButton = [KIUIContainerControl getButton:CGRectMake(0, 88.0f, 50, 40) title:@"清空" tag:0 target:self action:@selector(OCCallJavaScript:) ];
+    [clearButton setTitle:@"清空" forState:UIControlStateNormal];
+    [self.view addSubview:clearButton];
+
+    UIButton *huanMobile = [KIUIContainerControl getButton:CGRectMake(60, 88.0f, 70, 40) title:@"黄mobile" tag:1 target:self action:@selector(OCCallJavaScript:)];
+    [huanMobile setTitle:@"黄mobile" forState:UIControlStateNormal];
+    [self.view addSubview:huanMobile];
 }
 #pragma mark - Getter
 - (WKWebView *)myWkWebView {

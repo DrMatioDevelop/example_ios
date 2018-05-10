@@ -21,8 +21,6 @@
 #import <Masonry/Masonry.h>
 #import <FMDB/FMDB.h>
 #import <Aspects/Aspects.h>
-#import <SwiftMonkeyPaws/SwiftMonkeyPaws-Swift.h>
-#import <SwiftMonkey/SwiftMonkey-Swift.h>
 #import <YYModel/YYModel.h>
 
 //third category
