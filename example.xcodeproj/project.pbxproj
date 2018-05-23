@@ -851,7 +851,7 @@
 				TargetAttributes = {
 					56077CB31DED2EE300CC4D0D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZM8ZWSEQY4;
+						DevelopmentTeam = 8TQ5J5ANUH;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1214,7 +1214,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
+				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1240,7 +1240,7 @@
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyfsoftware163.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyfsoftware163.example1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "example/测试/example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1257,7 +1257,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Dianchuang Technology Co.,Ltd (959Q9RL588)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ZM8ZWSEQY4;
+				DEVELOPMENT_TEAM = 8TQ5J5ANUH;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1283,7 +1283,7 @@
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyfsoftware163.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyfsoftware163.example1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "example/测试/example-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

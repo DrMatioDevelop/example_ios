@@ -41,6 +41,7 @@
     button.tag = tag;
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor lightGrayColor] ];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }

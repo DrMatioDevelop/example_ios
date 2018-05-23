@@ -16,22 +16,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    button.backgroundColor = [UIColor redColor];
-    [button setTitle:@"开始执行" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 100, 100, 50);
-    [self.view bringSubviewToFront:button];
-    [button addTarget:self action:@selector(beginTask:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *button = [KIUIContainerControl getButton:CGRectMake(0, 100, 100, 50) title:@"开始执行" tag:0 target:self action:@selector(beginTask:)];
     [self.view addSubview:button];
+    
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(10, 200, 100, 0.1)];
+    view1.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view1];
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(10, 220, 100, 0.2)];
+    view2.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view2];
+    
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(10, 240, 100, 0.3)];
+    view3.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view3];
+    
+    UIView *view5 = [[UIView alloc] initWithFrame:CGRectMake(10, 260, 100, 0.5)];
+    view5.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view5];
+    
+    UIView *view10 = [[UIView alloc] initWithFrame:CGRectMake(10, 280, 100, 1)];
+    view10.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view10];
 }
 
 - (void)beginTask:(UIButton *)btn {
     [self GCD_Seamphone];
     
-//    [self gcd_test];
-//    NSLog(@"\n\n\n");
+    //    [self gcd_test];
+    //    NSLog(@"\n\n\n");
 }
 
 
@@ -42,20 +57,20 @@
     //并行
     dispatch_queue_t concurrentQueue = dispatch_queue_create("com.16.cyfsoftwareCon", DISPATCH_QUEUE_CONCURRENT);
     //线程分为同步与异步
-//    dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
-//    dispatch_sync(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
+    //    dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
+    //    dispatch_sync(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
     
     
     /* 当前是串行队列，当执行到 dispatch_sync 时，因为是同步操作，所以 dispatch_sync 需要等待 block 执行完之后才能向下执行;当执行 NSLog(@"222"),的时候会加入到主线程中，但是这个时候主现程正是 dispatch_sync 在执行，所以 block 的 NSLog(@"222") 需要等待 dispatch_sync 执行完之后才能向下执行。这样就你等我，我等你，造成了死锁---必蹦
      */
-//    NSLog(@"111");
-//    dispatch_sync(dispatch_get_main_queue(), ^{
-//        NSLog(@"222");
-//    });
-//    NSLog(@"3333");
+    //    NSLog(@"111");
+    //    dispatch_sync(dispatch_get_main_queue(), ^{
+    //        NSLog(@"222");
+    //    });
+    //    NSLog(@"3333");
     
     //首先建立了一个串行的自定义队列，执行任务1后，遇到异步线程dispatch_async，不会等待执行任务2便会往下走，从而执行任务5，网上说的 5 2 顺序不确定，但是我用模拟器及真机测试发现任务5确实在任务2之前执行。执行任务2之后，遇到了同步线程dispatch_sync，需要等待任务3执行完才能继续往下走，但此时任务3也串行队列中，而此时的串行队列正被 dispatch_sync 占用着，这样就你等我，我等你，造成了死锁
-
+    
     
 }
 
@@ -65,17 +80,35 @@
 - (void)GCD_Seamphone {
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+//    //1⃣️队列异步执行 不使用信号量
+//    //异步并行发起 接收到任务完成的回调，只做到了并行发起，没有做到全部完成的回调。
+//    dispatch_group_async(group, queue, ^{
+//        [self requestC];
+//    });
+//    dispatch_group_async(group, queue, ^{
+//        [self requestB];
+//    });
+//    dispatch_group_async(group, queue, ^{
+//        [self requestA];
+//    });
+//    dispatch_group_notify(group, queue, ^{
+//        NSLog(@"Game Over");
+//    });
+    
+    //2⃣️队列异步执行 使用信号量 1⃣️与2⃣️相互对比
+    //异步并行发起 接收到任务完成回调，使用信号量各个任务全部执行完成
     dispatch_group_async(group, queue, ^{
-        [self requestC];
+        [self requestC_sema];
     });
     dispatch_group_async(group, queue, ^{
-        [self requestB];
+        [self requestB_sema];
     });
     dispatch_group_async(group, queue, ^{
-        [self requestA];
+        [self requestA_sema];
     });
     dispatch_group_notify(group, queue, ^{
-       NSLog(@"Game Over");
+        NSLog(@"Game Over");
     });
 }
 - (void)didReceiveMemoryWarning {
@@ -83,8 +116,38 @@
 }
 
 
+#pragma mark - 测试网络请求 requestA不含有信号量，requestA_sema含有信号量
 - (void)requestA {
     NSLog(@"start -requestA");
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=liwei" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"%s",__func__);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    NSLog(@"");
+}
+- (void)requestB {
+    NSLog(@"start -requestB");
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"%s",__func__);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    NSLog(@"");
+    
+}
+- (void)requestC {
+    NSLog(@"start -requestC");
+    [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
+        NSLog(@"%s",__func__);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    NSLog(@"");
+}
+
+- (void)requestA_sema {
+    NSLog(@"start -requestA_sema");
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=liwei" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
@@ -96,8 +159,8 @@
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     NSLog(@"");
 }
-- (void)requestB {
-    NSLog(@"start -requestB");
+- (void)requestB_sema {
+    NSLog(@"start -requestB_sema");
     dispatch_semaphore_t sema =  dispatch_semaphore_create(0);
     [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=w" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
@@ -108,10 +171,10 @@
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     NSLog(@"");
-
+    
 }
-- (void)requestC {
-    NSLog(@"start -requestC");
+- (void)requestC_sema {
+    NSLog(@"start -requestC_sema");
     dispatch_semaphore_t sema =  dispatch_semaphore_create(0);
     [AFNHelp RequestWithHttpType:GET urlStr:@"https://appserver.d2cmall.com/v3/api/product/list?k=o" parameters:@{} success:^(NSDictionary *responseJson) {
         NSLog(@"%s",__func__);
@@ -122,6 +185,5 @@
     }];
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     NSLog(@"");
-
 }
 @end

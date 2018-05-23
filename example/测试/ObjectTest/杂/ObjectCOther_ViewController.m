@@ -23,21 +23,30 @@ static const NSString *testChangLiang = @"测试";
     
 //    //日历
 //    [self timeWithCalendar_Component];
-    NSString *str1 = @"1";
-    NSString *str2 = nil;
-    NSString *str3 = @"2";
-    _otherNameFlag = YES;
     
-    NSLog(@"%@",testChangLiang);
-    NSArray *array1 = [NSArray arrayWithObjects:str1,testChangLiang,str2,str3, nil];
-//    NSArray *array2 = @[str1,str2, str3];
+
+
 }
 - (void)setOtherNameFlag:(BOOL)otherNameFlag {
     _otherNameFlag = YES;
 }
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.otherNameFlag = NO;
+}
+#pragma mark - KVC
+
+/**
+ kvc 在赋值的时候会以字符串的方式向对象发送消息，首先会查找_key ` _iskey命名的Getter方法，如果不存在会查找_key ` _iskey的实例变量.
+ 由此可以看出kvc使用的成本比直接赋值取值大，所以只在适合的时候使用kvc。
+ */
+- (void)KVCTest {
+    //如果要使用kvc进行修改值需要满足以下两个添加
+    //1.在被修改的中设置允许KVC进行修改
+    //2.被修改的属性或容器没有使用getter方法进行赋值，而是使用_属性变量名进行赋值
+    ObjectCOther_KVCTest *kvcTest = [[ObjectCOther_KVCTest alloc] init];
+    NSLog(@"before:%@",kvcTest.myname);
+    [kvcTest setValue:@"yan" forKey:@"myname"];
+    NSLog(@"kvcAfter:%@",kvcTest.myname);
 }
 
 #pragma mark - NSCalendar NSDateComponents
@@ -67,4 +76,26 @@ static const NSString *testChangLiang = @"测试";
     // Dispose of any resources that can be recreated.
 }
 
+@end
+
+
+
+
+@implementation ObjectCOther_KVCTest
+- (instancetype)init {
+    if (self = [super init]) {
+        _myname = @"yan";
+    }
+    return self;
+}
+
+//- (NSString *)myname {
+//    return @"feng";
+//}
+
+
+//在类中设置此方法返回YES 允许KVC进行修改， NO进制KVC进行修改
++ (BOOL)accessInstanceVariablesDirectly {
+    return NO;
+}
 @end
