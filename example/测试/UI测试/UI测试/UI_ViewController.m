@@ -211,6 +211,10 @@
         Class cla = NSClassFromString(@"OprationViewController");
         [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
     }
+    else if ([@"UICollectionViewTest" isEqualToString:[self.arrayDS objectAtIndex:indexPath.row]]) {
+        Class cla = NSClassFromString(@"KICollectionViewTestVC");
+        [self.navigationController pushViewController:[[cla alloc] init] animated:YES];
+    }
 }
 
 
@@ -229,7 +233,8 @@
 - (NSArray *)arrayDS {
     _arrayDS = @[
                  @"弹窗与sheet",
-                 @"TextField TextView"
+                 @"TextField TextView",
+                 @"UICollectionViewTest"
                  ];
     return _arrayDS;
 }

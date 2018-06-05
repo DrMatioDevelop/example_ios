@@ -24,6 +24,8 @@
                      @{@"q":@"1",@"name":@"杂",@"class":@"ObjectCOther_ViewController"},
                      @{@"q":@"1",@"name":@"断点测试",@"class":@"BreakPoint_ViewController"},
                      @{@"q":@"0",@"name":@"weakSelf Strongify",@"class":@"KINSTestViewController"},
+                     @{@"q":@"0",@"name":@"崩溃信号处理",@"class":@"KISignal_VC"},
+
                      ];
     [self.objectTabView reloadData];
     

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "KISignalHandeler.h"
+#import "GGCrashManager.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
+//    [KISignalHandeler registerSignalhandler];
+    [GGCrashManager startCatchCrash];
     // 界面的跳转(针对应用程序被杀死的状态下的跳转)
     // 杀死状态下的，界面跳转并不会执行下面的方法- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification，
     // 所以我们在写本地通知的时候，要在这个与下面方法中写，但要判断，是通过哪种类型通知来打开的
