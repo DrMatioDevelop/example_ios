@@ -11,11 +11,11 @@
 #import "GGCrashManager.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    self.paws = [[MonkeyPaws alloc] initWithView:self.window tapUIApplication:true];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

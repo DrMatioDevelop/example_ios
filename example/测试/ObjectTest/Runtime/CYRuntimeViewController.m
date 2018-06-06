@@ -7,7 +7,6 @@
 //
 
 #import "CYRuntimeViewController.h"
-#import "example-swift.h"
 #import "People.h"
 #import <objc/runtime.h>
 @interface CYRuntimeViewController ()

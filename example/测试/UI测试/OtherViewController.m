@@ -38,7 +38,7 @@
                      @{@"index":@"1",@"name":@"瀑布流"                 ,@"class":@"Collection_ViewController"},
                      @{@"index":@"1",@"name":@"图片显示"                ,@"class":@"IMG_ViewController"},
                      @{@"index":@"1",@"name":@"多线程"                 ,@"class":@"OprationViewController"},
-                     @{@"index":@"1",@"name":@"人脸识别"               ,@"class":@"TableVIew_ViewController"},
+                     @{@"index":@"1",@"name":@"人脸识别"               ,@"class":@"Face_ViewController"},
                      @{@"index":@"1",@"name":@"滚动边缘动画"            ,@"class":@"ScrollviewAnimationVC"},
                      @{@"index":@"1",@"name":@"转场动画"               ,@"class":@"Transition_ViewController"},
     ];

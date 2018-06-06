@@ -102,8 +102,6 @@
 
 
 - (void)clickLeftBar:(UIBarButtonItem *)barItem {
-    gifImageViewController *vc = [[gifImageViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
 
 //    [self.navigationController pushViewController:[[YYText_1_ViewController alloc] init] animated:YES];
 }

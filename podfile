@@ -2,16 +2,10 @@ inhibit_all_warnings!
 platform :ios, '8.0'
 use_frameworks!
 
-
-#一千只猴子测试 SwiftMonkey依赖于XCUITest SwiftMonkeyPaws 呈现视图效果
-#target 'exampleTests' do
-#    pod 'SwiftMonkey', '~> 2.1.0'
-#end
-
 target 'example' do
     
     #一千只猴子测试 SwiftMonkey依赖于XCUITest SwiftMonkeyPaws 呈现视图效果
-    #pod 'SwiftMonkeyPaws', '~> 2.1.0'
+    pod 'SwiftMonkeyPaws', '~> 2.1.0'
     
     # 网络请求
     pod 'AFNetworking', '~> 3.1.0'
@@ -81,4 +75,9 @@ target 'example' do
     #自定义分类
     pod 'ESCategories', '~> 0.2.3'
 
+end
+
+#一千只猴子测试 SwiftMonkey依赖于XCUITest SwiftMonkeyPaws 呈现视图效果
+target 'exampleUITests' do
+    pod 'SwiftMonkey', '~> 2.1.0'
 end
