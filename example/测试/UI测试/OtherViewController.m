@@ -7,6 +7,7 @@
 //
 
 #import "OtherViewController.h"
+#import "example-Swift.h"
 @interface OtherViewController ()
 @property(nonatomic, strong)UIButton                *button;
 @property(nonatomic, strong)UITableView             *tableView;
@@ -75,6 +76,13 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *className = [self.arrayDS[indexPath.row] objectForKey:@"class"];
+    
+    if ([className isEqualToString:@"Face_ViewController"]) {
+        Face_ViewController *vc = [[Face_ViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        self.title = [self.arrayDS[indexPath.row] objectForKey:@"name"];
+        return;
+    }
     Class cla = NSClassFromString(className);
     UIViewController *vc = [[cla alloc] init];
     vc.title = [self.arrayDS[indexPath.row] objectForKey:@"name"];

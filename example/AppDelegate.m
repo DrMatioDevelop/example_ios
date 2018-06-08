@@ -15,7 +15,8 @@
 
 @implementation AppDelegate 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.paws = [[MonkeyPaws alloc] initWithView:self.window tapUIApplication:true];
+    self.paws = [[MonkeyPaws alloc] init];
+    [self.paws monkeyInitWithView:self.window];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

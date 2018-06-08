@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
+#import <SwiftMonkeyPaws/SwiftMonkeyPaws-Swift.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-//@property (strong, nonatomic) MonkeyPaws *paws;
+@property (strong, nonatomic) MonkeyPaws *paws;
 
 
 @end

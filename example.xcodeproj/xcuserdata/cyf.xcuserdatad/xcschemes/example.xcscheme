@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "56077CD71DED2EE300CC4D0D"
+               BlueprintIdentifier = "15191A1B20C68DCC00683D14"
                BuildableName = "exampleUITests.xctest"
                BlueprintName = "exampleUITests"
                ReferencedContainer = "container:example.xcodeproj">

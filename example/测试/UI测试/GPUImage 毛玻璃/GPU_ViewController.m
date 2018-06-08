@@ -30,7 +30,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSStringFromClass([self class]);
-    [self configSubviews];
+//    [self configSubviews];
 }
 
 - (void)didReceiveMemoryWarning {

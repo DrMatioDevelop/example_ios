@@ -7,7 +7,7 @@
 //
 
 #import "Swift_ViewController.h"
-//#import "
+#import "example-Swift.h"
 @interface Swift_ViewController ()
 @property(nonatomic, strong)NSArray *currentArray;
 @property(nonatomic, strong)NSArray *cCopyArray;
@@ -17,6 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    demoTest *demo = [[demoTest alloc] init];
+    [demo mydog];
+    
+    
+    Face_ViewController *vc = [[Face_ViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,7 +38,6 @@
     NSMutableArray *copyArray = [muarray mutableCopy];
     
     [copyArray removeLastObject];
-
     
     [self.tabBarController.tabBar setHidden:YES];
 }
