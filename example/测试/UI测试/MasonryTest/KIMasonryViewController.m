@@ -56,21 +56,21 @@
         make.width.offset  = 100;
         make.height.offset = 30;
         make.centerX.equalTo(self.view.mas_centerX).offset = -(375 / 2.0 - 100) ;
-        make.bottom.equalTo(self.view.mas_bottom).offset   = -50;
+        make.bottom.equalTo(self.view.mas_bottom).offset   = -100;
     }];
     
     [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.offset  = 100;
         make.height.offset = 30;
         make.centerX.equalTo(self.view.mas_centerX);
-        make.bottom.equalTo(self.view.mas_bottom).offset   = -50;
+        make.bottom.equalTo(self.view.mas_bottom).offset   = -100;
     }];
     
     [_confirmBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.offset  = 100;
         make.height.offset = 30;
         make.centerX.equalTo(self.view.mas_centerX).offset = (375 / 2.0 - 100) ;
-        make.bottom.equalTo(self.view.mas_bottom).offset   = -50;
+        make.bottom.equalTo(self.view.mas_bottom).offset   = -100;
     }];
 }
 
@@ -90,13 +90,15 @@
 }
 - (void)clickConfirmBtn:(UIButton *)btn {
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:0.3 animations:^{
-        _animationView.layer.cornerRadius = 50.0;
+    [UIView animateWithDuration:10 animations:^{
+//        _animationView.layer.cornerRadius = 50.0;
         
-        [_animationView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [_animationView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.offset = 100;
             make.height.offset = 100;
-            make.centerX.equalTo(self.view.mas_centerX);
+//            make.centerX.equalTo(self.view.mas_centerX);
+//            make.centerY.equalTo(self.view.mas_centerY);
+            make.left.offset = 200;
             make.centerY.equalTo(self.view.mas_centerY);
         }];
         [self.view layoutIfNeeded];

@@ -13,10 +13,10 @@
 @interface AppDelegate ()
 @end
 
-@implementation AppDelegate 
+@implementation AppDelegate
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.paws = [[MonkeyPaws alloc] init];
-    [self.paws monkeyInitWithView:self.window];
+    //    self.paws = [[MonkeyPaws alloc] init];
+    //    [self.paws monkeyInitWithView:self.window];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

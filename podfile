@@ -6,6 +6,7 @@ target 'example' do
     
     #一千只猴子测试 SwiftMonkey依赖于XCUITest SwiftMonkeyPaws 呈现视图效果
     pod 'SwiftMonkeyPaws', '~> 2.1.0'
+#    pod 'SwiftMonkey', '~> 2.1.0'
     
     # 网络请求
     pod 'AFNetworking', '~> 3.1.0'
@@ -74,6 +75,13 @@ target 'example' do
     
     #自定义分类
     pod 'ESCategories', '~> 0.2.3'
+
+    #基于OC的盒式布局  依赖于yoga
+    pod 'FlexLib'
+    
+#    #图标
+#    pod 'Charts'
+    
 
 end
 

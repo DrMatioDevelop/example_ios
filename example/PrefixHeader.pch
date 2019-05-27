@@ -35,6 +35,9 @@
 #import <FMDB/FMDB.h>
 #import <Aspects/Aspects.h>
 #import <YYModel/YYModel.h>
+//#import <Charts/Charts-Swift.h>
+#import <ChartFramework/ChartFramework.h>
+#import <ChartFramework/ChartFramework-Swift.h>
 
 //third category
 #import <SDWebImage/UIButton+WebCache.h>

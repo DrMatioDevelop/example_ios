@@ -2,13 +2,12 @@
 //  exampleUITests.swift
 //  exampleUITests
 //
-//  Created by 陈雁锋 on 2018/6/6.
+//  Created by 陈雁锋 on 2018/6/8.
 //  Copyright © 2018年 d2c_cyf. All rights reserved.
 //
 
 import XCTest
 import SwiftMonkey
-
 class exampleUITests: XCTestCase {
         
     override func setUp() {
@@ -60,6 +59,5 @@ class exampleUITests: XCTestCase {
         // Run the monkey test indefinitely.
         monkey.monkeyAround()
     }
-    
     
 }
