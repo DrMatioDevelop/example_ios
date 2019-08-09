@@ -25,6 +25,25 @@
 #define KIRationWidth(_width) ((_width)*(SSize.width/375.0))
 #define KIRationHeight(_height) ((_height)*(SSize.height/667.0))
 
+//无比例字体
+#define DJFontRegular(x) (DJSCREEN_WIDTH <= 320.f ? [UIFont systemFontOfSize:x-2] : [UIFont systemFontOfSize:x])
+#define DJFontBold(x)    (DJSCREEN_WIDTH <= 320.f ? [UIFont boldSystemFontOfSize:x-2] : [UIFont boldSystemFontOfSize:x])
+
+#pragma mark - 适配比例
+#define DJRatioWidth(x)   ((x)*(DJSCREEN_WIDTH/375.0))
+#define DJRatioHeight(x)  ((x)*(DJSCREEN_HEIGHT/667.0))
+
+//Hex颜色
+#define DJHexRGB(HexValue)        [UIColor colorWithRed:((float)((HexValue & 0xFF0000) >> 16))/255.0 green:((float)((HexValue & 0xFF00) >> 8))/255.0 blue:((float)(HexValue & 0xFF))/255.0 alpha:1.0]
+
+#define DJHexRGBAlpha(HexValue,a) [UIColor colorWithRed:((float)((HexValue & 0xFF0000) >> 16))/255.0 green:((float)((HexValue & 0xFF00) >> 8))/255.0 blue:((float)(HexValue & 0xFF))/255.0 alpha:(a)]
+
+//屏幕尺寸
+#define DJSCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define DJSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//无比例字体
+#define DJFontRegular(x) (DJSCREEN_WIDTH <= 320.f ? [UIFont systemFontOfSize:x-2] : [UIFont systemFontOfSize:x])
+#define DJFontBold(x)    (DJSCREEN_WIDTH <= 320.f ? [UIFont boldSystemFontOfSize:x-2] : [UIFont boldSystemFontOfSize:x]) 
 //system
 #import <objc/runtime.h>
 
@@ -35,9 +54,6 @@
 #import <FMDB/FMDB.h>
 #import <Aspects/Aspects.h>
 #import <YYModel/YYModel.h>
-//#import <Charts/Charts-Swift.h>
-#import <ChartFramework/ChartFramework.h>
-#import <ChartFramework/ChartFramework-Swift.h>
 
 //third category
 #import <SDWebImage/UIButton+WebCache.h>
@@ -54,4 +70,6 @@
 #import "GCD.h"
 
 #import "KIUIContainerControl.h"
+#import "NSObject+KIController.h"
+#import "KIBaseViewController.h"
 #endif /* PrefixHeader_pch */

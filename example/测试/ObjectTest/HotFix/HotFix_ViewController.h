@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface HotFix_ViewController : ViewController
+@interface HotFix_ViewController : KIBaseViewController
 
 @end

@@ -11,11 +11,12 @@
 		1561C0A320B538D2000BCE80 /* KISignalHandeler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1561C0A220B538D2000BCE80 /* KISignalHandeler.m */; };
 		1561C0A620B562DC000BCE80 /* GGCrashManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1561C0A420B562DC000BCE80 /* GGCrashManager.m */; };
 		1561C0B220BD29CD000BCE80 /* KICollectionViewTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1561C0B120BD29CD000BCE80 /* KICollectionViewTestVC.m */; };
-		156F91A322646B92005419D0 /* ChartFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156F91A12264673C005419D0 /* ChartFramework.framework */; };
-		156F91A522646F7A005419D0 /* ChartFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156F91A12264673C005419D0 /* ChartFramework.framework */; };
-		156F91A622646F7A005419D0 /* ChartFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 156F91A12264673C005419D0 /* ChartFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		157C6B91229CDE1100779860 /* KIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B90229CDE1100779860 /* KIBaseViewController.m */; };
+		157C6B94229CDF0B00779860 /* NSObject+KIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B93229CDF0B00779860 /* NSObject+KIController.m */; };
 		1595C81222154E4800986350 /* UI_ChartsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1595C81122154E4800986350 /* UI_ChartsVC.m */; };
 		15AB67CC208604C50094924B /* KIUIMasonryConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */; };
+		15FA3B8322AF9E4100CD216F /* FSLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FA3B8222AF9E4100CD216F /* FSLoadingHUD.m */; };
+		15FA3B8622AF9E9D00CD216F /* KIUI_LoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FA3B8522AF9E9D00CD216F /* KIUI_LoadingVC.m */; };
 		15FF2C8F20C78645009AD0EB /* demoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF2C8E20C78645009AD0EB /* demoTest.swift */; };
 		15FF2C9120C7AEE3009AD0EB /* Face_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF2C9020C7AEE3009AD0EB /* Face_ViewController.swift */; };
 		15FF2CBE20CA4FAE009AD0EB /* exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF2CBD20CA4FAD009AD0EB /* exampleUITests.swift */; };
@@ -69,8 +70,6 @@
 		56328797205F92C300271875 /* Swift_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56328741205F92C300271875 /* Swift_ViewController.m */; };
 		56328799205F92C300271875 /* GCD_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56328746205F92C300271875 /* GCD_ViewController.m */; };
 		5632879A205F92C300271875 /* HotFix_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56328749205F92C300271875 /* HotFix_ViewController.m */; };
-		5632879B205F92C300271875 /* KIHotFixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5632874B205F92C300271875 /* KIHotFixTest.m */; };
-		5632879C205F92C300271875 /* KIHotFixTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5632874D205F92C300271875 /* KIHotFixTool.m */; };
 		5632879D205F92C300271875 /* ObjectC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5632874F205F92C300271875 /* ObjectC_ViewController.m */; };
 		5632879E205F92C300271875 /* CYRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56328752205F92C300271875 /* CYRuntimeViewController.m */; };
 		5632879F205F92C300271875 /* MsgSend_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56328755205F92C300271875 /* MsgSend_ViewController.m */; };
@@ -113,7 +112,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				156F91A622646F7A005419D0 /* ChartFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,11 +126,18 @@
 		1561C0A520B562DC000BCE80 /* GGCrashManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCrashManager.h; sourceTree = "<group>"; };
 		1561C0B020BD29CD000BCE80 /* KICollectionViewTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KICollectionViewTestVC.h; sourceTree = "<group>"; };
 		1561C0B120BD29CD000BCE80 /* KICollectionViewTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KICollectionViewTestVC.m; sourceTree = "<group>"; };
-		156F91A12264673C005419D0 /* ChartFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ChartFramework.framework; sourceTree = "<group>"; };
+		157C6B8F229CDE1100779860 /* KIBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIBaseViewController.h; sourceTree = "<group>"; };
+		157C6B90229CDE1100779860 /* KIBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIBaseViewController.m; sourceTree = "<group>"; };
+		157C6B92229CDF0B00779860 /* NSObject+KIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KIController.h"; sourceTree = "<group>"; };
+		157C6B93229CDF0B00779860 /* NSObject+KIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KIController.m"; sourceTree = "<group>"; };
 		1595C81022154E4800986350 /* UI_ChartsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI_ChartsVC.h; sourceTree = "<group>"; };
 		1595C81122154E4800986350 /* UI_ChartsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI_ChartsVC.m; sourceTree = "<group>"; };
 		15AB67CA208604C50094924B /* KIUIMasonryConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIUIMasonryConstraint.h; sourceTree = "<group>"; };
 		15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIUIMasonryConstraint.m; sourceTree = "<group>"; };
+		15FA3B8122AF9E4100CD216F /* FSLoadingHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLoadingHUD.h; sourceTree = "<group>"; };
+		15FA3B8222AF9E4100CD216F /* FSLoadingHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLoadingHUD.m; sourceTree = "<group>"; };
+		15FA3B8422AF9E9D00CD216F /* KIUI_LoadingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIUI_LoadingVC.h; sourceTree = "<group>"; };
+		15FA3B8522AF9E9D00CD216F /* KIUI_LoadingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIUI_LoadingVC.m; sourceTree = "<group>"; };
 		15FF2C8D20C78644009AD0EB /* example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example-Bridging-Header.h"; sourceTree = "<group>"; };
 		15FF2C8E20C78645009AD0EB /* demoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoTest.swift; sourceTree = "<group>"; };
 		15FF2C9020C7AEE3009AD0EB /* Face_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Face_ViewController.swift; sourceTree = "<group>"; };
@@ -234,10 +239,6 @@
 		56328746205F92C300271875 /* GCD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD_ViewController.m; sourceTree = "<group>"; };
 		56328748205F92C300271875 /* HotFix_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotFix_ViewController.h; sourceTree = "<group>"; };
 		56328749205F92C300271875 /* HotFix_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotFix_ViewController.m; sourceTree = "<group>"; };
-		5632874A205F92C300271875 /* KIHotFixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIHotFixTest.h; sourceTree = "<group>"; };
-		5632874B205F92C300271875 /* KIHotFixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIHotFixTest.m; sourceTree = "<group>"; };
-		5632874C205F92C300271875 /* KIHotFixTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIHotFixTool.h; sourceTree = "<group>"; };
-		5632874D205F92C300271875 /* KIHotFixTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIHotFixTool.m; sourceTree = "<group>"; };
 		5632874E205F92C300271875 /* ObjectC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectC_ViewController.h; sourceTree = "<group>"; };
 		5632874F205F92C300271875 /* ObjectC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectC_ViewController.m; sourceTree = "<group>"; };
 		56328751205F92C300271875 /* CYRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRuntimeViewController.h; sourceTree = "<group>"; };
@@ -300,9 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				156F91A322646B92005419D0 /* ChartFramework.framework in Frameworks */,
 				B4E30D39E9F3B45569775B27 /* Pods_example.framework in Frameworks */,
-				156F91A522646F7A005419D0 /* ChartFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +337,17 @@
 				15AB67CB208604C50094924B /* KIUIMasonryConstraint.m */,
 			);
 			path = "Masonry约束";
+			sourceTree = "<group>";
+		};
+		15FA3B8022AF9E2500CD216F /* Loading测试 */ = {
+			isa = PBXGroup;
+			children = (
+				15FA3B8122AF9E4100CD216F /* FSLoadingHUD.h */,
+				15FA3B8222AF9E4100CD216F /* FSLoadingHUD.m */,
+				15FA3B8422AF9E9D00CD216F /* KIUI_LoadingVC.h */,
+				15FA3B8522AF9E9D00CD216F /* KIUI_LoadingVC.m */,
+			);
+			path = "Loading测试";
 			sourceTree = "<group>";
 		};
 		15FF2CB320CA4F81009AD0EB /* exampleUITests */ = {
@@ -456,6 +466,7 @@
 				15AB67C9208604860094924B /* Masonry约束 */,
 				563286F9205F92C300271875 /* OtherViewController.h */,
 				563286FA205F92C300271875 /* OtherViewController.m */,
+				15FA3B8022AF9E2500CD216F /* Loading测试 */,
 				15FF2CD320CE630E009AD0EB /* FlexLib(盒式布局) */,
 				563287AA205F964900271875 /* 工具条悬停 */,
 				563286EB205F92C300271875 /* GPUImage 毛玻璃 */,
@@ -684,10 +695,6 @@
 			children = (
 				56328748205F92C300271875 /* HotFix_ViewController.h */,
 				56328749205F92C300271875 /* HotFix_ViewController.m */,
-				5632874A205F92C300271875 /* KIHotFixTest.h */,
-				5632874B205F92C300271875 /* KIHotFixTest.m */,
-				5632874C205F92C300271875 /* KIHotFixTool.h */,
-				5632874D205F92C300271875 /* KIHotFixTool.m */,
 			);
 			path = HotFix;
 			sourceTree = "<group>";
@@ -797,7 +804,6 @@
 		5637948E1E553CB700CA645C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				156F91A12264673C005419D0 /* ChartFramework.framework */,
 				568488761E7920C6004F8A06 /* iphone.jpg */,
 				5637948F1E553CC000CA645C /* view-wechat-chat.gif */,
 				56321F9A1E6E4DD60054A7D1 /* copyCode */,
@@ -816,6 +822,10 @@
 				5684888D1E7A82D3004F8A06 /* GCD.m */,
 				565891EE1ECC1BC50025064E /* KIUIContainerControl.h */,
 				565891EF1ECC1BC50025064E /* KIUIContainerControl.m */,
+				157C6B8F229CDE1100779860 /* KIBaseViewController.h */,
+				157C6B90229CDE1100779860 /* KIBaseViewController.m */,
+				157C6B92229CDF0B00779860 /* NSObject+KIController.h */,
+				157C6B93229CDF0B00779860 /* NSObject+KIController.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -911,6 +921,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -996,7 +1007,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-example/Pods-example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-example/Pods-example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/ESCategories/ESCategories.framework",
@@ -1007,6 +1018,7 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MangoFix/MangoFix.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
@@ -1028,6 +1040,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MangoFix.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
@@ -1039,7 +1052,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-example/Pods-example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-example/Pods-example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA89EF60699DF8E4BFF5A2A2 /* [CP] Embed Pods Frameworks */ = {
@@ -1048,7 +1061,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-exampleUITests/Pods-exampleUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-exampleUITests/Pods-exampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftMonkey/SwiftMonkey.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1057,7 +1070,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-exampleUITests/Pods-exampleUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-exampleUITests/Pods-exampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1077,7 +1090,6 @@
 			files = (
 				563287A5205F92C300271875 /* ObjectCOther_ViewController.m in Sources */,
 				5684888E1E7A82D3004F8A06 /* GCD.m in Sources */,
-				5632879C205F92C300271875 /* KIHotFixTool.m in Sources */,
 				1595C81222154E4800986350 /* UI_ChartsVC.m in Sources */,
 				5632877A205F92C300271875 /* OtherViewController.m in Sources */,
 				56328774205F92C300271875 /* Flur_ViewController.m in Sources */,
@@ -1085,6 +1097,7 @@
 				563287AD205F968B00271875 /* KICustomBarOfColVC.m in Sources */,
 				56328795205F92C300271875 /* TransitionDelegate.m in Sources */,
 				56328778205F92C300271875 /* UIImage+GPUImage.m in Sources */,
+				157C6B91229CDE1100779860 /* KIBaseViewController.m in Sources */,
 				5632879F205F92C300271875 /* MsgSend_ViewController.m in Sources */,
 				5632879E205F92C300271875 /* CYRuntimeViewController.m in Sources */,
 				56328797205F92C300271875 /* Swift_ViewController.m in Sources */,
@@ -1094,6 +1107,7 @@
 				56328783205F92C300271875 /* UI_Input_VC.m in Sources */,
 				5632878F205F92C300271875 /* CustomLineLayout.m in Sources */,
 				565891F01ECC1BC50025064E /* KIUIContainerControl.m in Sources */,
+				15FA3B8622AF9E9D00CD216F /* KIUI_LoadingVC.m in Sources */,
 				5632877F205F92C300271875 /* QuartzCoreView.m in Sources */,
 				5632878D205F92C300271875 /* Custom_CollectionViewCell.m in Sources */,
 				563287A7205F92C300271875 /* UIImage+MYKit.m in Sources */,
@@ -1107,7 +1121,6 @@
 				56C253B81E53EEAB00C5DA8E /* AFNHelp.m in Sources */,
 				563287A1205F92C300271875 /* People.m in Sources */,
 				56328792205F92C300271875 /* PresentationController.m in Sources */,
-				5632879B205F92C300271875 /* KIHotFixTest.m in Sources */,
 				56328793205F92C300271875 /* TargetViewController.m in Sources */,
 				5632878E205F92C300271875 /* CustomLayout.m in Sources */,
 				5632878A205F92C300271875 /* RegurOrHtmlViewController.m in Sources */,
@@ -1115,10 +1128,12 @@
 				5632877C205F92C300271875 /* Layer_ViewController.m in Sources */,
 				56328791205F92C300271875 /* ChangeArray.m in Sources */,
 				1561C0A020B5382A000BCE80 /* KISignal_VC.m in Sources */,
+				15FA3B8322AF9E4100CD216F /* FSLoadingHUD.m in Sources */,
 				563794971E56A0CB00CA645C /* FileHelp.m in Sources */,
 				56328794205F92C300271875 /* Transition_ViewController.m in Sources */,
 				563287A6205F92C300271875 /* Function.m in Sources */,
 				5632877D205F92C300271875 /* Line_ViewController.m in Sources */,
+				157C6B94229CDF0B00779860 /* NSObject+KIController.m in Sources */,
 				1561C0B220BD29CD000BCE80 /* KICollectionViewTestVC.m in Sources */,
 				56328775205F92C300271875 /* GPU_ViewController.m in Sources */,
 				563287A8205F92C300271875 /* YYText_1_ViewController.m in Sources */,

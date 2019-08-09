@@ -17,11 +17,19 @@
     UIButton *_cancelBtn;
     UIButton *_confirmBtn;
     UIButton *_confirmBtn2;
+    UIStackView *_stackView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
+    [self UIStackViewTest];
+   
+}
+
+
+- (void)masonryTest {
     self.view.backgroundColor = [UIColor lightGrayColor];
     _animationView = [[UIView alloc] init];
     _animationView.backgroundColor = [UIColor redColor];
@@ -72,6 +80,92 @@
         make.centerX.equalTo(self.view.mas_centerX).offset = (375 / 2.0 - 100) ;
         make.bottom.equalTo(self.view.mas_bottom).offset   = -100;
     }];
+}
+
+- (void)UIStackViewTest {
+    //如果只是单纯的视图 宽度会被缩小为0，所以测试时使用UILable进行测试
+    //@available 大于等于当前版本
+    if (@available(iOS 9.0, *)) {
+    
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(15, 150, SSize.width - 30, 180)];
+        [self.view addSubview:view];
+        view.backgroundColor = [UIColor lightGrayColor];
+        
+        _stackView = [[UIStackView alloc] init];
+        _stackView.axis = UILayoutConstraintAxisHorizontal;
+        _stackView.distribution = UIStackViewDistributionEqualCentering;
+        _stackView.spacing = 8;
+        _stackView.alignment = UIStackViewAlignmentFill;
+        _stackView.frame = CGRectMake(0, 0, SSize.width - 30, 180);
+        [view addSubview:_stackView];
+
+        
+//        UIView *v1 = [[UIView alloc] init];
+//        v1.backgroundColor = [UIColor redColor];
+////        v1.frame = CGRectMake(10, 30, 50, 50);
+//
+////        UIView *v2 = [[UIView alloc] init];
+////        v2.backgroundColor = [UIColor purpleColor];
+////        v2.frame = CGRectMake(10, 30, 50, 50);
+//
+//        UIView *v3 = [[UIView alloc] init];
+//        v3.backgroundColor = [UIColor blueColor];
+////        v3.frame = CGRectMake(10, 30, 50, 50);
+//
+//        [_stackView addArrangedSubview:v1];
+////        [stackView addArrangedSubview:v2];
+//        [_stackView addArrangedSubview:v3];
+//        [_stackView layoutIfNeeded];
+
+        UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [addBtn setBackgroundColor:[UIColor greenColor]];
+        [addBtn setTitle:@"增加一个" forState:UIControlStateNormal];
+        [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        addBtn.frame = CGRectMake(100, 400, 100, 50);
+        [addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:addBtn];
+        
+        UIButton *removeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [removeBtn setBackgroundColor:[UIColor redColor]];
+        [removeBtn setTitle:@"减少一个" forState:UIControlStateNormal];
+        [removeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        removeBtn.frame = CGRectMake(240, 400, 100, 50);
+        [removeBtn addTarget:self action:@selector(removeClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:removeBtn];
+    }
+}
+
+- (void)addClick {
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1.0];
+    NSString *str = [NSString stringWithFormat:@"视图%u", arc4random() % 100];
+    for (int i = 0; i < random() % 2; i++) {
+        str = [str stringByAppendingString:str];
+    }
+    label.text = str;
+    [_stackView addArrangedSubview:label];
+    [UIView animateWithDuration:1.0
+                     animations:^{
+                         [_stackView layoutIfNeeded];
+                     }];
+    NSLog(@"---%lu", (unsigned long)_stackView.subviews.count);
+
+    //    NSLog(@"添加之前 : %zd",_stackView.subviews.count);
+    //    UILabel *label = [[UILabel alloc] init];
+    //    label.textAlignment = NSTextAlignmentCenter;
+    //    NSString *str = [NSString stringWithFormat:@"视图%ld",(long)index];
+    //    for (int i = 0; i < random() % 2; i ++) {
+    //        str = [str stringByAppendingString:str];
+    //    }
+    //    label.text = str;
+    //    label.backgroundColor = [UIColor colorWithRed:random()%256/255.0 green:random()%256/255.0 blue:random()%256/255.0 alpha:1];
+    //    [_stackView addArrangedSubview:label];
+    //    [UIView animateWithDuration:1.0 animations:^{
+    //        [_stackView layoutIfNeeded];
+    //    }];
+    //
+    //    NSLog(@"添加之后 : %zd",_stackView.subviews.count);
+
 }
 
 - (void)clickCancleBtn:(UIButton *)btn {

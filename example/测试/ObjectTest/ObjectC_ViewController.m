@@ -59,7 +59,7 @@
     Class clas = NSClassFromString([[self.muarray objectAtIndex:indexPath.row] objectForKey:@"class"]);
     UIViewController *vc = [[clas alloc] init];
     vc.title = [[self.muarray objectAtIndex:indexPath.row] objectForKey:@"name"];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self DJPushViewController:vc animated:YES];
 }
 - (UITableView *)objectTabView {
     if (!_objectTabView) {

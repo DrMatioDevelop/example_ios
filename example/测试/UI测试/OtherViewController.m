@@ -24,6 +24,9 @@
 
     [self.view addSubview:self.tableView];
     self.arrayDS = @[
+                     @{ @"index" : @"0",
+                        @"name" : @"Loading测试",
+                        @"class" : @"KIUI_LoadingVC" },
         @{ @"index" : @"0",
            @"name" : @"Charts测试",
            @"class" : @"UI_ChartsVC" },
